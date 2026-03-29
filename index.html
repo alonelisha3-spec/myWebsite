@@ -48,11 +48,12 @@
         <li>ייפוי כוח מתמשך</li>
       </ul>
       <p class="hero-tagline">אנו מספקים ייעוץ וליווי משפטי מקיף, מדויק ומבוסס ניסיון רב-שנים.</p>
-      <form class="hero-form">
-        <input type="text" placeholder="שם פרטי" required/>
-        <input type="text" placeholder="שם משפחה" required/>
-        <input type="email" placeholder="דוא״ל" required/>
-        <input type="tel" placeholder="נייד" required/>
+      <form class="hero-form" name="ליד-דף-בית" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="ליד-דף-בית"/>
+        <input type="text" name="שם-פרטי" placeholder="שם פרטי" required/>
+        <input type="text" name="שם-משפחה" placeholder="שם משפחה" required/>
+        <input type="email" name="דוא״ל" placeholder="דוא״ל" required/>
+        <input type="tel" name="נייד" placeholder="נייד" required/>
         <button type="submit" class="btn-gold">שלח</button>
       </form>
     </div>
@@ -139,11 +140,12 @@
         <p>📧 <a href="mailto:alonelisha3@gmail.com">alonelisha3@gmail.com</a></p>
         <p>📞 <a href="tel:054-9260698">054-9260698</a></p>
       </div>
-      <form class="contact-form">
-        <input type="text" placeholder="שם פרטי" required/>
-        <input type="text" placeholder="שם משפחה" required/>
-        <input type="email" placeholder="דוא״ל" required/>
-        <textarea placeholder="הודעה" rows="5" required></textarea>
+      <form class="contact-form" name="צור-קשר" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="צור-קשר"/>
+        <input type="text" name="שם-פרטי" placeholder="שם פרטי" required/>
+        <input type="text" name="שם-משפחה" placeholder="שם משפחה" required/>
+        <input type="email" name="דוא״ל" placeholder="דוא״ל" required/>
+        <textarea name="הודעה" placeholder="הודעה" rows="5" required></textarea>
         <button type="submit" class="btn-gold">שלח הודעה</button>
       </form>
     </div>

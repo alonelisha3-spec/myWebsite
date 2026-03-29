@@ -69,28 +69,22 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// === HERO FORM — שולח מייל ===
-document.querySelector('.hero-form').addEventListener('submit', e => {
+// === HERO FORM ===
+document.querySelector('.hero-form').addEventListener('submit', async e => {
   e.preventDefault();
-  const firstName = e.target[0].value;
-  const lastName  = e.target[1].value;
-  const email     = e.target[2].value;
-  const phone     = e.target[3].value;
-  const subject   = encodeURIComponent('ליד חדש מהאתר – ' + firstName + ' ' + lastName);
-  const body      = encodeURIComponent('שם: ' + firstName + ' ' + lastName + '\nדוא"ל: ' + email + '\nנייד: ' + phone);
-  window.location.href = 'mailto:alonelisha3@gmail.com?subject=' + subject + '&body=' + body;
-  e.target.reset();
+  const form = e.target;
+  const data = new FormData(form);
+  await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
+  form.reset();
+  alert('תודה! נחזור אליך בהקדם.');
 });
 
-// === CONTACT FORM — שולח מייל ===
-document.querySelector('.contact-form').addEventListener('submit', e => {
+// === CONTACT FORM ===
+document.querySelector('.contact-form').addEventListener('submit', async e => {
   e.preventDefault();
-  const firstName = e.target[0].value;
-  const lastName  = e.target[1].value;
-  const email     = e.target[2].value;
-  const message   = e.target[3].value;
-  const subject   = encodeURIComponent('פנייה חדשה מהאתר – ' + firstName + ' ' + lastName);
-  const body      = encodeURIComponent('שם: ' + firstName + ' ' + lastName + '\nדוא"ל: ' + email + '\n\nהודעה:\n' + message);
-  window.location.href = 'mailto:alonelisha3@gmail.com?subject=' + subject + '&body=' + body;
-  e.target.reset();
+  const form = e.target;
+  const data = new FormData(form);
+  await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
+  form.reset();
+  alert('הודעתך התקבלה! נחזור אליך בהקדם.');
 });
