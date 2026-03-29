@@ -72,12 +72,12 @@ window.addEventListener('scroll', () => {
 // === HERO FORM — שולח מייל ===
 document.querySelector('.hero-form').addEventListener('submit', e => {
   e.preventDefault();
-  const data = new FormData(e.target);
   const firstName = e.target[0].value;
   const lastName  = e.target[1].value;
   const email     = e.target[2].value;
+  const phone     = e.target[3].value;
   const subject   = encodeURIComponent('ליד חדש מהאתר – ' + firstName + ' ' + lastName);
-  const body      = encodeURIComponent('שם: ' + firstName + ' ' + lastName + '\nדוא"ל: ' + email);
+  const body      = encodeURIComponent('שם: ' + firstName + ' ' + lastName + '\nדוא"ל: ' + email + '\nנייד: ' + phone);
   window.location.href = 'mailto:alonelisha3@gmail.com?subject=' + subject + '&body=' + body;
   e.target.reset();
 });
