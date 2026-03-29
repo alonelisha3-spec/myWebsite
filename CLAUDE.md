@@ -19,6 +19,7 @@
 - **טלפון / ווטסאפ:** 054-9260698 (wa.me/972549260698)
 - **פייסבוק:** https://www.facebook.com/profile.php?id=61579276704370
 - **לינקדאין:** https://www.linkedin.com/company/107369376/
+- **Formspree endpoint:** https://formspree.io/f/mgopabze (שני הטפסים שולחים לכאן → מייל אוטומטי לalonelisha3@gmail.com)
 
 ## Deploy
 לעדכון האתר החי לאחר שינויים:
