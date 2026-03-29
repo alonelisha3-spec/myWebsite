@@ -69,22 +69,26 @@ window.addEventListener('scroll', () => {
   });
 });
 
+const FORMSPREE = 'https://formspree.io/f/mgopabze';
+
 // === HERO FORM ===
 document.querySelector('.hero-form').addEventListener('submit', async e => {
   e.preventDefault();
   const form = e.target;
-  const data = new FormData(form);
-  await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
-  form.reset();
-  alert('תודה! נחזור אליך בהקדם.');
+  try {
+    const res = await fetch(FORMSPREE, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) });
+    if (res.ok) { form.reset(); alert('תודה! נחזור אליך בהקדם.'); }
+    else { alert('שגיאה בשליחה, נסה שוב.'); }
+  } catch { alert('שגיאה בשליחה, נסה שוב.'); }
 });
 
 // === CONTACT FORM ===
 document.querySelector('.contact-form').addEventListener('submit', async e => {
   e.preventDefault();
   const form = e.target;
-  const data = new FormData(form);
-  await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
-  form.reset();
-  alert('הודעתך התקבלה! נחזור אליך בהקדם.');
+  try {
+    const res = await fetch(FORMSPREE, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) });
+    if (res.ok) { form.reset(); alert('הודעתך התקבלה! נחזור אליך בהקדם.'); }
+    else { alert('שגיאה בשליחה, נסה שוב.'); }
+  } catch { alert('שגיאה בשליחה, נסה שוב.'); }
 });
