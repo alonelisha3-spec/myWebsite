@@ -1,4 +1,4 @@
-// Accessibility panel toggle
+// === ACCESSIBILITY ===
 function toggleAccessibility() {
   document.getElementById('accessibilityPanel').classList.toggle('open');
 }
@@ -19,7 +19,6 @@ function resetAccessibility() {
   document.body.classList.remove('high-contrast');
 }
 
-// Close panel when clicking outside
 document.addEventListener('click', e => {
   const panel = document.getElementById('accessibilityPanel');
   if (!panel.contains(e.target) && !e.target.closest('.fab.accessibility')) {
@@ -27,7 +26,18 @@ document.addEventListener('click', e => {
   }
 });
 
-// Active nav link on scroll
+// === WILLS IFRAME BACK ===
+function willsBack() {
+  const iframe = document.getElementById('willsIframe');
+  try {
+    iframe.contentWindow.history.back();
+  } catch (e) {
+    // cross-origin fallback — reload
+    iframe.src = iframe.src;
+  }
+}
+
+// === ACTIVE NAV ON SCROLL ===
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('nav ul li a');
 
@@ -46,16 +56,28 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Hero form
+// === HERO FORM — שולח מייל ===
 document.querySelector('.hero-form').addEventListener('submit', e => {
   e.preventDefault();
-  alert('Thank you! We will be in touch soon.');
+  const data = new FormData(e.target);
+  const firstName = e.target[0].value;
+  const lastName  = e.target[1].value;
+  const email     = e.target[2].value;
+  const subject   = encodeURIComponent('ליד חדש מהאתר – ' + firstName + ' ' + lastName);
+  const body      = encodeURIComponent('שם: ' + firstName + ' ' + lastName + '\nדוא"ל: ' + email);
+  window.location.href = 'mailto:alonelisha3@gmail.com?subject=' + subject + '&body=' + body;
   e.target.reset();
 });
 
-// Contact form
+// === CONTACT FORM — שולח מייל ===
 document.querySelector('.contact-form').addEventListener('submit', e => {
   e.preventDefault();
-  alert('Message sent! We will be in touch soon.');
+  const firstName = e.target[0].value;
+  const lastName  = e.target[1].value;
+  const email     = e.target[2].value;
+  const message   = e.target[3].value;
+  const subject   = encodeURIComponent('פנייה חדשה מהאתר – ' + firstName + ' ' + lastName);
+  const body      = encodeURIComponent('שם: ' + firstName + ' ' + lastName + '\nדוא"ל: ' + email + '\n\nהודעה:\n' + message);
+  window.location.href = 'mailto:alonelisha3@gmail.com?subject=' + subject + '&body=' + body;
   e.target.reset();
 });
