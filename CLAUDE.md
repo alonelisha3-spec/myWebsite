@@ -4,10 +4,15 @@
 אתר משרד עורכי דין אלון אלישע — בנוי כ-static site (HTML/CSS/JS).
 
 ## URLs
-- **אתר חי:** https://elisha-law.netlify.app
+- **אתר חי (דומיין סופי):** https://elisha-law.com
+- **אתר חי (Netlify):** https://elisha-law.netlify.app
 - **Netlify dashboard:** https://app.netlify.com/projects/elisha-law
-- **אתר מקורי (Wix):** https://www.elisha-law.com
 - **צוואה בדיגיטל (מוטמע):** https://hebrew-will-guide.lovable.app/
+
+## DNS (Namecheap → Netlify)
+- Nameservers: Namecheap BasicDNS
+- A Record: `@` → `75.2.60.5`
+- CNAME Record: `www` → `elisha-law.netlify.app`
 
 ## פרטי קשר / אוטומציה
 - **מייל לידים:** alonelisha3@gmail.com
