@@ -14,15 +14,18 @@
   <header id="header">
     <div class="nav-container">
       <a href="tel:054-9260698" class="nav-phone">📞 054-9260698</a>
-      <nav>
+      <button class="hamburger" id="hamburger" aria-label="תפריט" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="mainNav">
         <ul>
-          <li><a href="#home">בית</a></li>
-          <li><a href="#about">אודות</a></li>
-          <li><a href="#practice">תחומי התמחות</a></li>
-          <li><a href="#making-order">עושים סדר</a></li>
-          <li><a href="#location">מיקום</a></li>
-          <li><a href="#contact">צור קשר</a></li>
-          <li><a href="#my-project" class="tab-highlight">צוואה בדיגיטל</a></li>
+          <li><a href="#home" onclick="closeMenu()">בית</a></li>
+          <li><a href="#about" onclick="closeMenu()">אודות</a></li>
+          <li><a href="#practice" onclick="closeMenu()">תחומי התמחות</a></li>
+          <li><a href="#making-order" onclick="closeMenu()">עושים סדר</a></li>
+          <li><a href="#location" onclick="closeMenu()">מיקום</a></li>
+          <li><a href="#contact" onclick="closeMenu()">צור קשר</a></li>
+          <li><a href="#my-project" class="tab-highlight" onclick="closeMenu()">צוואה בדיגיטל</a></li>
         </ul>
       </nav>
       <div class="logo-wrap">
@@ -159,9 +162,9 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-social">
-      <a href="#" aria-label="פייסבוק">f</a>
+      <a href="https://www.facebook.com/profile.php?id=61579276704370" target="_blank" aria-label="פייסבוק">f</a>
       <a href="#" aria-label="טוויטר">t</a>
-      <a href="#" aria-label="לינקדאין">in</a>
+      <a href="https://www.linkedin.com/company/107369376/" target="_blank" aria-label="לינקדאין">in</a>
       <a href="#" aria-label="אינסטגרם">ig</a>
     </div>
     <p class="footer-contact">

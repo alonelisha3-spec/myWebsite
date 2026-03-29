@@ -1,3 +1,16 @@
+// === HAMBURGER MENU ===
+function toggleMenu() {
+  const nav = document.getElementById('mainNav');
+  const btn = document.getElementById('hamburger');
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+
+function closeMenu() {
+  document.getElementById('mainNav').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+
 // === ACCESSIBILITY ===
 function toggleAccessibility() {
   document.getElementById('accessibilityPanel').classList.toggle('open');
