@@ -45,6 +45,14 @@ netlify deploy --prod --dir .
 ## הנחיות עיצוב
 - שפה: עברית, RTL
 - צבעים: navy `#0d1b2e` + gold `#c9a84c`
-- פונט: Heebo (עברית), Cormorant Garamond (כותרות)
-- הלוגו בניווט: ELISHA-LAW (טקסט, לא תמונה)
+- פונט: Heebo (עברית), Cormorant Garamond (כותרות), Montserrat (לוגו)
+- הלוגו בניווט: ELISHA-LAW (טקסט Montserrat, לא תמונה)
 - אין לציין שמות פלטפורמות חיצוניות באתר עצמו
+
+## שינויים אחרונים
+- תחומי התמחות — תוכן מקצועי מלא
+- לוגו ELISHA-LAW — פונט Montserrat (מינוס ישר)
+- טפסים — Formspree (mgopabze) שולח למייל
+- צוואה בדיגיטל — כרטיס עם כפתור CTA
+- המבורגר מנו — מובייל
+- דומיין — elisha-law.com על Netlify
