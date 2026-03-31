@@ -56,3 +56,19 @@ netlify deploy --prod --dir .
 - צוואה בדיגיטל — כרטיס עם כפתור CTA
 - המבורגר מנו — מובייל
 - דומיין — elisha-law.com על Netlify
+- מאמר SEO — article-tzavaah.html (כתיבת צוואה בישראל)
+- Sitemap — sitemap.xml + robots.txt
+- Google Search Console — מחובר, sitemap נשלח, אינדוקס התבקש
+- קמפיין השקה — campaign/content-calendar.md (6 פוסטים, השקה 4.4.2026)
+
+## מודל עסקי — צוואה בדיגיטל
+- כלי חינמי: https://hebrew-will-guide.lovable.app/ — משתמש מכין צוואה בעצמו
+- ליד מגיע אוטומטית ל-alonelisha3@gmail.com
+- עורך הדין מציע השלמה מקצועית בתשלום
+- השקה רשמית: 4.4.2026
+
+## קבצים נוספים
+- `article-tzavaah.html` — מאמר SEO על כתיבת צוואה
+- `sitemap.xml` — מפת אתר לגוגל
+- `robots.txt` — הוראות לסורקי גוגל
+- `campaign/content-calendar.md` — לוח פרסום לפייסבוק ולינקדאין
