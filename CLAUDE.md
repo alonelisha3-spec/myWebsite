@@ -154,7 +154,7 @@ Also try to extract and download any images used in the Lovable wills site (chec
 ## Navigation
 
 ```
-בית | עושים סדר | אודות | צוואה | צור קשר
+בית | אודות | תחומי התמחות | עושים סדר | מיקום | צור קשר | צוואה בדיגיטל | חוזה דיגיטלי
 ```
 
 - Desktop: horizontal nav bar, right-aligned (RTL), sticky on scroll
@@ -294,6 +294,28 @@ Button: `054-9260698` (tel link) + `שלח הודעה` (→ contact form)
   <!-- שם מלא, טלפון, אימייל, הודעה, שלח -->
 </form>
 ```
+
+---
+
+### 6. חוזה דיגיטלי (Digital Contract) — `#contract`
+
+> **Dev phase added: 2026-04-01**
+
+A new tab added next to "צוואה בדיגיטל" in the navigation. Embeds the full contract creation tool built in React/Lovable.
+
+**Implementation:**
+- Section ID: `#contract`
+- Embedded via `<iframe src="https://elisha-law.lovable.app/">` (full-height, 850px desktop / 600px mobile)
+- Source code in `externalContent/Index (1).tsx` (React component with ContractTypeSelector, ContractForm, ContractPreview, AIContractGenerator)
+- Built/saved version: `externalContent/image2.html`
+- Live Lovable app: https://elisha-law.lovable.app/
+
+**Functionality:**
+- Two modes: "חוזה מתבנית" (template-based) and "חוזה עם AI" (AI-generated)
+- Template flow: select contract type → fill details → preview/download
+- AI flow: describe contract in plain language → AI generates it
+
+**Note:** The iframe embeds the live Lovable app. If the Lovable app URL changes, update the `src` in `index.html` section `#contract`.
 
 ---
 
