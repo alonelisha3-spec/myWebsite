@@ -22,10 +22,14 @@
 - **Formspree endpoint:** https://formspree.io/f/mgopabze (שני הטפסים שולחים לכאן → מייל אוטומטי לalonelisha3@gmail.com)
 
 ## Deploy
-לעדכון האתר החי לאחר שינויים:
+לעדכון האתר החי אחרי שינויים:
 ```
-netlify deploy --prod --dir .
+git add .
+git commit -m "תיאור השינוי"
+git push origin main
 ```
+**הוסטינג:** GitHub Pages (חינמי, ללא מגבלות)
+**לשעבר:** Netlify — הושהה בגלל מגבלת תוכנית חינמית
 
 ## מבנה הסקשנים
 1. בית (hero) — תמונה + שם + רשימת תחומים + טופס ליד
