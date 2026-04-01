@@ -84,3 +84,16 @@ git push origin main
 - `sitemap.xml` — מפת אתר לגוגל
 - `robots.txt` — הוראות לסורקי גוגל
 - `campaign/content-calendar.md` — לוח פרסום לפייסבוק ולינקדאין
+- `campaign/medium-plain.txt` — טקסט המאמר ל-Medium (ללא markdown)
+- `dashboard.html` — דשבורד ניהול פרויקט (פתח בדפדפן מקומי)
+- `package.json` — npm scripts: `npm run optimize` (מינוי CSS/JS/HTML)
+- `.github/workflows/deploy.yml` — GitHub Actions: דיפלוי אוטומטי ל-Pages בכל push
+
+## כלי פיתוח (npm)
+```
+npm run optimize       # מינוי CSS + JS + HTML (הכל ביחד)
+npm run minify-css     # cleancss → style.min.css
+npm run minify-js      # terser → script.min.js
+npm run minify-html    # html-minifier → index.min.html
+```
+devDependencies: clean-css-cli, terser, html-minifier-terser
