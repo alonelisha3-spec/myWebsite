@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>דשבורד — משרד עורכי דין אלישע</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1b2e; color: #eee; min-height: 100vh; }
+
+    header {
+      background: #0a1525;
+      padding: 20px 40px;
+      border-bottom: 3px solid #c9a84c;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { color: #c9a84c; font-size: 1.4rem; font-weight: 700; letter-spacing: 2px; }
+    .date { color: #888; font-size: 0.85rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 32px 40px; }
+
+    .card {
+      background: #1a2d45;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #243650;
+    }
+    .card h3 { color: #c9a84c; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #243650;
+      font-size: 0.9rem;
+    }
+    .status-row:last-child { border-bottom: none; }
+
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-left: 8px; }
+    .dot-green { background: #28a745; box-shadow: 0 0 6px #28a745; }
+    .dot-yellow { background: #ffc107; box-shadow: 0 0 6px #ffc107; }
+    .dot-red { background: #dc3545; box-shadow: 0 0 6px #dc3545; }
+
+    .btn-link {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #c9a84c;
+      color: #0d1b2e;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 12px;
+      margin-left: 8px;
+      transition: opacity 0.2s;
+    }
+    .btn-link:hover { opacity: 0.85; }
+    .btn-link.secondary { background: #243650; color: #c9a84c; }
+
+    .big-num { font-size: 2.5rem; font-weight: 700; color: #c9a84c; }
+    .big-label { font-size: 0.8rem; color: #888; margin-top: 4px; }
+
+    .nums-row { display: flex; gap: 24px; margin-bottom: 16px; }
+
+    .cmd {
+      background: #0a1525;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #c9a84c;
+      margin: 8px 0;
+      cursor: pointer;
+      border: 1px solid #243650;
+      transition: border-color 0.2s;
+    }
+    .cmd:hover { border-color: #c9a84c; }
+    .cmd.copied { border-color: #28a745; color: #28a745; }
+
+    .checklist { list-style: none; }
+    .checklist li {
+      padding: 8px 0;
+      border-bottom: 1px solid #243650;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist input[type=checkbox] { width: 16px; height: 16px; cursor: pointer; accent-color: #c9a84c; }
+    .checklist li.done { text-decoration: line-through; color: #555; }
+
+    .alert { background: #2d1f0a; border: 1px solid #c9a84c; border-radius: 8px; padding: 12px 16px; font-size: 0.85rem; color: #c9a84c; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ELISHA-LAW | דשבורד ניהול</div>
+  <div class="date" id="now"></div>
+</header>
+
+<div class="grid">
+
+  <!-- סטטוס מערכות -->
+  <div class="card">
+    <h3>סטטוס מערכות</h3>
+    <div class="status-row">
+      <span>אתר ראשי</span>
+      <span><span class="dot dot-green"></span> פעיל</span>
+    </div>
+    <div class="status-row">
+      <span>GitHub Pages</span>
+      <span><span class="dot dot-green"></span> פעיל</span>
+    </div>
+    <div class="status-row">
+      <span>Formspree (טפסים)</span>
+      <span><span class="dot dot-green"></span> פעיל</span>
+    </div>
+    <div class="status-row">
+      <span>SSL (מנעול ירוק)</span>
+      <span><span class="dot dot-yellow"></span> בהמתנה</span>
+    </div>
+    <div class="status-row">
+      <span>Google Search Console</span>
+      <span><span class="dot dot-green"></span> מחובר</span>
+    </div>
+    <div class="status-row">
+      <span>Google Business Profile</span>
+      <span><span class="dot dot-green"></span> מעודכן</span>
+    </div>
+    <a href="https://elisha-law.com" target="_blank" class="btn-link">פתח אתר</a>
+    <a href="https://github.com/alonelisha3-spec/myWebsite" target="_blank" class="btn-link secondary">GitHub</a>
+  </div>
+
+  <!-- עדכון האתר -->
+  <div class="card">
+    <h3>עדכון האתר</h3>
+    <p style="font-size:0.85rem;color:#888;margin-bottom:12px;">אחרי כל שינוי בקבצים — הרץ בטרמינל:</p>
+    <div class="cmd" onclick="copyCmd(this, 'git add .')">git add .</div>
+    <div class="cmd" onclick="copyCmd(this, 'git commit -m \"עדכון\"')">git commit -m "עדכון"</div>
+    <div class="cmd" onclick="copyCmd(this, 'git push origin main')">git push origin main</div>
+    <p style="font-size:0.8rem;color:#555;margin-top:8px;">לחץ על כל פקודה להעתקה</p>
+    <a href="https://app.netlify.com" target="_blank" class="btn-link secondary" style="margin-top:12px">Netlify (ישן)</a>
+  </div>
+
+  <!-- קמפיין -->
+  <div class="card">
+    <h3>קמפיין השקה — 4.4.2026</h3>
+    <div class="nums-row">
+      <div>
+        <div class="big-num" id="days-left">—</div>
+        <div class="big-label">ימים להשקה</div>
+      </div>
+      <div>
+        <div class="big-num">6</div>
+        <div class="big-label">פוסטים מוכנים</div>
+      </div>
+    </div>
+    <a href="C:/projects/קמפיין SEO- צוואה דיגיטלית/dashboard.html" target="_blank" class="btn-link">פתח לוח פרסום</a>
+    <a href="https://www.facebook.com/profile.php?id=61579276704370" target="_blank" class="btn-link secondary">פייסבוק</a>
+  </div>
+
+  <!-- SEO -->
+  <div class="card">
+    <h3>SEO ותוכן</h3>
+    <div class="status-row">
+      <span>מאמר ראשי</span>
+      <span><span class="dot dot-green"></span> חי</span>
+    </div>
+    <div class="status-row">
+      <span>Sitemap</span>
+      <span><span class="dot dot-green"></span> נשלח לגוגל</span>
+    </div>
+    <div class="status-row">
+      <span>Medium</span>
+      <span><span class="dot dot-green"></span> פורסם</span>
+    </div>
+    <div class="status-row">
+      <span>LinkedIn Article</span>
+      <span><span class="dot dot-red"></span> ממתין</span>
+    </div>
+    <div class="status-row">
+      <span>e-dine.co.il</span>
+      <span><span class="dot dot-red"></span> ממתין</span>
+    </div>
+    <a href="https://search.google.com/search-console" target="_blank" class="btn-link">Search Console</a>
+    <a href="https://elisha-law.com/article-tzavaah.html" target="_blank" class="btn-link secondary">מאמר</a>
+  </div>
+
+  <!-- לידים -->
+  <div class="card">
+    <h3>לידים ואוטומציה</h3>
+    <div class="status-row">
+      <span>טופס בית</span>
+      <span><span class="dot dot-green"></span> Formspree</span>
+    </div>
+    <div class="status-row">
+      <span>טופס צור קשר</span>
+      <span><span class="dot dot-green"></span> Formspree</span>
+    </div>
+    <div class="status-row">
+      <span>כלי צוואה</span>
+      <span><span class="dot dot-green"></span> ליד למייל</span>
+    </div>
+    <div class="status-row">
+      <span>מייל לידים</span>
+      <span>alonelisha3@gmail.com</span>
+    </div>
+    <a href="https://formspree.io/forms" target="_blank" class="btn-link">Formspree</a>
+    <a href="https://hebrew-will-guide.lovable.app" target="_blank" class="btn-link secondary">כלי צוואה</a>
+  </div>
+
+  <!-- צ'קליסט שבועי -->
+  <div class="card">
+    <h3>צ'קליסט שבועי</h3>
+    <ul class="checklist" id="checklist">
+      <li><input type="checkbox" onchange="saveCheck(this,0)"> פרסם פוסט פייסבוק השבוע</li>
+      <li><input type="checkbox" onchange="saveCheck(this,1)"> בדוק לידים במייל</li>
+      <li><input type="checkbox" onchange="saveCheck(this,2)"> עדכן Google Business Profile</li>
+      <li><input type="checkbox" onchange="saveCheck(this,3)"> הרשמה ל-e-dine.co.il</li>
+      <li><input type="checkbox" onchange="saveCheck(this,4)"> פרסם LinkedIn Article</li>
+      <li><input type="checkbox" onchange="saveCheck(this,5)"> בדוק Google Search Console</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+  // Date
+  const now = new Date();
+  document.getElementById('now').textContent = now.toLocaleDateString('he-IL', {weekday:'long', year:'numeric', month:'long', day:'numeric'});
+
+  // Days to launch
+  const launch = new Date('2026-04-04');
+  const diff = Math.ceil((launch - now) / (1000*60*60*24));
+  document.getElementById('days-left').textContent = diff > 0 ? diff : '🚀';
+
+  // Copy command
+  function copyCmd(el, text) {
+    navigator.clipboard.writeText(text || el.textContent).then(() => {
+      el.classList.add('copied');
+      setTimeout(() => el.classList.remove('copied'), 1500);
+    });
+  }
+
+  // Checklist persistence
+  function saveCheck(el, idx) {
+    const state = JSON.parse(localStorage.getItem('checklist') || '{}');
+    state[idx] = el.checked;
+    localStorage.setItem('checklist', JSON.stringify(state));
+    el.closest('li').classList.toggle('done', el.checked);
+  }
+
+  // Load checklist
+  const checks = JSON.parse(localStorage.getItem('checklist') || '{}');
+  document.querySelectorAll('#checklist input').forEach((el, i) => {
+    if (checks[i]) { el.checked = true; el.closest('li').classList.add('done'); }
+  });
+</script>
+
+</body>
+</html>

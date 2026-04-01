@@ -1,0 +1,18 @@
+{
+  "name": "elisha-law-website",
+  "version": "1.0.0",
+  "description": "משרד עורכי דין אלישע — אתר סטטי + כלים",
+  "scripts": {
+    "deploy": "git add . && git commit -m \"update\" && git push origin main",
+    "optimize": "npm run minify-css && npm run minify-js && npm run minify-html",
+    "minify-css": "cleancss -o style.min.css style.css",
+    "minify-js": "terser script.js -o script.min.js",
+    "minify-html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o index.min.html index.html",
+    "check": "node scripts/check.js"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "terser": "^5.31.0",
+    "html-minifier-terser": "^7.2.0"
+  }
+}
