@@ -96,6 +96,120 @@
   }
   </script>
 
+  <!-- Schema — HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "איך יוצרים טיוטת צוואה דיגיטלית",
+    "description": "שלבים ליצירת טיוטת צוואה ראשונית בחינם דרך כלי ה-AI של משרד עו\"ד אלון אלישע",
+    "totalTime": "PT10M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "ILS",
+      "value": "0"
+    },
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "כניסה לכלי",
+        "text": "היכנסו לכלי יצירת הצוואה הדיגיטלית בכתובת elisha-law.com/#my-project"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "בחירת מסלול",
+        "text": "בחרו מסלול: צוואה חדשה (ללא צוואה קיימת) או עדכון צוואה קיימת"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "מילוי פרטים",
+        "text": "ענו על שאלות ממוקדות על המצב המשפחתי, הנכסים, ורצונותיכם — בעברית פשוטה"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "קבלת הטיוטה",
+        "text": "הכלי מייצר טיוטת צוואה ראשונית מפורטת תוך דקות. הטיוטה נשלחת גם למייל."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "פגישה עם עורך הדין",
+        "text": "צוות המשרד יצור קשר לתיאום פגישה לעריכה, חתימה, והפיכת הטיוטה לצוואה תקפה משפטית"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema — BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "דף הבית",
+        "item": "https://elisha-law.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "עושים סדר",
+        "item": "https://elisha-law.com/#making-order"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "צוואה דיגיטלית בישראל: הכלי שמשנה את כללי המשחק",
+        "item": "https://elisha-law.com/article-tzavaah-digital.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema — LegalService (publisher detail) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "משרד עורכי דין אלון אלישע",
+    "url": "https://elisha-law.com",
+    "telephone": "+972-54-9260698",
+    "email": "alonelisha3@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IL"
+    },
+    "areaServed": "IL",
+    "availableLanguage": "Hebrew",
+    "priceRange": "₪₪",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "שירותים משפטיים",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "יצירת טיוטת צוואה דיגיטלית",
+          "description": "טיוטת צוואה ראשונית בחינם תוך 10 דקות, בסיוע AI",
+          "price": "0",
+          "priceCurrency": "ILS"
+        },
+        {
+          "@type": "Offer",
+          "name": "עריכת צוואה מסודרת",
+          "description": "צוואה תקפה משפטית עם חתימה בפני עדים וליווי עורך דין",
+          "priceRange": "1500–5500 ₪"
+        }
+      ]
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 
@@ -489,6 +603,15 @@
     <p>צור את טיוטת הצוואה שלך עכשיו — חינם, תוך דקות, ללא התחייבות</p>
     <a href="https://elisha-law.com/#my-project" class="cta-btn">יצירת צוואה דיגיטלית ←</a>
     <a href="tel:054-9260698" class="cta-btn outline">📞 054-9260698</a>
+  </div>
+
+  <!-- Related article -->
+  <div style="margin:48px 0 32px; padding:20px 24px; background:#f5f3ef; border-right:4px solid #c9a84c; border-radius:0 8px 8px 0;">
+    <p style="margin:0 0 8px; font-size:0.85rem; color:#888;">קראו גם ←</p>
+    <a href="article-tzavaah.html" style="color:#0d1b2e; font-weight:700; font-size:1.05rem; text-decoration:none;">
+      כתיבת צוואה בישראל: המדריך המלא לפני שמתחילים
+    </a>
+    <p style="margin:8px 0 0; font-size:0.9rem; color:#555;">מה קורה אם אין צוואה? כמה עולה? איזה טעויות פוסלות צוואה? כל מה שצריך לדעת.</p>
   </div>
 
   <p class="disclaimer">
