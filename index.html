@@ -34,10 +34,15 @@
     "email": "alonelisha3@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "רמת השרון",
+      "addressLocality": "הרצליה",
+      "addressRegion": "מחוז תל אביב",
       "addressCountry": "IL"
     },
-    "areaServed": "IL",
+    "areaServed": [
+      { "@type": "City", "name": "הרצליה" },
+      { "@type": "City", "name": "רמת השרון" },
+      { "@type": "City", "name": "תל אביב" }
+    ],
     "priceRange": "$$",
     "sameAs": [
       "https://www.facebook.com/profile.php?id=61579276704370",
@@ -176,9 +181,12 @@
   <section id="location" class="section location">
     <div class="container">
       <h2 class="section-title dark">מיקום המשרד</h2>
+      <p style="text-align:center; color:#c8a96e; font-size:1.05rem; margin-bottom:24px;">
+        📍 משרד עורכי דין אלון אלישע — הרצליה
+      </p>
       <div class="map-wrap">
         <iframe
-          src="https://maps.google.com/maps?q=Ramat+HaSharon,+Israel&output=embed"
+          src="https://maps.google.com/maps?q=Herzliya,+Israel&output=embed"
           width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
         </iframe>
       </div>
