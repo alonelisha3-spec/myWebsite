@@ -475,14 +475,18 @@ nav ul li a.tab-highlight:hover {
 .wills-features li { color: var(--gold-light); font-weight: 500; }
 
 .wills-cta {
-  display: inline-block;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
   background: var(--gold);
   color: var(--navy);
-  padding: 15px 50px;
-  font-size: 1rem;
+  padding: 18px 24px;
+  font-size: 1.15rem;
   font-weight: 700;
   font-family: 'Heebo', sans-serif;
   letter-spacing: 1px;
+  border-radius: 10px;
+  text-align: center;
   transition: background 0.2s, transform 0.15s;
   margin-bottom: 1.5rem;
 }
