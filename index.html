@@ -1,60 +1,103 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ET42K00LTJ"></script>
+  <!-- Google Analytics — loads only after cookie consent -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ET42K00LTJ');
+    function loadGA(){
+      if(document.getElementById('gaScript'))return;
+      var s=document.createElement('script');s.id='gaScript';s.async=true;
+      s.src='https://www.googletagmanager.com/gtag/js?id=G-ET42K00LTJ';
+      document.head.appendChild(s);
+      gtag('js',new Date());gtag('config','G-ET42K00LTJ');
+    }
+    if(localStorage.getItem('cookie_consent')==='accepted')loadGA();
   </script>
   <meta charset="UTF-8" />
   <meta name="google" content="notranslate" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>עו״ד אלון אלישע | משרד עורכי דין | חוזים, צוואות, הוצאה לפועל</title>
-  <meta name="description" content="משרד עו״ד אלון אלישע – ליווי משפטי מקצועי בתחומי חוזים, מכרזים, צוואות וירושות, הוצאה לפועל ואנרגיה מתחדשת. בדוק עכשיו מה צריך להסדיר בצוואה שלך."/>
-  <meta name="keywords" content="עורך דין, משרד עורכי דין, צוואה, ירושה, הוצאה לפועל, חוזים, מכרזים, אנרגיה מתחדשת, ייפוי כוח מתמשך, אלון אלישע, עו״ד, רמת השרון"/>
+  <title>עו״ד אלון אלישע | פתרונות משפטיים דיגיטליים | חוזים, צוואות, פרטיות</title>
+  <meta name="description" content="עו״ד א��ון אלישע — לא סתם עוד משרד עורכי דין. פתרונות משפטיים דיגיטליים וחכמים: צוואה דיגיטלית בחינם, ייפוי כוח מתמשך, הגנת פרטיות לעסקים, חוזים ומכרזים."/>
+  <meta name="keywords" content="עורך דין, פתרונו�� משפטיים דיגיטליים, צוואה דיגיטלית, ייפוי כוח מתמשך, הגנת פרטי��ת, תיקון 13, חוזים, מכרזים, אנרגיה מתחדשת, LegalTech, אלון אלישע"/>
   <meta name="author" content="עו״ד אלון אלישע"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://elisha-law.com/"/>
   <link rel="sitemap" type="application/xml" href="https://elisha-law.com/sitemap.xml"/>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="עו״ד אלון אלישע | משרד עורכי דין"/>
-  <meta property="og:description" content="ליווי משפטי מקצועי בחוזים, צוואות, הוצאה לפועל ואנרגיה מתחדשת. גלה עכשיו מה צריך להסדיר בצוואה שלך."/>
+  <meta property="og:title" content="עו״ד אלון אלישע | פתרונות משפטיים דיגיטליים"/>
+  <meta property="og:description" content="לא סתם עוד משרד עורכי דין — פתרונות משפטיים דיגיטליים: צוואה בח��נם, ייפוי כוח, ��גנת פרטיות, חוזים ומכרזים."/>
   <meta property="og:url" content="https://elisha-law.com/"/>
   <meta property="og:type" content="website"/>
   <meta property="og:locale" content="he_IL"/>
   <meta property="og:image" content="https://elisha-law.com/externalContent/DA-185.jpg"/>
 
-  <!-- Schema Markup -->
+  <!-- Schema: LegalService + WebSite + Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LegalService",
-    "name": "משרד עורכי דין אלון אלישע",
-    "url": "https://elisha-law.com",
-    "logo": "https://elisha-law.com/externalContent/ALON ELISHA (1).png",
-    "image": "https://elisha-law.com/externalContent/DA-185.jpg",
-    "description": "משרד עו״ד אלון אלישע – ליווי משפטי מקצועי בתחומי חוזים, מכרזים, צוואות, הוצאה לפועל ואנרגיה מתחדשת.",
-    "telephone": "+972-54-9260698",
-    "email": "alonelisha3@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "הרצליה",
-      "addressRegion": "מחוז תל אביב",
-      "addressCountry": "IL"
-    },
-    "areaServed": [
-      { "@type": "City", "name": "הרצליה" },
-      { "@type": "City", "name": "רמת השרון" },
-      { "@type": "City", "name": "תל אביב" }
-    ],
-    "priceRange": "$$",
-    "sameAs": [
-      "https://www.facebook.com/profile.php?id=61579276704370",
-      "https://www.linkedin.com/company/107369376/"
+    "@graph": [
+      {
+        "@type": "LegalService",
+        "@id": "https://elisha-law.com/#business",
+        "name": "משרד עורכי דין אלו�� אלישע",
+        "url": "https://elisha-law.com",
+        "logo": "https://elisha-law.com/externalContent/ALON ELISHA (1).png",
+        "image": "https://elisha-law.com/externalContent/DA-185.jpg",
+        "description": "עו״ד אלון אלישע — פתרונו�� משפטיים דיגיטליים וח��מים: צוואה דיגיט��ית, יי��וי כוח מתמשך, הגנת פרטיות, חוזים ומכרזים.",
+        "telephone": "+972-54-9260698",
+        "email": "alonelisha3@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "הרצליה",
+          "addressRegion": "מחוז תל אביב",
+          "addressCountry": "IL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "32.1628",
+          "longitude": "34.7896"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "הרצליה" },
+          { "@type": "City", "name": "רמת השרון" },
+          { "@type": "City", "name": "ת�� אביב" },
+          { "@type": "City", "name": "כפר סבא" },
+          { "@type": "City", "name": "רעננה" },
+          { "@type": "City", "name": "נתניה" }
+        ],
+        "priceRange": "$$",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "שירותים משפטיים",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "צוואה דיגיטלית", "description": "יצירת טיוטת צוואה בחינם בכלי ד��גיטלי" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "יי��וי כוח מתמשך", "description": "עריכת ייפוי כוח מתמשך להגנה על העתיד" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "הגנ�� פרטיות ותיקון 13", "description": "שירותי DPO וייעוץ רגולטורי לעסקים" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "חוזים מסחריים", "description": "ניסוח וליווי חוזים מסחריים ואזרחיים" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "מכרזים", "description": "ליווי משפטי בהליכי מכרזים צי��וריים" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "אנרגיה מתחדשת", "description": "ליווי משפטי לפרויקטי אנרגיה סולארית" } }
+          ]
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61579276704370",
+          "https://www.linkedin.com/company/107369376/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://elisha-law.com/#website",
+        "url": "https://elisha-law.com",
+        "name": "משרד עורכי דין אלון אל��שע",
+        "publisher": { "@id": "https://elisha-law.com/#business" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "דף הבית", "item": "https://elisha-law.com/" }
+        ]
+      }
     ]
   }
   </script>
@@ -67,7 +110,7 @@
   <!-- HEADER / NAV -->
   <header id="header">
     <div class="nav-container">
-      <a href="tel:054-9260698" class="nav-phone">📞 054-9260698</a>
+      <a href="tel:054-9260698" class="nav-phone">054-9260698</a>
       <button class="hamburger" id="hamburger" aria-label="תפריט" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </button>
@@ -75,198 +118,322 @@
         <ul>
           <li><a href="#home" onclick="closeMenu()">בית</a></li>
           <li><a href="#about" onclick="closeMenu()">אודות</a></li>
-          <li><a href="#practice" onclick="closeMenu()">תחומי התמחות</a></li>
-          <li><a href="#making-order" onclick="closeMenu()">עושים סדר</a></li>
-          <li><a href="#location" onclick="closeMenu()">מיקום</a></li>
+          <li><a href="#products" onclick="closeMenu()">המוצרים שלנו</a></li>
+          <li><a href="#making-order" onclick="closeMenu()">מאמרים</a></li>
           <li><a href="#contact" onclick="closeMenu()">צור קשר</a></li>
-          <li><a href="#my-project" class="tab-highlight" onclick="closeMenu()">צוואה בדיגיטל</a></li>
+          <li><a href="landing-tzavaah.html" class="nav-cta" onclick="closeMenu()">צוואה דיגיטלית - חינם</a></li>
         </ul>
       </nav>
       <div class="logo-wrap">
-        <span class="logo-text">ELISHA-LAW</span>
+        <a href="#home"><span class="logo-text">ELISHA-LAW</span></a>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- SCROLL CTA BAR -->
+  <div id="scrollCta">
+    <a href="landing-tzavaah.html">צרו טיוטת צ��ואה בחינם — התחילו עכשיו ←</a>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- HERO — מבחן 5 השניות                          -->
+  <!-- ============================================ -->
   <section id="home" class="hero">
     <div class="hero-right">
       <p class="hero-subtitle">משרד עורכי דין</p>
-      <h1 class="hero-title">אלון אלישע</h1>
-      <div class="hero-divider"></div>
-      <ul class="hero-list">
-        <li>חוזים ומכרזים</li>
-        <li>אנרגיה מתחדשת</li>
-        <li>הוצאה לפועל</li>
-        <li>הגנת הפרטיות</li>
-        <li>צוואות וייפוי כוח מתמשך</li>
-      </ul>
-      <p class="hero-tagline">אנו מספקים ייעוץ וליווי משפטי מקיף, מדויק ומבוסס ניסיון רב-שנים.</p>
-      <form class="hero-form" name="lead-form">
+      <h1 class="hero-title">לא סתם עוד עורך דין.<br/>פתרונות משפטיים דיגיטליים וחכמים.</h1>
+      <p class="hero-tagline">ייעוץ משפטי מקצועי משולב בכלים דיגיטליים שחוסכים לכם זמן, כסף וכאב ראש. מהצוואה הראשונה ועד לחוזה המורכב ביותר.</p>
 
-        <input type="text" name="שם-פרטי" placeholder="שם פרטי" required/>
-        <input type="text" name="שם-משפחה" placeholder="שם משפחה" required/>
-        <input type="email" name="דוא״ל" placeholder="דוא״ל" required/>
-        <input type="tel" name="נייד" placeholder="נייד" required/>
-        <button type="submit" class="btn-gold">שלח</button>
-      </form>
+      <div class="hero-ctas">
+        <a href="landing-tzavaah.html" class="cta-primary">צור טי��טת צוואה בחינם ←</a>
+        <a href="tel:054-9260698" class="cta-secondary">
+          <span>שיחת ייעוץ</span>
+          <span style="direction:ltr">054-9260698</span>
+        </a>
+      </div>
+
+      <div class="trust-badges">
+        <span class="trust-badge"><span class="badge-check">✓</span> עורך דין פעיל</span>
+        <span class="trust-badge"><span class="badge-check">✓</span> LegalTech ראשון מסוגו בישראל</span>
+        <span class="trust-badge"><span class="badge-check">✓</span> ניסיון רב-שנים</span>
+      </div>
     </div>
     <div class="hero-left">
-      <img src="externalContent/DA-185.jpg" alt="עו״ד אלון אלישע" class="hero-photo"/>
+      <img src="externalContent/DA-185.jpg" alt="עו״ד אלון אלישע — פתרונות משפטיים דיגיטליים" class="hero-photo"/>
     </div>
   </section>
 
-  <!-- ABOUT / VISION -->
-  <section id="about" class="section vision">
-    <div class="container vision-inner">
-      <img src="externalContent/ALON ELISHA (1).png" alt="לוגו" class="vision-logo"/>
-      <div class="section-divider-line"></div>
-      <h2 class="section-title dark">החזון שלנו</h2>
-      <div class="section-divider-line"></div>
-      <p class="vision-text">
-        משרדנו פועל מתוך מחויבות עמוקה לשירות משפטי מדויק ומקצועי. אנו מאמינים ביצירת ערך אמיתי ללקוחותינו – לא רק בפתרון סכסוכים, אלא בליווי חכם מראש. החזון שלנו הוא לשלב מומחיות משפטית עם הבנה עסקית רחבה, וללוות כל לקוח בביטחון מלא.
-      </p>
+  <!-- ============================================ -->
+  <!-- TRUST BAR — רצועת אמון                        -->
+  <!-- ============================================ -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <span class="trust-bar-item"><span class="tb-icon">⚖️</span> עורך דין מורשה</span>
+      <span class="trust-bar-item"><span class="tb-icon">💻</span> מפתח כלים משפטיים דיגיטליים</span>
+      <span class="trust-bar-item"><span class="tb-icon">📋</span> מומחה חוזים ומכרזים</span>
+      <span class="trust-bar-item"><span class="tb-icon">🔒</span> ליווי עסקי ורגולטורי</span>
     </div>
-  </section>
+  </div>
 
-  <!-- PRACTICE AREAS -->
-  <section id="practice" class="section practice">
+  <!-- ============================================ -->
+  <!-- PRODUCT STACK — המוצרים המשפטיים              -->
+  <!-- ============================================ -->
+  <section id="products" class="section products">
     <div class="container">
-      <h2 class="section-title light">תחומי התמחות</h2>
-      <p class="section-subtitle">המשרד עוסק בליווי משפטי מקיף, הנשען על ניסיון מעשי, ראייה מערכתית וחשיבה אסטרטגית, תוך התאמה מדויקת לכל תיק ולכל לקוח/ה.</p>
-      <ul class="practice-list">
-        <li><strong>חוזים</strong> – עריכה, ניתוח וליווי של מגוון רחב של הסכמים מסחריים ואזרחיים. העבודה מתבצעת מתוך הבנה עמוקה של צרכים משפטיים ועסקיים, לצד תכנון מוקדם של סיכונים ומנגנוני הגנה.</li>
-        <li><strong>מכרזים</strong> – ליווי משפטי הן מצד מציעים והן מצד גופים מפרסמים. המשרד מעניק שירות החל משלב ניתוח תנאי המכרז, דרך גיבוש אסטרטגיית הגשה, ועד לייצוג בהליכי זכייה והתמודדות עם השגות. בנוסף, למשרד ניסיון בכתיבת מכרזים ובהשתתפות בוועדות מקצועיות.</li>
-        <li><strong>אנרגיה מתחדשת</strong> – ליווי משפטי לפרויקטים בתחום האנרגיה המתחדשת, לרבות יזמים, בעלי זכויות במקרקעין והתקשרויות מסחריות מורכבות, בדגש על פרויקטים סולאריים.</li>
-        <li><strong>הוצאה לפועל</strong> – ייצוג זוכים וחייבים, פרטיים וציבוריים, בניהול תיקי הוצאה לפועל מורכבים ופשוטים כאחד, תוך בחירת אסטרטגיה מותאמת למטרות ההליך ולנסיבות המקרה.</li>
-        <li><strong>הגנת הפרטיות</strong> – ליווי וייעוץ משפטי בתחום הגנת הפרטיות, לרבות עמידה בדרישות חוק הגנת הפרטיות, ניהול מאגרי מידע, מדיניות פרטיות והתמודדות עם הפרות פרטיות.</li>
-        <li><strong>צוואות וירושות</strong> – עריכת צוואות ותכנון העברה בין-דורית, מתוך הבנה מעמיקה של רצון המצווה ושל ההשלכות המשפטיות והמשפחתיות.</li>
-        <li><strong>ייפוי כוח מתמשך</strong> – הסדרה משפטית מוקדמת של קבלת החלטות לעתיד, במצבים של אובדן כשירות, תוך ליווי אישי, דיסקרטי ומקצועי.</li>
-      </ul>
+      <h2 class="section-title dark">המוצרים המשפטיים שלנו</h2>
+      <p class="section-subtitle" style="color: var(--gray-text);">לא רשימת שירותים — פתרונות משפטיים מדויקים עם תוצאה ברורה</p>
+
+      <div class="product-grid">
+
+        <!-- FEATURED: צוואה דיגיטלית (Lead Magnet) -->
+        <div class="product-card featured">
+          <div>
+            <span class="product-badge free">חינם | כלי דיג��טלי</span>
+            <h3>צ��ואה דיגיטלית</h3>
+            <p>ענו על שאלון קצר — קבלו טי��טת צוואה כמעט מוכנה תוך דקות. עורך הדין משלים התאמות משפטיות — אתם משלמים רק על ההפרש. ללא התחייבות.</p>
+            <a href="landing-tzavaah.html" class="product-cta">התחל עכשיו - חינם ←</a>
+          </div>
+          <div style="display:flex; flex-direction:column; justify-content:center; gap:1rem;">
+            <div style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--navy);">
+              <span style="color:#28a745; font-weight:700;">✓</span> 3 דקות בלבד
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--navy);">
+              <span style="color:#28a745; font-weight:700;">✓</span> בעברית, בממשק פשוט
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--navy);">
+              <span style="color:#28a745; font-weight:700;">✓</span> ללא רישום, ללא תשלום
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--navy);">
+              <span style="color:#28a745; font-weight:700;">✓</span> עורך דין משלים מקצועית
+            </div>
+          </div>
+        </div>
+
+        <!-- ייפוי כוח מתמשך -->
+        <div class="product-card">
+          <span class="product-badge premium">שירות פרימיום</span>
+          <h3>ייפוי כוח מתמשך</h3>
+          <p>שמרו על השליטה בעתיד שלכם. אל תתנו לאפוטרופסות לקרות לכם — תכנון חכם היום מונע אסון משפטי מחר.</p>
+          <a href="landing-yipui-koach.html" class="product-cta">למדו עוד ←</a>
+        </div>
+
+        <!-- הגנת פרטיות -->
+        <div class="product-card">
+          <span class="product-badge b2b">לעסקים | B2B</span>
+          <h3>הגנת פרטיות + תיקון 13</h3>
+          <p>קנסות של עד 3.2 מיליון שקל, חובות יידוע חדשות, אכיפה הולכת וגוברת. שירותי DPO וייעוץ רגולטורי מלא לעסקים.</p>
+          <a href="landing-privacy.html" class="product-cta">בדקו אם אתם עומדים בדרישות ←</a>
+        </div>
+
+        <!-- חוזים / מכרזים / אנרגיה -->
+        <div class="product-card">
+          <span class="product-badge core">ליבת המשרד</span>
+          <h3>חוזים | מכר��ים | אנרגיה מתחדשת</h3>
+          <p>ניסוח וליווי הסכמים מסחריים, ייצוג במכרזים ציבוריים, וליווי משפטי לפרויקטים סולאריים, מתקני אגירה ו-BESS.</p>
+          <a href="#contact" class="product-cta">שלח פנייה ←</a>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- MAKING ORDER (BLOG) -->
+  <!-- ============================================ -->
+  <!-- MINI FUNNEL — איך עובד הכלי                   -->
+  <!-- ============================================ -->
+  <section class="section mini-funnel">
+    <div class="container">
+      <h2 class="section-title dark">איך עובד הכלי לצוואה דיגיטלית?</h2>
+      <p style="text-align:center; color:var(--gray-text); font-size:0.95rem; margin-bottom:1rem;">תהליך פשוט, מהיר ובטוח — מהשאלון ועד למסמך מוכן</p>
+
+      <div class="funnel-steps">
+        <div class="funnel-step">
+          <div class="funnel-number">1</div>
+          <h3>עונים על שאלון</h3>
+          <p>שאלות פשוטות על המשפחה, הנכסים והרצונות שלכם. לוקח כ-3 דק��ת.</p>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-number">2</div>
+          <h3>מקבלים טיוטה מדויקת</h3>
+          <p>הכלי מייצר טיוטת צוואה מסודרת על בסיס התשובות — מיד, בחינם.</p>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-number">3</div>
+          <h3>עורך הדין משלים</h3>
+          <p>אני בודק, מתאים ומשלים את המסמך משפטית. אתם משלמים רק על הדלתא.</p>
+        </div>
+      </div>
+
+      <div class="funnel-cta">
+        <a href="landing-tzavaah.html" class="cta-primary">התחל עכשיו - חינם ←</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- ABOUT — בידול                                 -->
+  <!-- ============================================ -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="about-inner">
+        <img src="externalContent/ALON ELISHA (1).png" alt="עו״ד אלון אלישע" class="about-photo"/>
+        <div class="about-text">
+          <h2>עו״ד אלון אלישע</h2>
+          <p class="about-lead">עורך דין פעיל שמפתח כלי LegalTech — שילוב נדיר של מומחיות משפטית ויכולת טכנולוגית</p>
+          <p class="about-desc">
+            משרדנו פועל מתוך מחויבות עמוקה לשירות משפטי מדויק ומקצועי. אנחנו לא מסתפקים בייעוץ — אנחנו בונים כלים דיגיטליים שנותנים ללקוחות שלנו יתרון אמיתי. שילוב של ניסיון משפטי רב-שנים עם הבנה טכנולוגית עמוקה מאפשר לנו לייצר פתרונות שמשרדים אחרים פשוט לא יכולים להציע.
+          </p>
+          <ul class="about-bullets">
+            <li>ניסיון מעשי בחוזים, מכרזים ואנרגיה מתח��שת</li>
+            <li>פיתוח כלי צוואה דיגיטלית ראשון מסוגו בישראל</li>
+            <li>ליווי יזמים, עסקים ורשויות מקומיות</li>
+            <li>שילוב AI ובינה מלאכותית בשירותים משפטיים</li>
+            <li>מומחיות בהגנת פרטיות ותיקון 13</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- ARTICLES — מאמרים                             -->
+  <!-- ============================================ -->
   <section id="making-order" class="section making-order">
     <div class="container">
-      <h2 class="section-title light">עושים סדר</h2>
-      <p class="section-subtitle">סיפורים ותובנות מזירת המשפט</p>
+      <h2 class="section-title light">עושים סדר — מאמרים ותובנות</h2>
+      <p class="section-subtitle">סיפורים, מדריכים ותובנות מזירת המשפט</p>
       <div class="blog-grid">
-        <div class="blog-card">
-          <span class="blog-date">31 מרץ 2026</span>
-          <h3>כתיבת צוואה בישראל: המדריך המלא לפני שמתחילים</h3>
-          <p>מה קורה אם אין צוואה? כמה עולה? איזה טעויות פוסלות צוואה? כל מה שצריך לדעת — לפני שמתחילים.</p>
-          <a href="article-tzavaah.html" class="read-more">קראו עוד ←</a>
-        </div>
-        <div class="blog-card">
-          <span class="blog-date">10 נוב׳ 2024</span>
-          <h3>שוקלים לחתום על חוזה אנרגיה סולארית? עצרו רגע לחשוב.</h3>
-          <p>שנות ההטבות הסתיימו, מערכת על הגג, הכנסה פסיבית – אבל מה קורא כשהדברים מסתבכים? אני פוגש שוב...</p>
-          <a href="#making-order" class="read-more">קראו עוד ←</a>
-        </div>
-        <div class="blog-card">
-          <span class="blog-date">10 נוב׳ 2024</span>
-          <h3>לפעמים הקבלן לא מוכרע במספרים – הראיון האישי הוא הרגע הקריטי</h3>
-          <p>בחלק מהמקרים, הכל נראה מתאים: מחיר, ניקוד טכני, עמידה בדרישות – והצעה הנומינלית גדולה יותר...</p>
-          <a href="#making-order" class="read-more">קראו עוד ←</a>
-        </div>
-        <div class="blog-card">
-          <span class="blog-date">6 נוב׳ 2024</span>
-          <h3>צדק לא מחייב חשבון בבנק: סיוע משפטי לאישה יום ביום במסגרת תכנית "שכר מצווה"</h3>
-          <p>בתוך עומס התיקים והעבודה השוטפת, ישנם מקרים שלא נמדדים בשכר טרחה – אלא בהשפעה על החיים עצמם...</p>
-          <a href="#making-order" class="read-more">קראו עוד ←</a>
-        </div>
         <div class="blog-card">
           <span class="blog-date">5 אפריל 2026</span>
           <h3>צוואה דיגיטלית בישראל: הכלי שמשנה את כללי המשחק</h3>
           <p>לראשונה בישראל — יצירת טיוטת צוואה בחינם תוך דקות, בסיוע AI. חלק ממהפכת הבינה המלאכותית בעולם המשפטי.</p>
           <a href="article-tzavaah-digital.html" class="read-more">קראו עוד ←</a>
         </div>
+        <div class="blog-card">
+          <span class="blog-date">31 מרץ 2026</span>
+          <h3>כתיבת צוואה בישראל: המדריך המלא לפני שמתחילים</h3>
+          <p>מה קורה אם אין צוואה? כמה עולה? איזה טעויות פוסלות צוואה? כל מה שצריך לדעת — לפני שמתחי��ים.</p>
+          <a href="article-tzavaah.html" class="read-more">קראו עוד ←</a>
+        </div>
+        <div class="blog-card">
+          <span class="blog-date">10 נוב׳ 2024</span>
+          <h3>שוקלים לחתום על חוזה אנרגיה סולארית? עצרו רגע לחשוב.</h3>
+          <p>25 שנות התחייבות, מערכת על הגג, הכנסה פסיבית — אבל מה קורה כשהדברים מסתבכים? אני פוגש שוב ושוב בעלי נכסים שנכנסו להסכמים בלי להבין.</p>
+          <a href="#making-order" class="read-more">קראו עוד ←</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- LOCATION -->
-  <section id="location" class="section location">
-    <div class="container">
-      <h2 class="section-title dark">מיקום המשרד</h2>
-      <p style="text-align:center; color:#c8a96e; font-size:1.05rem; margin-bottom:24px;">
-        📍 משרד עורכי דין אלון אלישע — הרצליה
-      </p>
-      <div class="map-wrap">
-        <iframe
-          src="https://maps.google.com/maps?q=Herzliya,+Israel&output=embed"
-          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
+  <!-- ============================================ -->
+  <!-- CONTACT — צור קשר + לכידת לידים               -->
+  <!-- ============================================ -->
   <section id="contact" class="section contact">
-    <div class="container contact-inner">
-      <h2 class="section-title light">צור קשר</h2>
-      <div class="contact-details">
-        <p>📧 <a href="mailto:alonelisha3@gmail.com">alonelisha3@gmail.com</a></p>
-        <p>📞 <a href="tel:054-9260698">054-9260698</a></p>
-      </div>
-      <form class="contact-form" name="contact-form">
-
-        <input type="text" name="שם-פרטי" placeholder="שם פרטי" required/>
-        <input type="text" name="שם-משפחה" placeholder="שם משפחה" required/>
-        <input type="email" name="דוא״ל" placeholder="דוא״ל" required/>
-        <textarea name="הודעה" placeholder="הודעה" rows="5" required></textarea>
-        <button type="submit" class="btn-gold">שלח הודעה</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- WILLS GUIDE -->
-  <section id="my-project" class="section wills-section">
     <div class="container">
-      <div class="wills-card">
-        <div class="wills-icon">📜</div>
-        <h2 class="wills-title">רוצים להסדיר צוואה?</h2>
+      <h2 class="section-title light">מוכנים להתחיל?</h2>
+      <p class="section-subtitle">בחרו נושא, השאירו פרטים — ונחזור אליכם תוך יום עסקים</p>
 
-        <p class="wills-desc">כלי חינמי שמאפשר לכם לייצר בעצמכם נוסח לצוואה, על בסיס תשובות לשאלות — תוך כ־3 דקות בלבד.</p>
-        <p class="wills-desc" style="margin-top:12px;">עונים על מספר שאלות ומקבלים תוצר שמרכז את ההחלטות שלכם לגבי חלוקת רכוש, נכסים והוראות אישיות. הכלי נותן לכם אפשרות להתנסות ולראות איך הדברים נראים בפועל — ולהבין מה אתם מייצרים בעצמכם.</p>
+      <div class="contact-grid">
+        <div>
+          <form class="contact-form" name="contact-form">
+            <select name="נושא" required>
+              <option value="" disabled selected>בחרו נושא...</option>
+              <option value="צוואה">צוואה דיגיטלית</option>
+              <option value="ייפוי-כוח">יי��וי כוח מתמשך</option>
+              <option value="פרטיות">הגנת פרטיות / תיקון 13</option>
+              <option value="חוזים">חוזים מסחריי��</option>
+              <option value="מכר��ים">מכרזים</option>
+              <option value="אנרגיה">אנרגיה מתחדשת</option>
+              <option value="אחר">א��ר</option>
+            </select>
+            <input type="text" name="שם-מלא" placeholder="שם מלא" required/>
+            <input type="tel" name="טלפון" placeholder="טלפון" required/>
+            <input type="email" name="דוא״ל" placeholder="דוא״ל" required/>
+            <textarea name="הודעה" placeholder="ספרו לנו בקצרה על מה מדובר..." rows="4"></textarea>
+            <div style="font-size:.72em;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:12px">
+              הפרטים נאספים לצורך חזרה אליך בלבד. המידע לא יועבר לצד שלישי ולא ישמש לדיוור ללא הסכמתך. ניתן לבקש עיון, תיקון או מחיקה בכל עת — <a href="mailto:alonelisha3@gmail.com" style="color:var(--gold);text-decoration:underline">alonelisha3@gmail.com</a>.
+              <a href="#" onclick="document.getElementById('privacyModal').style.display='flex';return false" style="color:var(--gold);text-decoration:underline">מדיניות פרטיות</a>
+            </div>
+            <button type="submit" class="btn-gold">שלח פנייה</button>
+          </form>
+        </div>
 
-        <a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="wills-cta">
-          התחל עכשיו ←
-        </a>
-
-        <details style="margin-top:0; border:1.5px solid #c9a84c; border-radius:10px; background:#fff8ee; text-align:right;">
-          <summary style="padding:14px 20px; font-size:0.9rem; font-weight:700; color:#0d1b2e; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">
-            ⚖️ הבהרה משפטית — לחץ לקריאה
-            <span style="font-size:0.75rem; color:#c9a84c;">▼</span>
-          </summary>
-          <div style="padding:0 20px 16px; font-size:0.87rem; color:#4a3b1f; line-height:1.8; border-top:1px solid #e8d9b5;">
-            הכלי מייצר <strong>טיוטת מסמך ראשונית בלבד</strong> לצורכי עבודה מקדימה, ואינו מהווה ייעוץ משפטי.
-            השימוש בכלי <strong>אינו יוצר יחסי עורך דין–לקוח</strong> בין המשתמש למשרד עו"ד אלון אלישע, ואינו מתיימר להחליף ייעוץ או ליווי של עורך דין מוסמך.
-            הטיוטה המתקבלת מיועדת אך ורק כבסיס ראשוני להשלמה.
-            <strong>אין להסתמך על הטיוטה כמסמך משפטי תקף.</strong>
-            המשרד ממליץ ליצור צוואה תקפה על פי דין לאחר ייעוץ משפטי.
-            <span style="display:block; margin-top:12px; padding-top:12px; border-top:1px solid #e8d9b5;">לייעוץ: <a href="tel:054-9260698" style="color:#0d1b2e; font-weight:700;">054-9260698</a> &nbsp;|&nbsp; <a href="mailto:alonelisha3@gmail.com" style="color:#0d1b2e; font-weight:700;">alonelisha3@gmail.com</a></span>
+        <div class="contact-info">
+          <h3>דברו איתנו ישירות</h3>
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <span class="cd-icon">📞</span>
+              <a href="tel:054-9260698">054-9260698</a>
+            </div>
+            <div class="contact-detail-item">
+              <span class="cd-icon">📧</span>
+              <a href="mailto:alonelisha3@gmail.com">alonelisha3@gmail.com</a>
+            </div>
+            <div class="contact-detail-item">
+              <span class="cd-icon">💬</span>
+              <a href="https://wa.me/972549260698" target="_blank">שלחו הודעה בוואטסאפ</a>
+            </div>
+            <div class="contact-detail-item">
+              <span class="cd-icon">📍</span>
+              <span>הרצליה, מחוז תל אביב</span>
+            </div>
           </div>
-        </details>
-
+          <div class="map-wrap">
+            <iframe
+              src="https://maps.google.com/maps?q=Herzliya,+Israel&output=embed"
+              width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ============================================ -->
+  <!-- FOOTER                                        -->
+  <!-- ============================================ -->
   <footer>
-    <div class="footer-social">
-      <a href="https://www.facebook.com/profile.php?id=61579276704370" target="_blank" aria-label="פייסבוק">f</a>
-      <a href="#" aria-label="טוויטר">t</a>
-      <a href="https://www.linkedin.com/company/107369376/" target="_blank" aria-label="לינקדאין">in</a>
-      <a href="#" aria-label="אינסטגרם">ig</a>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>המוצרים שלנו</h4>
+        <ul>
+          <li><a href="landing-tzavaah.html">צוואה דיגיטלית</a></li>
+          <li><a href="landing-yipui-koach.html">ייפוי כוח מתמשך</a></li>
+          <li><a href="landing-privacy.html">הגנת פרטיות</a></li>
+          <li><a href="#contact">חוזים ומכרזים</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>תוכן</h4>
+        <ul>
+          <li><a href="article-tzavaah.html">מדריך כת��בת צוואה</a></li>
+          <li><a href="article-tzavaah-digital.html">צוואה דיגיטלית — הכלי</a></li>
+          <li><a href="#making-order">כל המאמרים</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>צור קשר</h4>
+        <p>
+          עו״ד אלון אלישע<br/>
+          <a href="tel:054-9260698" style="color:var(--gold);">054-9260698</a><br/>
+          <a href="mailto:alonelisha3@gmail.com" style="color:var(--gold);">alonelisha3@gmail.com</a><br/>
+          הרצליה, ישראל
+        </p>
+      </div>
     </div>
-    <p class="footer-contact">
-      <a href="mailto:alonelisha3@gmail.com">alonelisha3@gmail.com</a> &nbsp;|&nbsp;
-      <a href="tel:054-9260698">054-9260698</a>
-    </p>
-    <p class="footer-copy">&copy; 2026 משרד עורכי דין אלון אלישע. כל הזכויות שמורות.</p>
+    <div class="footer-bottom">
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61579276704370" target="_blank" aria-label="פייסבוק">f</a>
+        <a href="https://www.linkedin.com/company/107369376/" target="_blank" aria-label="לינקדאין">in</a>
+      </div>
+      <div style="margin-bottom:8px;font-size:.85em">
+        <a href="#" onclick="document.getElementById('privacyModal').style.display='flex';return false" style="color:var(--gold);text-decoration:none">מדיניות פרטיות</a>
+        <span style="opacity:.3"> · </span>
+        <a href="#" onclick="document.getElementById('termsModal').style.display='flex';return false" style="color:var(--gold);text-decoration:none">תנאי שימוש</a>
+        <span style="opacity:.3"> · </span>
+        <a href="#" onclick="document.getElementById('a11yModal').style.display='flex';return false" style="color:var(--gold);text-decoration:none">הצהרת נגישות</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 משרד עורכי דין אלון אלישע. כל הזכויות שמורות.</p>
+    </div>
   </footer>
 
   <!-- FLOATING BUTTONS -->
@@ -292,6 +459,86 @@
     <button onclick="resetAccessibility()">איפוס</button>
   </div>
 
+  <!-- EXIT INTENT POPUP -->
+  <div class="exit-overlay" id="exitPopup">
+    <div class="exit-popup">
+      <button class="exit-close" aria-label="סגור">&times;</button>
+      <h3>רגע לפני שעוזבים...</h3>
+      <p>80% מהישראלים לא כתבו צוואה. תוך 3 דקות תוכלו ליצור טיוטה ראשונה — בחינם, בלי התחי��בות.</p>
+      <a href="landing-tzavaah.html" class="cta-primary">צור טיוטת צוואה בחינם ←</a>
+    </div>
+  </div>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#fff;border-top:2px solid var(--gold,#c8a96e);padding:16px 24px;box-shadow:0 -4px 20px rgba(0,0,0,.1)">
+    <div style="max-width:800px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:space-between">
+      <p style="font-size:.82em;color:#555;line-height:1.5;flex:1;min-width:240px">אתר זה משתמש בעוגיות לצורך שיפור חוויית הגלישה וניתוח שימוש. ניתן לקרוא את <a href="#" onclick="document.getElementById('privacyModal').style.display='flex';return false" style="color:#1a3a5c;text-decoration:underline;font-weight:600">מדיניות הפרטיות</a>.</p>
+      <div style="display:flex;gap:8px;flex-shrink:0">
+        <button onclick="acceptCookies()" style="padding:10px 24px;background:#1a3a5c;color:#fff;border:none;border-radius:8px;font-family:inherit;font-size:.85em;font-weight:600;cursor:pointer">אישור</button>
+        <button onclick="rejectCookies()" style="padding:10px 24px;background:#f5f5f0;color:#666;border:1px solid #ddd;border-radius:8px;font-family:inherit;font-size:.85em;cursor:pointer">דחייה</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALS -->
+  <div id="privacyModal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:10000;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 16px">
+    <div style="max-width:640px;width:100%;background:#fff;border-radius:12px;padding:36px 32px;position:relative" dir="rtl">
+      <button onclick="this.parentElement.parentElement.style.display='none'" style="position:absolute;top:16px;left:16px;background:none;border:none;font-size:1.4em;cursor:pointer;color:#999">✕</button>
+      <h2 style="font-size:1.3em;font-weight:700;color:#1a3a5c;margin-bottom:6px">מדיניות פרטיות</h2>
+      <p style="font-size:.75em;color:#999;margin-bottom:20px">עודכן לאחרונה: מאי 2026</p>
+      <div style="font-size:.85em;color:#555;line-height:1.8">
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">1. כללי</strong><br>מדיניות פרטיות זו מתארת כיצד משרד עורכי דין אלון אלישע ("המשרד") אוסף, משתמש ומגן על מידע אישי שנמסר על ידי משתמשי האתר. המשרד מכבד את פרטיות המשתמשים ופועל בהתאם להוראות חוק הגנת הפרטיות, התשמ"א-1981, תיקון 13 (תשפ"ה-2024) והתקנות שמכוחו.</p>
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">2. מידע שנאסף</strong><br>האתר עשוי לאסוף:<br>• <strong>פרטים מזהים:</strong> שם מלא, מספר טלפון, כתובת דוא"ל — באמצעות טופס יצירת קשר.<br>• <strong>תשובות לשאלונים:</strong> מידע שנמסר במסגרת כלים דיגיטליים (צוואה, הגנת פרטיות).<br>• <strong>מידע טכני:</strong> כתובת IP, סוג דפדפן, מערכת הפעלה — לצורכי אבטחה ושיפור חוויית המשתמש.</p>
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">3. מטרות השימוש</strong><br>• יצירת קשר עם המשתמש בהתאם לבקשתו.<br>• מתן שירותים משפטיים.<br>• שיפור האתר והכלים הדיגיטליים.<br>• שליחת עדכונים ותוכן מקצועי — רק אם המשתמש הסכים במפורש.</p>
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">4. שיתוף עם צדדים שלישיים</strong><br>המשרד לא ימכור או ישכיר מידע אישי. מידע עשוי להיות משותף עם:<br>• ספקי שירות טכניים (אחסון, דוא"ל) — תחת התחייבות לסודיות.<br>• Google Analytics — לניתוח שימוש באתר (רק לאחר הסכמה לעוגיות).<br>• דרישה חוקית — צו בית משפט או דרישת רשות מוסמכת.</p>
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">5. עוגיות (Cookies)</strong><br>האתר משתמש בעוגיות חיוניות לתפעול ובעוגיות אנליטיות (Google Analytics) — רק לאחר הסכמת המשתמש באמצעות באנר העוגיות. ניתן לנהל הגדרות עוגיות דרך הדפדפן.</p>
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">6. אבטחת מידע</strong><br>המשרד נוקט אמצעים סבירים לאבטחת המידע, לרבות הצפנת תקשורת (SSL) ומגבלות גישה. אין אפשרות להבטיח אבטחה מוחלטת.</p>
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">7. שמירת מידע</strong><br>המידע יישמר כל עוד הדבר נדרש למטרות שלשמן נאסף. מידע שאינו נדרש יימחק בתוך פרק זמן סביר.</p>
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">8. זכויות המשתמש</strong><br>בהתאם לחוק הגנת הפרטיות, למשתמש הזכות:<br>• לעיין במידע האישי המוחזק אודותיו.<br>• לבקש תיקון או מחיקה של מידע שגוי או מיותר.<br>• להתנגד לשימוש במידע לצורכי דיוור ישיר.<br>לכל בקשה: <a href="mailto:alonelisha3@gmail.com" style="color:#1a3a5c">alonelisha3@gmail.com</a> | <a href="tel:054-9260698" style="color:#1a3a5c">054-9260698</a></p>
+        <p><strong style="color:#1a1a1a">9. שינויים</strong><br>המשרד רשאי לעדכן מדיניות זו. המשך השימוש באתר לאחר עדכון מהווה הסכמה.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="termsModal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:10000;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 16px">
+    <div style="max-width:640px;width:100%;background:#fff;border-radius:12px;padding:36px 32px;position:relative" dir="rtl">
+      <button onclick="this.parentElement.parentElement.style.display='none'" style="position:absolute;top:16px;left:16px;background:none;border:none;font-size:1.4em;cursor:pointer;color:#999">✕</button>
+      <h2 style="font-size:1.3em;font-weight:700;color:#1a3a5c;margin-bottom:6px">תנאי שימוש</h2>
+      <p style="font-size:.75em;color:#999;margin-bottom:20px">עודכן לאחרונה: מאי 2026</p>
+      <div style="font-size:.85em;color:#555;line-height:1.8">
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">1. כללי</strong><br>אתר זה מופעל ע"י משרד עורכי דין אלון אלישע. השימוש באתר מהווה הסכמה לתנאים אלה.</p>
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">2. מהות השירות</strong><br>האתר מציע מידע כללי ושירותים משפטיים. הכלים הדיגיטליים (צוואה, הגנת פרטיות) מספקים הערכה ראשונית בלבד.</p>
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">3. אי-תחולת ייעוץ משפטי</strong><br>תכני האתר והכלים <strong>אינם מהווים ייעוץ משפטי</strong>, אינם יוצרים יחסי עורך דין–לקוח, ואינם מחליפים ייעוץ אישי.</p>
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">4. הגבלת אחריות</strong><br>המשרד אינו אחראי לנזק הנובע משימוש באתר או מהסתמכות על תוצאות הכלים. האחריות למסירת מידע נכון חלה על המשתמש.</p>
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">5. שיפוי</strong><br>המשתמש מתחייב לשפות את המשרד בגין כל תביעה הנובעת משימוש באתר או מהפרת תנאים אלה.</p>
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">6. קניין רוחני</strong><br>כל התכנים, העיצוב, הקוד והלוגיקה הם קניינו הבלעדי של המשרד.</p>
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">7. זמינות</strong><br>המשרד אינו מתחייב לזמינות רציפה של האתר.</p>
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">8. דין חל</strong><br>דיני מדינת ישראל. סמכות שיפוט: בתי המשפט בתל אביב-יפו.</p>
+        <p><strong style="color:#1a1a1a">9. יצירת קשר</strong><br><a href="tel:054-9260698" style="color:#1a3a5c">054-9260698</a> | <a href="mailto:alonelisha3@gmail.com" style="color:#1a3a5c">alonelisha3@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="a11yModal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:10000;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 16px">
+    <div style="max-width:640px;width:100%;background:#fff;border-radius:12px;padding:36px 32px;position:relative" dir="rtl">
+      <button onclick="this.parentElement.parentElement.style.display='none'" style="position:absolute;top:16px;left:16px;background:none;border:none;font-size:1.4em;cursor:pointer;color:#999">✕</button>
+      <h2 style="font-size:1.3em;font-weight:700;color:#1a3a5c;margin-bottom:16px">הצהרת נגישות</h2>
+      <div style="font-size:.85em;color:#555;line-height:1.8">
+        <p style="margin-bottom:14px">משרד עורכי דין אלון אלישע מחויב להנגשת שירותיו הדיגיטליים לכלל האוכלוסייה, לרבות אנשים עם מוגבלויות, בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות, התשנ"ח-1998 ולתקנות הנגישות.</p>
+        <p style="margin-bottom:14px"><strong style="color:#1a1a1a">פעולות נגישות:</strong><br>• התאמה לקריאת מסך<br>• ניווט באמצעות מקלדת<br>• ניגודיות צבעים מספקת<br>• אפשרות הגדלת טקסט<br>• מבנה סמנטי תקין<br>• כיוון RTL מלא</p>
+        <p><strong style="color:#1a1a1a">פניות בנושא נגישות:</strong><br><a href="mailto:alonelisha3@gmail.com" style="color:#1a3a5c">alonelisha3@gmail.com</a> | <a href="tel:054-9260698" style="color:#1a3a5c">054-9260698</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Cookie consent
+    if(!localStorage.getItem('cookie_consent')){setTimeout(function(){document.getElementById('cookieBanner').style.display='block'},1500)}
+    function acceptCookies(){localStorage.setItem('cookie_consent','accepted');document.getElementById('cookieBanner').style.display='none';loadGA()}
+    function rejectCookies(){localStorage.setItem('cookie_consent','rejected');document.getElementById('cookieBanner').style.display='none'}
+  </script>
+
   <script src="script.js"></script>
+  <script src="conversion.js"></script>
 </body>
 </html>
