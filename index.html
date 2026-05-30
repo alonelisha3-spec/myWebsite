@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ET42K00LTJ"></script>
+  <!-- Google Analytics — loads only after cookie consent -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ET42K00LTJ');
+    function loadGA(){if(document.getElementById('_ga'))return;var s=document.createElement('script');s.id='_ga';s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ET42K00LTJ';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-ET42K00LTJ');}
+    if(localStorage.getItem('ck')==='y')loadGA();
   </script>
   <meta charset="UTF-8" />
   <meta name="google" content="notranslate" />
@@ -108,6 +107,10 @@
         <input type="text" name="שם-משפחה" placeholder="שם משפחה" required/>
         <input type="email" name="דוא״ל" placeholder="דוא״ל" required/>
         <input type="tel" name="נייד" placeholder="נייד" required/>
+        <label style="display:flex;align-items:flex-start;gap:6px;font-size:.65em;color:rgba(255,255,255,.4);line-height:1.4;margin-bottom:8px;cursor:pointer">
+          <input type="checkbox" required style="margin-top:2px;flex-shrink:0">
+          <span>אני מסכים/ה לשמירת הפרטים לצורך חזרה אליי בלבד, בהתאם <a href="#" onclick="event.stopPropagation();document.getElementById('privModal').style.display='flex';return false" style="color:var(--gold)">למדיניות הפרטיות</a>.</span>
+        </label>
         <button type="submit" class="btn-gold">שלח</button>
       </form>
     </div>
@@ -216,6 +219,14 @@
         <input type="text" name="שם-משפחה" placeholder="שם משפחה" required/>
         <input type="email" name="דוא״ל" placeholder="דוא״ל" required/>
         <textarea name="הודעה" placeholder="הודעה" rows="5" required></textarea>
+        <label style="display:flex;align-items:flex-start;gap:6px;font-size:.7em;color:rgba(255,255,255,.45);line-height:1.4;margin-bottom:6px;cursor:pointer">
+          <input type="checkbox" required style="margin-top:2px;flex-shrink:0">
+          <span>אני מסכים/ה לשמירת הפרטים לצורך חזרה אליי בלבד, בהתאם <a href="#" onclick="event.stopPropagation();document.getElementById('privModal').style.display='flex';return false" style="color:var(--gold)">למדיניות הפרטיות</a>. *</span>
+        </label>
+        <label style="display:flex;align-items:flex-start;gap:6px;font-size:.65em;color:rgba(255,255,255,.35);line-height:1.4;margin-bottom:10px;cursor:pointer">
+          <input type="checkbox" name="שיווק" style="margin-top:2px;flex-shrink:0">
+          <span>אני מסכים/ה לקבל עדכונים, תוכן מקצועי והצעות שירות מהמשרד. (רשות)</span>
+        </label>
         <button type="submit" class="btn-gold">שלח הודעה</button>
       </form>
     </div>
@@ -266,6 +277,8 @@
       <a href="mailto:alonelisha3@gmail.com">alonelisha3@gmail.com</a> &nbsp;|&nbsp;
       <a href="tel:054-9260698">054-9260698</a>
     </p>
+    <div style="margin-bottom:6px;font-size:.8em"><a href="#" onclick="document.getElementById('privModal').style.display='flex';return false" style="color:var(--gold);text-decoration:none">מדיניות פרטיות</a> · <a href="#" onclick="document.getElementById('termsModal2').style.display='flex';return false" style="color:var(--gold);text-decoration:none">תנאי שימוש</a> · <a href="#" onclick="document.getElementById('a11yModal2').style.display='flex';return false" style="color:var(--gold);text-decoration:none">הצהרת נגישות</a></div>
+    <p style="font-size:.65em;color:rgba(255,255,255,.3);max-width:600px;margin:8px auto;line-height:1.6">האתר והכלים הדיגיטליים מספקים מידע כללי והערכות ראשוניות בלבד. אין מדובר בייעוץ משפטי, ואין בתכני האתר כדי ליצור יחסי עורך דין–לקוח. השימוש באתר אינו מחליף פגישת ייעוץ אישית עם עורך דין. כל הסתמכות על תוצאות הכלים נעשית באחריות המשתמש בלבד.</p>
     <p class="footer-copy">&copy; 2026 משרד עורכי דין אלון אלישע. כל הזכויות שמורות.</p>
   </footer>
 
@@ -291,6 +304,19 @@
     <button onclick="toggleHighContrast()">ניגודיות גבוהה</button>
     <button onclick="resetAccessibility()">איפוס</button>
   </div>
+
+  <!-- COOKIE BANNER -->
+  <div id="ckB" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#fff;border-top:2px solid var(--gold,#c8a96e);padding:14px 20px;box-shadow:0 -4px 16px rgba(0,0,0,.1)"><div style="max-width:700px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:space-between"><p style="font-size:.8em;color:#555;line-height:1.5;flex:1;min-width:200px">אתר זה משתמש בעוגיות לשיפור חוויית הגלישה. <a href="#" onclick="document.getElementById('privModal').style.display='flex';return false" style="color:#1a3a5c;text-decoration:underline">מדיניות פרטיות</a></p><div style="display:flex;gap:6px"><button onclick="localStorage.setItem('ck','y');document.getElementById('ckB').style.display='none';loadGA()" style="padding:8px 20px;background:#1a3a5c;color:#fff;border:none;border-radius:6px;font-family:inherit;font-size:.82em;font-weight:600;cursor:pointer">אישור</button><button onclick="localStorage.setItem('ck','n');document.getElementById('ckB').style.display='none'" style="padding:8px 20px;background:#f5f5f0;color:#666;border:1px solid #ddd;border-radius:6px;font-family:inherit;font-size:.82em;cursor:pointer">דחייה</button></div></div></div>
+  <script>if(!localStorage.getItem('ck'))setTimeout(function(){document.getElementById('ckB').style.display='block'},1500)</script>
+
+  <!-- PRIVACY MODAL -->
+  <div id="privModal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:10000;overflow-y:auto;padding:40px 16px;align-items:flex-start;justify-content:center"><div style="max-width:600px;margin:0 auto;background:#fff;border-radius:12px;padding:32px 28px;position:relative" dir="rtl"><button onclick="this.parentElement.parentElement.style.display='none'" style="position:absolute;top:14px;left:14px;background:none;border:none;font-size:1.3em;cursor:pointer;color:#999">✕</button><h2 style="font-size:1.2em;font-weight:700;color:#1a3a5c;margin-bottom:16px">מדיניות פרטיות</h2><div style="font-size:.82em;color:#555;line-height:1.8"><p style="margin-bottom:12px"><b style="color:#1a1a1a">1. כללי</b> · מדיניות זו מתארת כיצד משרד עו"ד אלון אלישע אוסף ומגן על מידע אישי, בהתאם לחוק הגנת הפרטיות, תשמ"א-1981 ותיקון 13.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">2. מידע שנאסף</b> · פרטי יצירת קשר (שם, טלפון, דוא"ל) באמצעות טפסים. תשובות לשאלונים בכלים דיגיטליים. מידע טכני (IP, דפדפן) לאבטחה.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">3. מטרות</b> · יצירת קשר לפי בקשה. מתן שירותים. שיפור האתר. עדכונים מקצועיים — רק בהסכמה.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">4. שיתוף עם צדדים שלישיים</b> · המשרד לא ימכור או ישכיר מידע אישי של משתמשים. מידע עשוי להיות משותף במקרים הבאים בלבד: ספקי שירות טכניים המסייעים בתפעול האתר (אחסון, דוא"ל), תחת התחייבות לסודיות; Google Analytics — לניתוח שימוש באתר, רק לאחר הסכמה לעוגיות; דרישה חוקית — צו בית משפט, דרישת רשות מוסמכת או הליך משפטי; הגנה על זכויות המשרד במקרה של מחלוקת משפטית.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">5. עוגיות (Cookies)</b> · האתר משתמש בעוגיות חיוניות לתפעול ובעוגיות אנליטיות (Google Analytics) — רק לאחר הסכמת המשתמש באמצעות באנר העוגיות. המשתמש רשאי לנהל את הגדרות העוגיות דרך הדפדפן שלו.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">6. אבטחת מידע</b> · המשרד נוקט אמצעים סבירים לאבטחת המידע, לרבות הצפנת תקשורת (SSL), שמירה בשרתים מאובטחים ומגבלות גישה. עם זאת, אין אפשרות להבטיח אבטחה מוחלטת, והמשתמש מכיר ומסכים לסיכון שנותר.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">7. שמירת מידע</b> · המידע יישמר כל עוד הדבר נדרש למטרות שלשמן נאסף, או כנדרש על פי דין. מידע שאינו נדרש עוד יימחק או יטושטש בתוך פרק זמן סביר. תשובות לשאלונים בכלים הדיגיטליים מעובדות בדפדפן בלבד ונמחקות בסגירת הדף.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">8. זכויות המשתמש</b> · בהתאם לחוק הגנת הפרטיות, למשתמש הזכות: לעיין במידע האישי המוחזק אודותיו; לבקש תיקון או מחיקה של מידע שגוי או מיותר; להתנגד לשימוש במידע לצורכי דיוור ישיר. לכל בקשה ניתן לפנות בדוא"ל <a href="mailto:alonelisha3@gmail.com" style="color:#1a3a5c">alonelisha3@gmail.com</a> או בטלפון <a href="tel:054-9260698" style="color:#1a3a5c">054-9260698</a>.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">9. דיוור ישיר</b> · המשרד לא ישלח דיוור שיווקי ללא הסכמה מפורשת ונפרדת של המשתמש. בכל הודעת דיוור תינתן אפשרות הסרה מיידית.</p><p><b style="color:#1a1a1a">10. שינויים במדיניות</b> · המשרד שומר לעצמו את הזכות לעדכן מדיניות זו מעת לעת. המשך השימוש באתר לאחר עדכון מהווה הסכמה למדיניות המעודכנת.</p></div></div></div>
+
+  <!-- TERMS MODAL -->
+  <div id="termsModal2" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:10000;overflow-y:auto;padding:40px 16px"><div style="max-width:600px;margin:0 auto;background:#fff;border-radius:12px;padding:32px 28px;position:relative" dir="rtl"><button onclick="this.parentElement.parentElement.style.display='none'" style="position:absolute;top:14px;left:14px;background:none;border:none;font-size:1.3em;cursor:pointer;color:#999">✕</button><h2 style="font-size:1.2em;font-weight:700;color:#1a3a5c;margin-bottom:16px">תנאי שימוש</h2><div style="font-size:.82em;color:#555;line-height:1.8"><p style="margin-bottom:12px"><b style="color:#1a1a1a">1. כללי</b> · השימוש באתר מהווה הסכמה לתנאים אלה.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">2. מהות</b> · האתר מציע מידע ושירותים משפטיים. הכלים הדיגיטליים מספקים הערכה ראשונית בלבד.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">3. אי-ייעוץ</b> · תכני האתר <b>אינם ייעוץ משפטי</b>, אינם יוצרים יחסי עו"ד-לקוח.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">4. הגבלת אחריות</b> · המשרד אינו אחראי לנזק כלשהו — ישיר, עקיף, תוצאתי או מיוחד — הנובע מהשימוש באתר, מהסתמכות על תוצאות הכלים, או מאי-שימוש בייעוץ משפטי פרטני. המשרד אינו אחראי לדיוק, שלמות או עדכניות המידע המופק. האחריות למסירת מידע מלא, נכון ומעודכן חלה על המשתמש בלבד.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">5. שיפוי</b> · המשתמש מתחייב לשפות את המשרד, עובדיו ונציגיו בגין כל תביעה, דרישה, נזק, הפסד, הוצאה או חבות (לרבות שכר טרחת עורך דין) הנובעים משימוש באתר, מהסתמכות על תוצאותיו, או מהפרת תנאי שימוש אלה.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">6. קניין רוחני</b> · כל התכנים, העיצוב, הקוד, הלוגיקה, הטקסטים והמבנה של האתר הם קניינו הבלעדי של המשרד. אין להעתיק, לשכפל, להפיץ או לעשות שימוש מסחרי בתכנים ללא אישור מראש ובכתב.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">7. שימוש מותר</b> · השימוש באתר ובכלים מיועד לצרכים אישיים ולא מסחריים. אין להשתמש בתוצאות הכלים לצורך מתן שירותים לצדדים שלישיים.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">8. זמינות</b> · המשרד אינו מתחייב לזמינות רציפה של האתר, ושומר לעצמו את הזכות לשנות, להשעות או להפסיק את השירות בכל עת.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">9. דין חל וסמכות שיפוט</b> · על תנאי שימוש אלה יחולו דיני מדינת ישראל. סמכות השיפוט הבלעדית תהיה נתונה לבתי המשפט המוסמכים בתל אביב-יפו.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">10. שינויים</b> · המשרד שומר לעצמו את הזכות לעדכן תנאים אלה. המשך השימוש לאחר עדכון מהווה הסכמה.</p><p><b style="color:#1a1a1a">11. יצירת קשר</b> · <a href="tel:054-9260698" style="color:#1a3a5c">054-9260698</a> · <a href="mailto:alonelisha3@gmail.com" style="color:#1a3a5c">alonelisha3@gmail.com</a></p></div></div></div>
+
+  <!-- A11Y MODAL -->
+  <div id="a11yModal2" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:10000;overflow-y:auto;padding:40px 16px"><div style="max-width:600px;margin:0 auto;background:#fff;border-radius:12px;padding:32px 28px;position:relative" dir="rtl"><button onclick="this.parentElement.parentElement.style.display='none'" style="position:absolute;top:14px;left:14px;background:none;border:none;font-size:1.3em;cursor:pointer;color:#999">✕</button><h2 style="font-size:1.2em;font-weight:700;color:#1a3a5c;margin-bottom:16px">הצהרת נגישות</h2><div style="font-size:.82em;color:#555;line-height:1.8"><p style="margin-bottom:12px">משרד עו"ד אלון אלישע מחויב לנגישות בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות, התשנ"ח-1998.</p><p style="margin-bottom:12px"><b style="color:#1a1a1a">פעולות:</b> קריאת מסך, מקלדת, ניגודיות, הגדלת טקסט, RTL מלא.</p><p><b style="color:#1a1a1a">פניות:</b> <a href="mailto:alonelisha3@gmail.com" style="color:#1a3a5c">alonelisha3@gmail.com</a> · <a href="tel:054-9260698" style="color:#1a3a5c">054-9260698</a></p></div></div></div>
 
   <script src="script.js"></script>
 </body>
