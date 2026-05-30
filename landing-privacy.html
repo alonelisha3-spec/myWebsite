@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>בדיקת ציות לתיקון 13 | עו"ד אלון אלישע</title>
+    <meta name="description" content="בדיקת עמידה בתיקון 13 לחוק הגנת הפרטיות — בדקו אם העסק שלכם מוגן, ללא עלות, תוך דקה.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600&display=swap');
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--navy:#0d1b2e;--navy2:#152236;--gold:#c9a84c;--gold-light:#e0c070;--off-white:#f2f0eb;--footer-dark:#060e1a;--gray-text:#555;--nd:#0d1b2e;--gl:#e0c070;--bg:#f2f0eb;--tx:#1a1a1a;--mt:#555;--bd:#e0dbd3;--red:#c0392b;--grn:#27ae60;--amb:#d4860b}
+        body{font-family:'Heebo',sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;letter-spacing:0.01em}
+        h1,h2,h3{font-family:'Heebo',sans-serif}
+
+        /* === GLOBAL TRANSITIONS === */
+        *{transition-timing-function:ease}
+
+        /* === SECTIONS === */
+        .s{padding:32px 24px}.si{max-width:580px;margin:0 auto}
+        .s h2{font-size:1.2em;font-weight:700;margin-bottom:6px;text-align:center}
+        .s .sub{font-size:.84em;color:var(--mt);text-align:center;margin-bottom:20px;line-height:1.6}
+        .s + .s{border-top:1px solid rgba(0,0,0,.04)}
+
+        /* === DISCLAIMER BAR === */
+        .disclaimer-bar{width:100%;background:#fff8ee;border-bottom:1.5px solid var(--gold);padding:10px 24px;text-align:center;font-size:0.72em;color:#4a3b1f;line-height:1.6;font-family:'Heebo',sans-serif}
+
+        /* === HERO === */
+        .hero{background:var(--navy);color:#fff;padding:44px 24px 40px;text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,.07),transparent 70%);top:-200px;right:-150px;pointer-events:none}
+        .hero::after{content:'';position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(201,168,76,.06),transparent 70%);bottom:-150px;left:-120px;pointer-events:none}
+        .hero-texture{position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(201,168,76,.015) 10px,rgba(201,168,76,.015) 11px);pointer-events:none}
+        .hero>*{position:relative;z-index:1}
+        .hero .law{font-size:.74em;color:var(--gold-light);margin-bottom:18px;display:inline-block;padding:6px 18px;border:1px solid rgba(201,168,76,.3);border-radius:50px;background:rgba(201,168,76,.08);letter-spacing:1px;font-family:'Heebo',sans-serif}
+        .hero h1{font-family:'Heebo',sans-serif;font-size:1.7em;font-weight:700;line-height:1.35;max-width:540px;margin:0 auto 12px;letter-spacing:-0.01em}
+        .hero h1 em{font-style:normal;color:var(--gold)}
+        .hero-p{font-size:.88em;color:rgba(255,255,255,.55);max-width:440px;margin:0 auto 20px;line-height:1.65}
+        .hero-sep{width:50px;height:2px;background:var(--gold);margin:0 auto 20px;opacity:.6}
+        .hbtn{display:inline-block;padding:15px 40px;background:var(--gold);color:var(--nd);border-radius:10px;font-weight:700;font-size:.97em;cursor:pointer;border:none;font-family:'Heebo';transition:all .25s ease;box-shadow:0 4px 20px rgba(201,168,76,.3)}
+        .hbtn:hover{background:var(--gl);transform:translateY(-3px);box-shadow:0 8px 28px rgba(201,168,76,.45)}
+        .hero-trust{font-size:.76em;color:rgba(255,255,255,.35);margin-top:14px;font-family:'Heebo',sans-serif}
+
+        /* === HERO DISCLAIMER === */
+        .hero-disclaimer summary{font-size:.75em;color:var(--gl);cursor:pointer;opacity:.7;text-align:center}
+        .hero-disclaimer .disc-inner{margin-top:10px;padding:14px;background:#fff8ee;border:1.5px solid var(--gold);border-radius:10px;font-size:.72em;color:#4a3b1f;line-height:1.7}
+        .hero-disclaimer .disc-inner a{color:var(--gold)}
+        .hero-disclaimer .disc-inner strong{color:#3a2d10}
+
+        /* === PROBLEM === */
+        .prob{background:var(--off-white);border-bottom:none}.prob h2{color:var(--navy)}
+        .prob ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+        .prob li{padding:12px 14px;font-size:.84em;color:var(--tx);display:flex;gap:10px;line-height:1.5;background:#fff;border-radius:10px;border-right:3px solid var(--red);box-shadow:0 1px 4px rgba(0,0,0,.04)}
+        .prob li .x{color:var(--red);font-weight:700;flex-shrink:0;font-size:1em}
+
+        /* === SOLUTION === */
+        .sol{background:#fff;border-bottom:none}.sol h2{color:var(--navy)}
+        .si2{display:flex;align-items:center;gap:12px;padding:14px;margin-bottom:8px;background:var(--bg);border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+        .si2 .n{width:34px;height:34px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:.8em;font-weight:700;flex-shrink:0;border:2px solid var(--gold);box-shadow:0 2px 8px rgba(13,27,46,.15)}
+        .si2 h4{font-size:.92em;font-weight:600;font-family:'Heebo';margin-bottom:2px}.si2 p{font-size:.8em;color:var(--mt);line-height:1.5;font-family:'Heebo',sans-serif}
+
+        /* === WHY ME === */
+        .wm{background:var(--bg);border-bottom:none}.wm h2{color:var(--navy)}
+        .wc{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--bd);border-right:3px solid var(--gold);border-radius:10px;padding:16px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+        .wc img{width:60px;height:60px;object-fit:contain;flex-shrink:0}
+        .wc h4{font-size:.95em;font-weight:700;color:var(--navy);margin-bottom:5px;font-family:'Heebo',sans-serif}
+        .wc p{font-size:.84em;color:var(--mt);line-height:1.65;font-family:'Heebo',sans-serif}.wc strong{color:var(--tx)}
+        .wm-divider{width:80px;height:2px;background:var(--gold);margin:20px auto;opacity:.5}
+        .wp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:0}
+        .wpi{background:#fff;border:1px solid var(--bd);border-radius:10px;padding:14px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+        .wpi .ic{font-size:1.6em;margin-bottom:6px}.wpi h4{font-size:.84em;font-weight:700;color:var(--navy);font-family:'Heebo'}.wpi p{font-size:.74em;color:var(--mt);margin-top:3px;font-family:'Heebo',sans-serif}
+
+        /* === HOW IT WORKS / STEPS === */
+        .hw{background:#fff;border-bottom:none}.hw h2{color:var(--navy)}
+        .stp{display:flex;gap:10px;position:relative}
+        .stp::before{content:'';position:absolute;top:50%;left:12%;right:12%;height:0;border-top:2px dashed var(--gold);opacity:.3;z-index:0;transform:translateY(-50%)}
+        .st{flex:1;padding:16px 10px;background:var(--bg);border-radius:10px;border:1px solid var(--bd);text-align:center;position:relative;z-index:1;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+        .st .n{font-family:'Heebo',sans-serif;font-size:1.5em;font-weight:700;color:var(--navy);width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;border:2px solid var(--gold);margin:0 auto 6px;background:#fff}
+        .st .t{font-size:.82em;font-weight:600;margin-top:4px;font-family:'Heebo',sans-serif}.st .d{font-size:.72em;color:var(--mt);margin-top:3px;font-family:'Heebo',sans-serif}
+
+        /* === CTA === */
+        .ccta{background:var(--nd);color:#fff;text-align:center}.ccta h2{color:var(--gold)}.ccta .sub{color:rgba(255,255,255,.45)}
+        .cbtn{display:inline-block;padding:15px 44px;background:var(--gold);color:var(--nd);border-radius:10px;font-weight:700;font-size:.97em;cursor:pointer;border:none;font-family:'Heebo';transition:all .25s ease;animation:ctaPulse 2.5s ease-in-out infinite;box-shadow:0 4px 16px rgba(201,168,76,.25)}
+        .cbtn:hover{background:var(--gl);transform:translateY(-3px);box-shadow:0 8px 28px rgba(201,168,76,.45);animation:none}
+        @keyframes ctaPulse{0%,100%{box-shadow:0 4px 16px rgba(201,168,76,.2)}50%{box-shadow:0 4px 28px rgba(201,168,76,.4)}}
+        .cn{font-size:.74em;color:rgba(255,255,255,.35);margin-top:14px;font-family:'Heebo',sans-serif}
+        .trust-badges{font-size:.72em;color:rgba(255,255,255,.35);margin-top:8px;letter-spacing:.02em;font-family:'Heebo',sans-serif}
+
+        /* === OVERLAY === */
+        .ov{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(13,27,46,.96);z-index:1000;overflow-y:auto;-webkit-overflow-scrolling:touch}
+        .ov.open{display:block}
+        .ow{max-width:520px;margin:0 auto;padding:20px 16px 40px}
+        .oc{position:sticky;top:0;text-align:left;padding:10px 0;z-index:10}
+        .oc button{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:8px 16px;border-radius:8px;font-family:'Heebo';font-size:.82em;cursor:pointer;transition:all .25s ease}
+        .oc button:hover{background:rgba(255,255,255,.18)}
+        .qp{height:4px;background:rgba(255,255,255,.1);border-radius:2px;margin-bottom:16px;overflow:hidden}
+        .qpf{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));transition:width .4s ease}
+        .qc{background:#fff;border-radius:16px;padding:32px 28px;color:var(--tx);display:none;box-shadow:0 8px 40px rgba(0,0,0,.2);animation:qFadeIn .3s ease}
+        .qc.a{display:block}
+        @keyframes qFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+        .qt{font-size:1.08em;font-weight:700;color:var(--navy);margin-bottom:5px;font-family:'Heebo',sans-serif}
+        .qs{font-size:.82em;color:var(--mt);margin-bottom:20px;line-height:1.55;font-family:'Heebo',sans-serif}
+        .fg{margin-bottom:16px}.fg label{display:block;font-weight:600;font-size:.86em;margin-bottom:6px;color:#333;font-family:'Heebo',sans-serif}
+        .fg input,.fg select{width:100%;padding:12px 16px;border:1px solid var(--bd);border-radius:10px;font-family:'Heebo';font-size:.89em;background:#fff;transition:border-color .25s ease}
+        .fg input:focus,.fg select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(13,27,46,.08)}
+        .ch{display:flex;flex-wrap:wrap;gap:8px}.ci{padding:9px 14px;border:1px solid var(--bd);border-radius:10px;background:#fff;cursor:pointer;font-size:.82em;font-weight:500;transition:all .25s ease;user-select:none;font-family:'Heebo',sans-serif}
+        .ci:hover{border-color:var(--gold);transform:translateY(-1px)}.ci.on{border-color:var(--navy);background:#eef2f8;font-weight:600;color:var(--navy)}
+        .ci .w{background:#fef2f2;color:var(--red);font-size:.68em;padding:1px 4px;border-radius:4px;font-weight:700;margin-left:2px}
+        .tg{display:flex;gap:8px}.tb{flex:1;padding:13px;border:1px solid var(--bd);border-radius:10px;background:#fff;cursor:pointer;font-family:'Heebo';font-size:.88em;font-weight:600;text-align:center;transition:all .25s ease}
+        .tb:hover{border-color:var(--gold)}
+        .tb.y{border-color:var(--navy);background:#eef2f8;color:var(--navy)}.tb.n{border-color:var(--grn);background:#f0fdf4;color:var(--grn)}
+        .qb{display:flex;gap:8px;margin-top:22px}.b{padding:13px 22px;border:none;border-radius:10px;font-family:'Heebo';font-size:.9em;font-weight:700;cursor:pointer;transition:all .25s ease}
+        .b:hover{transform:translateY(-1px)}
+        .bn{background:var(--navy);color:#fff;flex:1;box-shadow:0 2px 8px rgba(13,27,46,.15)}.bb{background:var(--bg);color:var(--mt);border:1px solid var(--bd)}
+
+        /* === RESULTS === */
+        .rc{background:#fff;border-radius:16px;padding:32px 28px;color:var(--tx);display:none;box-shadow:0 8px 40px rgba(0,0,0,.2);animation:qFadeIn .3s ease}.rc.a{display:block}
+        .rt{text-align:center;padding:28px 18px;border-radius:14px;margin-bottom:16px}
+        .rt.bad{background:#fef2f2;border:1px solid #f5c6c6}.rt.mid{background:#fef9ec;border:1px solid #f5e0a0}.rt.good{background:#edf9f0;border:1px solid #b5e6c0}
+        .rs{font-family:'Heebo',sans-serif;font-size:2.6em;font-weight:700}.rl{font-size:1.08em;font-weight:700;margin-top:5px;font-family:'Heebo',sans-serif}.rsu{font-size:.82em;color:var(--mt);margin-top:4px;font-family:'Heebo',sans-serif}
+        .db{padding:14px;border-radius:10px;text-align:center;margin-bottom:14px;font-size:.86em;font-family:'Heebo',sans-serif}
+        .db.req{background:#fef2f2;border:1px solid #f5c6c6}.db.none{background:#edf9f0;border:1px solid #b5e6c0}
+        .db b{display:block;margin-bottom:3px}.db p{font-size:.82em;color:var(--mt);line-height:1.55}
+        .fd{padding:12px 14px;border-right:4px solid;background:#fafafa;border-radius:0 10px 10px 0;margin-bottom:6px;font-size:.84em;transition:all .25s ease;font-family:'Heebo',sans-serif}
+        .fd:hover{transform:translateX(2px)}
+        .fd.c{border-color:var(--red);background:#fef2f2}.fd.w{border-color:var(--amb);background:#fef9ec}.fd.ok{border-color:var(--grn);background:#edf9f0}
+        .fd b{display:block;margin-bottom:2px}.fd p{font-size:.82em;color:var(--mt);line-height:1.45}.fd .lw{font-size:.74em;color:var(--navy);font-weight:600;margin-top:3px}
+        .fg2{margin-bottom:12px}.fg2t{font-weight:700;font-size:.84em;padding:6px 10px;border-radius:8px;margin-bottom:6px;font-family:'Heebo',sans-serif}
+        .fg2t.c{background:#fef2f2;color:var(--red)}.fg2t.w{background:#fef9ec;color:var(--amb)}.fg2t.ok{background:#edf9f0;color:var(--grn)}
+
+        /* === PACKAGE === */
+        .pkg{border-radius:16px;padding:28px 24px;text-align:center;color:#fff;margin-top:18px;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+        .pkg.basic{background:var(--navy)}.pkg.pro{background:linear-gradient(135deg,var(--navy),var(--navy2))}.pkg.full{background:linear-gradient(135deg,var(--navy2),var(--navy))}
+        .pkg h3{font-size:1.08em;color:var(--gold);margin-bottom:3px;font-family:'Heebo',sans-serif}
+        .pkg .ps{font-size:.78em;color:rgba(255,255,255,.4);margin-bottom:12px;font-family:'Heebo',sans-serif}
+        .pkg .pr{font-family:'Heebo',sans-serif;font-size:2.2em;font-weight:700;margin:8px 0 2px}
+        .pkg .pn{font-size:.72em;color:rgba(255,255,255,.4);margin-bottom:14px;font-family:'Heebo',sans-serif}
+        .pkg .pi{text-align:right;margin-bottom:16px;font-size:.84em;color:rgba(255,255,255,.7);font-family:'Heebo',sans-serif}
+        .pkg .pi div{padding:4px 0;display:flex;align-items:center;gap:6px}.pkg .pi .v{color:var(--grn);font-weight:700}
+        .pkg input,.pkg select{width:100%;padding:11px 14px;border:1px solid rgba(201,168,76,.2);border-radius:10px;background:rgba(255,255,255,.04);color:#fff;font-family:'Heebo';font-size:.86em;text-align:center;margin-bottom:6px;transition:border-color .25s ease}
+        .pkg input::placeholder{color:rgba(255,255,255,.28)}.pkg select{-webkit-appearance:none;color:rgba(255,255,255,.4)}.pkg select option{color:#333}
+        .pkg input:focus,.pkg select:focus{outline:none;border-color:var(--gold)}
+        .bbuy{display:block;width:100%;padding:15px;background:var(--gold);color:var(--nd);border:none;border-radius:10px;font-family:'Heebo';font-size:.97em;font-weight:700;cursor:pointer;text-decoration:none;text-align:center;margin-top:8px;transition:all .25s ease;box-shadow:0 2px 8px rgba(201,168,76,.2)}
+        .bbuy:hover{background:var(--gl);transform:translateY(-1px)}
+        .pkg .alt{font-size:.74em;color:rgba(255,255,255,.35);margin-top:12px;font-family:'Heebo',sans-serif}.pkg .alt a{color:var(--gl);transition:color .25s}
+        .pkg .g{font-size:.7em;color:rgba(255,255,255,.25);margin-top:12px;line-height:1.55;font-family:'Heebo',sans-serif}
+
+        /* === FOOTER === */
+        .ft{text-align:center;padding:36px 24px;font-size:.72em;color:rgba(255,255,255,.5);line-height:1.7;border-top:2px solid var(--gold);position:relative;background:var(--footer-dark);font-family:'Heebo',sans-serif}
+        .ft .ft-brand{font-family:'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:3px;color:var(--gold);font-size:1.1em;font-weight:500}
+        .ft .ft-name{color:rgba(255,255,255,.6);font-size:.9em;margin-top:4px}
+        .ft a{color:rgba(255,255,255,.6);text-decoration:none;font-weight:500;transition:all .25s ease;position:relative}
+        .ft a:hover{color:var(--gold)}
+        .ft a::after{content:'';position:absolute;bottom:-1px;right:0;width:0;height:1px;background:var(--gold);transition:width .25s ease}
+        .ft a:hover::after{width:100%}
+        .ft .ft-disclaimer{opacity:.5;font-size:.9em;max-width:520px;margin:0 auto;line-height:1.65;color:rgba(255,255,255,.45)}
+
+        .a11y-contrast{filter:contrast(1.4)!important}.a11y-links a{outline:2px solid var(--gold)!important;outline-offset:2px!important}.a11y-gray{filter:grayscale(1)!important}
+
+        /* === OFF-WHITE TEXTURE === */
+        .prob,.wm{background-image:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(0,0,0,.008) 20px,rgba(0,0,0,.008) 21px);background-color:var(--off-white)}
+
+        @media(max-width:600px){
+            .hero h1{font-size:1.5em}
+            .hero{padding:48px 18px 40px}
+            .s{padding:44px 20px}
+            .stp{flex-direction:column;gap:10px}
+            .stp::before{display:none}
+            .stp .st{position:relative;margin-right:20px}
+            .stp .st:not(:last-child)::before{content:'';position:absolute;bottom:-10px;right:50%;width:0;height:10px;border-right:2px dashed var(--gold);opacity:.3}
+            .wp{grid-template-columns:1fr}
+            .wc{flex-direction:column;align-items:center;text-align:center;border-right:none;border-top:3px solid var(--gold)}
+            .qc{padding:24px 18px;border-radius:14px}
+            .rc{padding:24px 18px;border-radius:14px}
+            .qb{flex-direction:column-reverse}
+            .b{width:100%;text-align:center}
+            .prob li{border-right:3px solid var(--red)}
+            .si2{padding:16px 14px}
+            .st{padding:18px 12px}
+            .ft{padding:28px 20px}
+            .disclaimer-bar{font-size:.65em;padding:8px 16px}
+        }
+    </style>
+</head>
+<body>
+<!-- DISCLAIMER BAR -->
+<div class="disclaimer-bar">הכלי מספק הערכה ראשונית בלבד ואינו מהווה ייעוץ משפטי. השימוש אינו יוצר יחסי עורך דין–לקוח.</div>
+
+<!-- PAGE -->
+<div class="hero">
+    <div class="hero-texture"></div>
+    <div class="law">חוק הגנת הפרטיות · תיקון 13</div>
+    <h1>יש לך אתר, חנות, טופס צור קשר, ניוזלטר או CRM?<br><em>החוק השתנה — העסק שלך חייב להתאים את עצמו</em></h1>
+    <p class="hero-p">תיקון 13 לחוק הגנת הפרטיות חל על כל עסק שאוסף מידע אישי — גם שם וטלפון בוואטסאפ. בדקו תוך דקה אם אתם עומדים בדרישות.</p>
+    <div class="hero-sep"></div>
+    <button class="hbtn" onclick="OQ()">בדקו עכשיו — ללא עלות</button>
+    <div class="hero-trust">ללא עלות · ללא התחייבות · תוך דקה</div>
+    <details class="hero-disclaimer" style="max-width:500px;margin:18px auto 0;text-align:right"><summary>&#x2696;&#xFE0F; הבהרה משפטית — לחצו לקריאה</summary><div class="disc-inner">הכלי מספק הערכה ראשונית בלבד ואינו מהווה ייעוץ משפטי. השימוש אינו יוצר יחסי עורך דין–לקוח.<br><br><strong>לייעוץ:</strong> <a href="tel:054-9260698">054-9260698</a> · <a href="mailto:alonelisha3@gmail.com">alonelisha3@gmail.com</a></div></details>
+</div>
+
+<div class="s prob"><div class="si"><h2>מה קורה בלי הגנה?</h2><ul>
+    <li><span class="x">&#x2715;</span>תיקון 13 מחיל חובות חדשות על כל מי שמחזיק מידע אישי</li>
+    <li><span class="x">&#x2715;</span>עיצומים כספיים משמעותיים בגין הפרות — גם ללא כוונה</li>
+    <li><span class="x">&#x2715;</span>אתר ללא מדיניות פרטיות — עלול להוות הפרה</li>
+    <li><span class="x">&#x2715;</span>שימוש בעוגיות או אנליטיקס ללא הסכמה — עלול להוות הפרה</li>
+    <li><span class="x">&#x2715;</span>לקוח ביקש למחוק מידע ולא טופל תוך 30 יום — הפרה נפרדת</li>
+</ul></div></div>
+
+<div class="s sol"><div class="si"><h2>מה אתם מקבלים?</h2><div class="sub">הכלי מאבחן את הרמה שלכם ומתאים פתרון — לא אותו דבר לכולם</div>
+    <div class="si2"><div class="n">1</div><div><h4>אבחון מותאם</h4><p>הכלי בודק סוג עסק, סוגי מידע, ספקים, עוגיות, DPO — ומציג בדיוק מה חסר</p></div></div>
+    <div class="si2"><div class="n">2</div><div><h4>מסמכים ע"י עורך דין</h4><p>מדיניות פרטיות, באנר עוגיות, הודעת פרטיות, טפסי מחיקה — מותאמים לעסק</p></div></div>
+    <div class="si2"><div class="n">3</div><div><h4>ליווי מלא למי שצריך</h4><p>DPO חיצוני, מיפוי מאגרים, הדרכת עובדים, ליווי רגולטורי — לפי מה שהאבחון מצא</p></div></div>
+</div></div>
+
+<div class="s wm"><div class="si"><h2>מה אתם מקבלים ממני?</h2>
+    <div class="wc"><img src="../myWebsite/externalContent/ALON ELISHA (1).png" alt="עו״ד אלון אלישע" onerror="this.style.display='none'"><div><h4>עו"ד אלון אלישע</h4><p>משפט אזרחי-מסחרי. <strong>אני קורא את האתר שלכם, מבין מה העסק עושה, ומתאים את המסמכים בדיוק.</strong></p></div></div>
+    <div class="wm-divider"></div>
+    <div class="wp">
+        <div class="wpi"><div class="ic">&#x2696;&#xFE0F;</div><h4>אני קורא את האתר שלכם</h4><p>בדיקה אמיתית, לא רובוט</p></div>
+        <div class="wpi"><div class="ic">&#x270D;&#xFE0F;</div><h4>אני כותב את המסמכים</h4><p>עו"ד שחותם על העבודה</p></div>
+        <div class="wpi"><div class="ic">&#x1F4F1;</div><h4>קו ישיר בוואטסאפ</h4><p>לא טיקט, לא בוט</p></div>
+        <div class="wpi"><div class="ic">&#x1F504;</div><h4>ליווי גם אחרי</h4><p>צריכים עדכון? אני כאן</p></div>
+    </div>
+</div></div>
+
+<div class="s hw"><div class="si"><h2>איך זה עובד?</h2><div class="stp">
+    <div class="st"><div class="n">1</div><div class="t">בדיקה ללא עלות</div><div class="d">דקה, כתובת אתר + 3 שאלות</div></div>
+    <div class="st"><div class="n">2</div><div class="t">אבחון</div><div class="d">מה חסר, מה חשוף</div></div>
+    <div class="st"><div class="n">3</div><div class="t">פתרון מותאם</div><div class="d">הצעה לפי הרמה שלכם</div></div>
+    <div class="st"><div class="n">4</div><div class="t">מוגנים</div><div class="d">מסמכים תוך 24 שעות</div></div>
+</div></div></div>
+
+<div class="s ccta"><div class="si" style="padding:8px 0"><h2>רוצים לדעת אם אתם מוגנים?</h2><div class="sub">ללא עלות — תוך דקה תדעו בדיוק מה המצב</div><button class="cbtn" onclick="OQ()">בדקו עכשיו</button><div class="cn">ללא עלות · ללא התחייבות · ללא שמירת מידע</div><div class="trust-badges">&#x2696;&#xFE0F; עורך דין מוסמך · &#x1F512; ללא שמירת מידע · &#x23F1;&#xFE0F; תוך דקה</div></div></div>
+
+<div class="ft">
+    <div style="margin-bottom:6px"><span class="ft-brand">ELISHA-LAW</span></div>
+    <div class="ft-name" style="margin-bottom:12px">אלון אלישע | משרד עורכי דין</div>
+    <div style="margin-bottom:10px"><a href="tel:054-9260698">054-9260698</a> · <a href="mailto:alonelisha3@gmail.com">alonelisha3@gmail.com</a> · <a href="https://elisha-law.com">elisha-law.com</a></div>
+    <div style="margin-bottom:14px"><a href="#" onclick="OM('priv');return false">מדיניות פרטיות</a> · <a href="#" onclick="OM('terms');return false">תנאי שימוש</a> · <a href="#" onclick="OM('a11y');return false">הצהרת נגישות</a></div>
+    <div class="ft-disclaimer">הערכה ראשונית בלבד. אינו מהווה ייעוץ משפטי. אינו יוצר יחסי עו"ד–לקוח. פרסום מותר לפי כללי לשכת עורכי הדין (אתיקה מקצועית), התשמ"ו-1986.</div>
+    <div style="margin-top:12px;opacity:.35">&copy; 2026 משרד עורכי דין אלון אלישע</div>
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/972549260698?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%92%D7%A0%D7%AA%20%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA." target="_blank" aria-label="WhatsApp" style="position:fixed;bottom:24px;left:24px;z-index:50;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.2);text-decoration:none"><svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<!-- A11Y -->
+<button onclick="document.getElementById('ap').style.display=document.getElementById('ap').style.display==='block'?'none':'block'" aria-label="נגישות" style="position:fixed;bottom:24px;left:88px;z-index:50;width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.2);cursor:pointer"><svg viewBox="0 0 24 24" style="width:26px;height:26px;fill:currentColor"><path d="M12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm-1 7h2a1 1 0 0 1 1 1v1.5l2.5 5a1 1 0 1 1-1.8.9L13 13.5V20a1 1 0 1 1-2 0v-3h-1v3a1 1 0 1 1-2 0v-6.6l-1.7 3.9a1 1 0 1 1-1.8-.9l2.5-5V10a1 1 0 0 1 1-1z"/></svg></button>
+<div id="ap" dir="rtl" style="display:none;position:fixed;bottom:88px;left:24px;z-index:50;width:260px;background:#fff;border:1px solid var(--bd);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.15);padding:18px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><strong style="font-size:.9em">נגישות</strong><button onclick="document.getElementById('ap').style.display='none'" style="background:none;border:none;cursor:pointer;color:var(--mt)">&#x2715;</button></div><div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:.82em">גודל טקסט</span><div style="display:flex;gap:6px"><button onclick="AF(-10)" style="width:32px;height:32px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);cursor:pointer;font-weight:700;font-size:.82em">א-</button><button onclick="AF(10)" style="width:32px;height:32px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);cursor:pointer;font-weight:700;font-size:.82em">א+</button></div></div><button onclick="document.documentElement.classList.toggle('a11y-contrast')" style="width:100%;text-align:right;font-size:.82em;padding:8px 10px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);cursor:pointer;font-family:'Heebo'">ניגודיות גבוהה</button><button onclick="document.documentElement.classList.toggle('a11y-links')" style="width:100%;text-align:right;font-size:.82em;padding:8px 10px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);cursor:pointer;font-family:'Heebo'">הדגשת קישורים</button><button onclick="document.documentElement.classList.toggle('a11y-gray')" style="width:100%;text-align:right;font-size:.82em;padding:8px 10px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);cursor:pointer;font-family:'Heebo'">גווני אפור</button><button onclick="AR()" style="font-size:.72em;color:var(--mt);background:none;border:none;cursor:pointer;text-decoration:underline;font-family:'Heebo'">איפוס</button></div></div>
+<!-- COOKIES -->
+<div id="cb" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--off-white);border-top:1px solid var(--bd);padding:14px 20px;box-shadow:0 -4px 12px rgba(0,0,0,.08)"><div style="max-width:600px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:space-between"><p style="font-size:.76em;color:var(--mt);line-height:1.5;flex:1;min-width:200px">אתר זה משתמש בעוגיות בהתאם <a href="#" onclick="OM('priv');return false" style="color:var(--gold);text-decoration:underline">למדיניות הפרטיות</a>.</p><div style="display:flex;gap:6px"><button onclick="SC('y')" style="padding:7px 16px;background:var(--navy);color:#fff;border:none;border-radius:8px;font-family:'Heebo';font-size:.78em;font-weight:600;cursor:pointer">אישור</button><button onclick="SC('n')" style="padding:7px 16px;background:var(--bg);color:var(--mt);border:1px solid var(--bd);border-radius:8px;font-family:'Heebo';font-size:.78em;cursor:pointer">דחייה</button></div></div></div>
+<!-- MODALS -->
+<div id="mo" onclick="if(event.target===this)CM()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:100;overflow-y:auto;padding:40px 16px"><div style="max-width:640px;margin:0 auto;background:#fff;border-radius:14px;padding:32px 28px;position:relative" dir="rtl"><button onclick="CM()" style="position:absolute;top:16px;left:16px;background:none;border:none;font-size:1.2em;cursor:pointer;color:var(--mt)">&#x2715;</button><div id="mc"></div></div></div>
+
+<!-- ===== QUIZ ===== -->
+<div class="ov" id="qo">
+<div class="ow">
+    <div class="oc"><button onclick="CQ()">&#x2715; סגור</button></div>
+    <div class="qp"><div class="qpf" id="qpf" style="width:0"></div></div>
+
+    <!-- Q1 -->
+    <div class="qc a" id="q1">
+        <div class="qt">ספרו לנו על העסק</div>
+        <div class="qs">כתובת אתר + 2 שאלות — תוך דקה תקבלו אבחון מלא</div>
+        <div class="fg"><label>כתובת האתר שלכם</label><input type="url" id="iUrl" placeholder="https://example.co.il"></div>
+        <div class="fg"><label>סוג העסק</label><select id="iType"><option value="">בחרו...</option><option value="ecommerce">חנות אונליין</option><option value="services">שירותים מקצועיים</option><option value="health">בריאות / רפואה</option><option value="finance">פיננסים / ביטוח</option><option value="realestate">נדל״ן</option><option value="tech">טכנולוגיה / סטארטאפ</option><option value="retail">קמעונאות / מסעדנות</option><option value="education">חינוך / הדרכה</option><option value="public">גוף ציבורי / עמותה</option><option value="other">אחר</option></select></div>
+        <div class="fg"><label>כמה אנשים יש לכם מידע עליהם?</label><select id="iScale"><option value="small">עד 1,000</option><option value="medium">1,000–10,000</option><option value="large">10,000–100,000</option><option value="xlarge">מעל 100,000</option></select></div>
+        <div class="qb"><button class="b bn" id="q1btn" onclick="Q1NEXT()">המשך</button></div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="qc" id="q2">
+        <div class="qt">איזה מידע אתם אוספים?</div>
+        <div class="qs">סמנו הכל — באתר, אקסל, CRM, טלפון, וואטסאפ</div>
+        <div class="fg"><label>פרטים מזהים</label><div class="ch" id="gI"><div class="ci" onclick="T(this)" data-v="name">שם</div><div class="ci" onclick="T(this)" data-v="id">ת.ז.</div><div class="ci" onclick="T(this)" data-v="phone">טלפון</div><div class="ci" onclick="T(this)" data-v="email">אימייל</div><div class="ci" onclick="T(this)" data-v="address">כתובת</div><div class="ci" onclick="T(this)" data-v="dob">תאריך לידה</div><div class="ci" onclick="T(this)" data-v="photo">תמונה</div></div></div>
+        <div class="fg"><label>מידע רגיש <span class="w">חשיפה גבוהה</span></label><div class="ch" id="gS"><div class="ci" onclick="T(this)" data-v="cc"><span class="w">!</span>כרטיס אשראי</div><div class="ci" onclick="T(this)" data-v="bank"><span class="w">!</span>חשבון בנק</div><div class="ci" onclick="T(this)" data-v="income"><span class="w">!</span>הכנסה / מצב כלכלי</div><div class="ci" onclick="T(this)" data-v="medical"><span class="w">!</span>מידע רפואי</div><div class="ci" onclick="T(this)" data-v="genetic"><span class="w">!</span>מידע גנטי</div><div class="ci" onclick="T(this)" data-v="bio"><span class="w">!</span>ביומטרי (טביעת אצבע, פנים, קול)</div><div class="ci" onclick="T(this)" data-v="location"><span class="w">!</span>נתוני מיקום</div><div class="ci" onclick="T(this)" data-v="comms"><span class="w">!</span>תקשורת אישית</div><div class="ci" onclick="T(this)" data-v="opinions"><span class="w">!</span>דעות / אמונות / דת</div><div class="ci" onclick="T(this)" data-v="sexual"><span class="w">!</span>נטייה מינית</div><div class="ci" onclick="T(this)" data-v="ethnic"><span class="w">!</span>מוצא אתני</div><div class="ci" onclick="T(this)" data-v="minors"><span class="w">!</span>מידע על קטינים</div><div class="ci" onclick="T(this)" data-v="criminal"><span class="w">!</span>הרשעות / חקירות</div></div></div>
+        <div class="fg"><label>מאיפה אוספים?</label><div class="ch" id="gR"><div class="ci" onclick="T(this)" data-v="website">אתר</div><div class="ci" onclick="T(this)" data-v="whatsapp">וואטסאפ</div><div class="ci" onclick="T(this)" data-v="app">אפליקציה</div><div class="ci" onclick="T(this)" data-v="crm">CRM</div><div class="ci" onclick="T(this)" data-v="cameras">מצלמות</div><div class="ci" onclick="T(this)" data-v="excel">אקסל / גיליונות</div><div class="ci" onclick="T(this)" data-v="social">רשתות חברתיות</div><div class="ci" onclick="T(this)" data-v="phone">טלפון</div><div class="ci" onclick="T(this)" data-v="forms">טפסים / דפדפוסט</div></div></div>
+        <div class="qb"><button class="b bb" onclick="GQ(1)">חזרה</button><button class="b bn" onclick="GQ(3)">המשך</button></div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="qc" id="q3">
+        <div class="qt">מה אתם עושים עם המידע?</div>
+        <div class="fg"><label>למה אתם אוספים מידע?</label><div class="ch" id="gPurpose"><div class="ci" onclick="T(this)" data-v="service">מתן שירות / ביצוע עסקה</div><div class="ci" onclick="T(this)" data-v="leads">ניהול לידים / חזרה ללקוח</div><div class="ci" onclick="T(this)" data-v="crm_use">ניהול מאגר לקוחות (CRM)</div><div class="ci" onclick="T(this)" data-v="legal">חובה חוקית (חשבוניות, דיווח)</div><div class="ci" onclick="T(this)" data-v="analytics_use">ניתוח שימוש / שיפור שירות</div><div class="ci" onclick="T(this)" data-v="mkt">שיווק ישיר (SMS, מיילים, שיחות)</div></div></div>
+        <div class="fg"><label>פעילויות מיוחדות</label><div class="ch" id="gA"><div class="ci" onclick="T(this)" data-v="trade">מעבירים/מוכרים מידע לגורמים</div><div class="ci" onclick="T(this)" data-v="monitor">ניטור שוטף (מצלמות, אפליקציה, אנליטיקס)</div><div class="ci" onclick="T(this)" data-v="profile">פרסום ממוקד / פרופיילינג / דירוג</div><div class="ci" onclick="T(this)" data-v="abroad">העברת מידע לחו"ל</div></div></div>
+        <div class="fg"><label>ספקים חיצוניים שמקבלים מידע</label><div class="ch" id="gV"><div class="ci" onclick="T(this)" data-v="cloud">ענן (AWS, Google, Azure)</div><div class="ci" onclick="T(this)" data-v="payment">סליקה (טרנזילה, קארדקום)</div><div class="ci" onclick="T(this)" data-v="analytics">Google Analytics / Tag Manager</div><div class="ci" onclick="T(this)" data-v="pixel">Facebook Pixel / Meta</div><div class="ci" onclick="T(this)" data-v="mail_vendor">דיוור (Mailchimp, Ravmesser)</div><div class="ci" onclick="T(this)" data-v="crm_vendor">CRM (Monday, Salesforce)</div><div class="ci" onclick="T(this)" data-v="outbrain">Outbrain / Taboola</div><div class="ci" onclick="T(this)" data-v="accountant">רו"ח / עו"ד</div></div></div>
+        <div class="fg"><label>אחסון פרטי אשראי</label><div class="tg"><div class="tb" onclick="ST(this,'cc',true)">אנחנו שומרים פרטים אצלנו</div><div class="tb" onclick="ST(this,'cc',false)">סליקה חיצונית בלבד</div></div></div>
+        <div class="qb"><button class="b bb" onclick="GQ(2)">חזרה</button><button class="b bn" onclick="GQ(4)">המשך</button></div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="qc" id="q4">
+        <div class="qt">מה כבר מסודר?</div>
+        <div class="qs">סמנו מה שקיים. אם הזנתם כתובת אתר — הכלי יסרוק ויזהה אוטומטית.</div>
+        <div id="scanStatus" style="display:none;text-align:center;padding:10px;background:var(--bg);border-radius:8px;margin-bottom:12px;font-size:.82em;color:var(--navy)">סורק את האתר שלכם...</div>
+        <div class="ch" id="gE">
+            <div class="ci" onclick="T(this)" data-v="policy">מדיניות פרטיות באתר</div>
+            <div class="ci" onclick="T(this)" data-v="cookies">באנר עוגיות (אישור/דחייה/הגדרות)</div>
+            <div class="ci" onclick="T(this)" data-v="notice">הודעת פרטיות בטפסים</div>
+            <div class="ci" onclick="T(this)" data-v="consent">הסכמה מפורשת למידע רגיש</div>
+            <div class="ci" onclick="T(this)" data-v="delete">נוהל מחיקה / עיון (30 יום)</div>
+            <div class="ci" onclick="T(this)" data-v="security">נוהל אבטחת מידע כתוב</div>
+            <div class="ci" onclick="T(this)" data-v="contracts">הסכמי עיבוד עם ספקים</div>
+            <div class="ci" onclick="T(this)" data-v="optout">מנגנון הסרה מדיוור</div>
+            <div class="ci" onclick="T(this)" data-v="training">הדרכת עובדים</div>
+            <div class="ci" onclick="T(this)" data-v="docs">תיעוד פעילויות עיבוד (Accountability)</div>
+            <div class="ci" onclick="T(this)" data-v="registry">רישום מאגר מידע</div>
+            <div class="ci" onclick="T(this)" data-v="dpo">ממונה הגנת פרטיות (DPO)</div>
+        </div>
+        <div class="qb"><button class="b bb" onclick="GQ(3)">חזרה</button><button class="b bn" onclick="RUN()">קבלו אבחון</button></div>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="rc" id="res">
+        <div class="rt" id="rT"><div class="rs" id="rS"></div><div class="rl" id="rL"></div><div class="rsu" id="rU"></div></div>
+        <div class="db" id="dB"></div>
+        <div id="fnd"></div>
+        <div id="pkgArea"></div>
+
+        <!-- DISCLAIMER -->
+        <div style="margin-top:18px;padding:16px;background:#f9f7f4;border:1px solid var(--bd);border-radius:10px">
+            <details>
+                <summary style="font-size:.78em;font-weight:600;color:var(--navy);cursor:pointer">⚖️ הבהרה משפטית חשובה — לחצו לקריאה</summary>
+                <div style="margin-top:10px;font-size:.72em;color:var(--mt);line-height:1.7">
+                    <p style="margin-bottom:8px"><strong style="color:var(--tx)">הערכה כללית בלבד</strong> — הכלי מספק הערכה ראשונית וכללית בלבד של עמידה בתיקון 13 לחוק הגנת הפרטיות, התשמ"א-1981. התוצאות מבוססות על מידע חלקי שהוזן ו/או נסרק באופן אוטומטי, ואינן מהוות בדיקה מקיפה או מלאה של מכלול החובות החלות על הארגון.</p>
+                    <p style="margin-bottom:8px"><strong style="color:var(--tx)">אינו מהווה ייעוץ משפטי</strong> — השימוש בכלי אינו מהווה ייעוץ משפטי, חוות דעת, או המלצה מקצועית מכל סוג שהוא. אין להסתמך על התוצאות כתחליף לייעוץ משפטי פרטני מעורך דין או מבעל מקצוע מתאים.</p>
+                    <p style="margin-bottom:8px"><strong style="color:var(--tx)">אין יחסי עורך דין–לקוח</strong> — השימוש בכלי אינו יוצר יחסי עורך דין–לקוח בין המשתמש למשרד עו"ד אלון אלישע. יחסים כאלה נוצרים רק בהסכם ייצוג חתום ומפורש.</p>
+                    <p style="margin-bottom:8px"><strong style="color:var(--tx)">התאמה מדויקת — רק מול בעל מקצוע</strong> — רק פנייה ישירה ושירות מול עורך דין או בעל מקצוע מתאים בתחום הגנת הפרטיות תיתן התאמה מדויקת, מלאה ותקפה לצרכי הארגון ולדרישות החוק.</p>
+                    <p style="margin-bottom:8px"><strong style="color:var(--tx)">הגבלת אחריות מוחלטת</strong> — המשרד, עובדיו ונציגיו אינם אחראים, בשום מקרה ובשום נסיבות, לכל נזק ישיר, עקיף, תוצאתי, מיוחד, עונשי או אגבי, לרבות אובדן רווחים, פגיעה במוניטין, קנסות, עיצומים כספיים, או כל הפסד אחר, הנובע או הקשור לשימוש בכלי, להסתמכות על תוצאותיו, או לאי-שימוש בייעוץ משפטי פרטני.</p>
+                    <p style="margin-bottom:8px"><strong style="color:var(--tx)">שיפוי</strong> — המשתמש מתחייב לשפות את המשרד, עובדיו ונציגיו בגין כל תביעה, דרישה, נזק, הפסד, הוצאה או חבות (לרבות שכר טרחת עורך דין) הנובעים מהשימוש בכלי או מהסתמכות על תוצאותיו.</p>
+                    <p><strong style="color:var(--tx)">הסכמה</strong> — עצם השימוש בכלי מהווה הסכמה מלאה ומפורשת לכל האמור לעיל, ל<a href="#" onclick="OM('terms');return false" style="color:var(--navy)">תנאי השימוש</a> ול<a href="#" onclick="OM('priv');return false" style="color:var(--navy)">מדיניות הפרטיות</a>.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="qb" style="margin-top:14px"><button class="b bb" onclick="RST()" style="flex:1">בדיקה חדשה</button></div>
+    </div>
+</div>
+</div>
+
+<script>
+var D={cc:null},FS=100,BL={ecommerce:'חנות אונליין',services:'שירותים מקצועיים',health:'בריאות/רפואה',finance:'פיננסים/ביטוח',realestate:'נדל"ן',tech:'טכנולוגיה',retail:'קמעונאות',education:'חינוך',public:'גוף ציבורי',other:'אחר'};
+var SENS=['cc','bank','income','medical','genetic','bio','location','comms','opinions','sexual','ethnic','minors','criminal'];
+var SUPERSENS=['medical','genetic','bio'];
+
+function OQ(){document.getElementById('qo').classList.add('open');document.body.style.overflow='hidden';GQ(1)}
+function CQ(){document.getElementById('qo').classList.remove('open');document.body.style.overflow=''}
+function GQ(n){
+    if(n===2){if(!document.getElementById('iType').value){alert('נא לבחור סוג עסק');return}}
+    for(var i=1;i<=4;i++)document.getElementById('q'+i).className='qc';
+    document.getElementById('res').className='rc';
+    document.getElementById('q'+n).className='qc a';
+    document.getElementById('qpf').style.width=({1:'10%',2:'30%',3:'55%',4:'80%'}[n]);
+    document.querySelector('.ow').scrollTo({top:0,behavior:'smooth'});
+}
+function T(e){e.classList.toggle('on')}
+function ST(e,k,v){D[k]=v;e.parentElement.querySelectorAll('.tb').forEach(function(b){b.className='tb'});e.classList.add(v?'y':'n')}
+function S(id){return[...document.querySelectorAll('#'+id+' .on')].map(function(e){return e.dataset.v})}
+
+function Q1NEXT(){
+    if(!document.getElementById('iType').value){alert('נא לבחור סוג עסק');return}
+    var url=document.getElementById('iUrl').value.trim();
+    if(url.length>=5){
+        // Has URL — scan and skip to results
+        document.getElementById('q1btn').textContent='סורק את האתר...';
+        document.getElementById('q1btn').disabled=true;
+        SCAN(function(scan){
+            document.getElementById('q1btn').textContent='המשך';
+            document.getElementById('q1btn').disabled=false;
+            if(scan&&Object.keys(scan).length>0){
+                // Scan succeeded — go straight to results with smart defaults
+                QUICK(scan);
+            } else {
+                // Scan failed — fallback to manual questions
+                GQ(2);
+            }
+        });
+    } else {
+        // No URL — manual flow
+        GQ(2);
+    }
+}
+
+// Quick analysis based on scan + business type defaults
+function QUICK(scan){
+    var type=document.getElementById('iType').value;
+    var scale=document.getElementById('iScale').value;
+    var url=document.getElementById('iUrl').value.trim();
+
+    // Smart defaults based on business type
+    var defaults={
+        ecommerce:{ident:['name','email','phone','address'],sens:['cc'],srcs:['website'],vends:['payment','analytics'],acts:[]},
+        services:{ident:['name','email','phone'],sens:[],srcs:['website','phone'],vends:['analytics'],acts:[]},
+        health:{ident:['name','email','phone','id'],sens:['medical'],srcs:['website','forms'],vends:['analytics'],acts:[]},
+        finance:{ident:['name','email','phone','id'],sens:['cc','bank','income'],srcs:['website'],vends:['analytics','payment'],acts:[]},
+        realestate:{ident:['name','email','phone'],sens:[],srcs:['website','whatsapp'],vends:['analytics'],acts:[]},
+        tech:{ident:['name','email'],sens:[],srcs:['website','app'],vends:['analytics','cloud'],acts:['monitor']},
+        retail:{ident:['name','email','phone'],sens:[],srcs:['website'],vends:['analytics','payment'],acts:[]},
+        education:{ident:['name','email','phone'],sens:['minors'],srcs:['website'],vends:['analytics'],acts:[]},
+        public:{ident:['name','email','phone','id'],sens:[],srcs:['website','forms'],vends:['analytics','cloud'],acts:[]},
+        other:{ident:['name','email','phone'],sens:[],srcs:['website'],vends:['analytics'],acts:[]}
+    };
+    var d=defaults[type]||defaults.other;
+
+    // Merge scan-detected vendors into defaults
+    if(scan._vendors){scan._vendors.forEach(function(v){if(!d.vends.includes(v))d.vends.push(v)})}
+
+    // Detect monitoring/profiling from scan
+    if(scan._monitoring&&!d.acts.includes('monitor'))d.acts.push('monitor');
+    if(scan._profiling&&!d.acts.includes('profile'))d.acts.push('profile');
+
+    // Detect accounts = more data
+    if(scan._signals&&scan._signals.includes('accounts')){
+        if(!d.ident.includes('email'))d.ident.push('email');
+        if(!d.ident.includes('name'))d.ident.push('name');
+    }
+    if(scan._signals&&scan._signals.includes('payment')&&!d.sens.includes('cc'))d.sens.push('cc');
+
+    // Build exist array from scan
+    var exist=[];
+    if(scan.policy)exist.push('policy');
+    if(scan.cookies)exist.push('cookies');
+    if(scan.notice)exist.push('notice');
+    if(scan.consent)exist.push('consent');
+    if(scan.optout)exist.push('optout');
+
+    // Run analysis directly
+    var hasSens=d.sens.length>0;
+    var hasSuper=d.sens.some(function(s){return SUPERSENS.includes(s)});
+    var sensCount=d.sens.length;
+    var score=0,findings=[],needDPO=false,dW=[];
+
+    // DPO
+    if(type==='public'){needDPO=true;dW.push('גוף ציבורי — ס׳ 17ב1(א)(1)')}
+    if(d.acts.includes('trade')){needDPO=true;dW.push('מסירת/סחר במידע — ס׳ 17ב1(א)(2)')}
+    if(d.acts.includes('monitor')||d.acts.includes('profile')){needDPO=true;dW.push('ניטור שוטף / פרופיילינג — ס׳ 17ב1(א)(3)')}
+    if(['health','finance'].includes(type)&&hasSens){needDPO=true;dW.push('עיבוד מידע רגיש כעיסוק מרכזי — ס׳ 17ב1(א)(4)')}
+    if(hasSens&&(scale==='large'||scale==='xlarge')&&!dW.some(function(r){return r.includes('(4)')})){needDPO=true;dW.push('מידע רגיש בהיקף ניכר — ס׳ 17ב1(א)(4)')}
+
+    // Score
+    if(sensCount>0)score+=Math.min(sensCount*8,30);
+    if(hasSuper)score+=10;
+    if(scale==='large')score+=5;if(scale==='xlarge')score+=10;
+    if(d.acts.includes('abroad'))score+=8;if(d.acts.length>1)score+=6;
+
+    // Findings
+    if(needDPO&&!exist.includes('dpo')){score+=15;findings.push({t:'c',ti:'חובת מינוי ממונה פרטיות (DPO) — לא מונה',d:'תיקון 13 מחייב. בתוקף מ-14.8.2025.',l:dW.join(' | ')})}
+    if(!exist.includes('policy')){score+=14;findings.push({t:'c',ti:'לא נמצאה מדיניות פרטיות באתר',d:'חובה לפרסם מדיניות נגישה: מידע, מטרות, שמירה, העברות, זכויות.',l:'תיקון 13 — פרק 7'})}
+    if(!exist.includes('cookies')&&d.vends.length>0){var vList=d.vends.filter(function(v){return v!=='accountant'}).join(', ');score+=10;findings.push({t:'c',ti:'לא נמצא באנר עוגיות',d:'נמצאו '+d.vends.length+' סקריפטים/ספקים חיצוניים ('+vList+') — נדרשת הסכמה מפורשת.',l:'תיקון 13 — פרק 8'})}
+    if(!exist.includes('notice')){var notW=hasSens?12:5;score+=notW;findings.push({t:hasSens?'c':'w',ti:'לא נמצאה הודעת פרטיות בטפסים',d:'בכל טופס שאוסף מידע — מומלץ לציין מטרה וזכויות.',l:'סעיף 11 + תיקון 13'})}
+    if(hasSens&&!exist.includes('consent')){score+=14;findings.push({t:'c',ti:'מידע רגיש ללא הסכמה מפורשת',d:'הסכמה פעילה, מדעת, ספציפית, ניתנת לביטול.',l:'סעיף 2(ב) + תיקון 13'})}
+    if(!exist.includes('security')){var secW=hasSens?8:3;score+=secW;findings.push({t:hasSens?'c':'w',ti:'נוהל אבטחת מידע',d:'מומלץ — נוהל כתוב, הרשאות, גיבויים.',l:'תקנות אבטחת מידע'})}
+    if(d.vends.length&&!exist.includes('contracts')){var cW=d.vends.length>3?10:d.vends.length>1?6:3;score+=cW;findings.push({t:d.vends.length>2?'c':'w',ti:'נמצאו '+d.vends.length+' ספקים חיצוניים ללא הסכמי עיבוד',d:'כל ספק שמקבל מידע חייב הסכם: סודיות, איסור שימוש חורג, מחיקה.',l:'תיקון 13 — פרק 10'})}
+    if(!exist.includes('delete')){score+=3;findings.push({t:'w',ti:'נוהל בקשות עיון/מחיקה',d:'30 יום לטפל בבקשה.',l:'סעיפים 13-14'})}
+    if(!exist.includes('docs')){score+=2;findings.push({t:'w',ti:'תיעוד פעילויות עיבוד',d:'תיעוד = הגנה בביקורת.',l:'תיקון 13'})}
+
+    // OK
+    if(exist.includes('policy'))findings.push({t:'ok',ti:'מדיניות פרטיות נמצאה באתר',d:'ודא עדכון לתיקון 13.',l:'תיקון 13'});
+    if(exist.includes('cookies'))findings.push({t:'ok',ti:'באנר עוגיות נמצא באתר',d:'ודא: אישור + דחייה + הגדרות.',l:'תיקון 13'});
+    if(exist.includes('notice'))findings.push({t:'ok',ti:'הודעת פרטיות נמצאה בטפסים',d:'ודא שמופיעה בכל נקודת איסוף.',l:'סעיף 11'});
+    if(exist.includes('consent'))findings.push({t:'ok',ti:'הסכמה מפורשת נמצאה',d:'ודא: מדעת, חופשית, ניתנת לביטול.',l:'סעיף 2(ב)'});
+    if(scan._a11y)findings.push({t:'ok',ti:'אלמנטי נגישות נמצאו',d:'',l:'חוק שוויון זכויות'});
+
+    score=Math.min(score,100);
+    var tier='basic';
+    if(needDPO||hasSuper||(hasSens&&(scale==='large'||scale==='xlarge')))tier='full';
+    else if(d.vends.length>2||d.acts.includes('mkt')||sensCount>2||scale==='medium')tier='pro';
+
+    SHOW(score,findings,needDPO,dW,tier,url,type,scale,hasSens,sensCount,d.vends,d.acts);
+}
+
+// Auto-scan website
+function SCAN(cb){
+    var url=document.getElementById('iUrl').value.trim();
+    if(url.length<5){cb({});return}
+    if(!url.startsWith('http'))url='https://'+url;
+    var proxies=[
+        'https://api.codetabs.com/v1/proxy?quest='+encodeURIComponent(url),
+        'https://api.allorigins.win/raw?url='+encodeURIComponent(url)
+    ];
+    var scanEl=document.getElementById('scanStatus');
+    if(scanEl)scanEl.style.display='block';
+    function tryProxy(i){
+        if(i>=proxies.length){if(scanEl)scanEl.style.display='none';cb({});return}
+        fetch(proxies[i]).then(function(r){if(!r.ok)throw new Error('status '+r.status);return r.text()}).then(function(html){
+            if(html.length<200)throw new Error('too short');
+            parseScan(html,cb,scanEl);
+        }).catch(function(){tryProxy(i+1)});
+    }
+    tryProxy(0);
+}
+function parseScan(html,cb,scanEl){
+        var res={_vendors:[],_signals:[]};
+        var h=html.toLowerCase();
+        // Privacy policy
+        if(h.includes('מדיניות פרטיות')||h.includes('privacy policy')||h.includes('privacy-policy'))res.policy=true;
+        // Cookie banner
+        if(h.includes('עוגיות')||h.includes('cookies')||h.includes('cookie-consent')||h.includes('cookie_consent')||h.includes('cookieconsent'))res.cookies=true;
+        // Privacy notice on forms
+        if(h.includes('הפרטים נאספים')||h.includes('מסכים/ה לשמירת')||h.includes('בהתאם למדיניות'))res.notice=true;
+        // Consent checkbox
+        if(h.includes('אני מסכים')||h.includes('אני מאשר'))res.consent=true;
+        // Accessibility
+        if(h.includes('נגישות')||h.includes('accessibility'))res._a11y=true;
+        // Opt-out
+        if(h.includes('הסרה')||h.includes('unsubscribe')||h.includes('opt-out'))res.optout=true;
+
+        // === VENDORS / TRACKERS ===
+        if(h.includes('gtag(')||h.includes('googletagmanager')){res._ga=true;res._vendors.push('analytics')}
+        if(h.includes('fbq(')||h.includes('facebook.com/tr')||h.includes('fbevents')){res._pixel=true;res._vendors.push('pixel')}
+        if(h.includes('outbrain'))res._vendors.push('outbrain');
+        if(h.includes('taboola'))res._vendors.push('taboola');
+        if(h.includes('tiktok'))res._vendors.push('tiktok');
+        if(h.includes('linkedin.com/px')||h.includes('snap.licdn'))res._vendors.push('linkedin');
+        if(h.includes('hotjar'))res._vendors.push('hotjar');
+        if(h.includes('mailchimp')||h.includes('ravmesser'))res._vendors.push('mail_vendor');
+        if(h.includes('intercom')||h.includes('drift')||h.includes('zendesk')||h.includes('crisp'))res._vendors.push('chat');
+
+        // === DATA SIGNALS ===
+        if(h.includes('<form'))res._signals.push('forms');
+        if(h.includes('type="email"')||h.includes('type=\\"email\\"')||h.includes('placeholder="אימייל"'))res._signals.push('email');
+        if(h.includes('type="tel"')||h.includes('placeholder="טלפון"'))res._signals.push('phone');
+        if(h.includes('login')||h.includes('התחברות')||h.includes('הרשמה')||h.includes('signup'))res._signals.push('accounts');
+        if(h.includes('credit')||h.includes('אשראי')||h.includes('סליקה'))res._signals.push('payment');
+
+        // === DETECT MONITORING ===
+        res._monitoring=res._vendors.length>=3||(h.includes('hotjar'))||(h.includes('taboola')&&h.includes('outbrain'));
+        res._profiling=res._vendors.includes('pixel')||res._vendors.includes('tiktok')||res._vendors.includes('linkedin');
+
+        if(scanEl)scanEl.style.display='none';
+        cb(res);
+}
+
+function RUN(){
+    // First scan, then analyze
+    SCAN(function(scanResults){
+        _ANALYZE(scanResults);
+    });
+}
+
+function _ANALYZE(scan){
+    var type=document.getElementById('iType').value,scale=document.getElementById('iScale').value,url=document.getElementById('iUrl').value.trim();
+    var hasUrl=url.length>3;
+    var ident=S('gI'),sens=S('gS'),srcs=S('gR'),acts=S('gA'),vends=S('gV'),exist=S('gE');
+
+    // Auto-add from scan results
+    if(scan.policy&&!exist.includes('policy'))exist.push('policy');
+    if(scan.cookies&&!exist.includes('cookies'))exist.push('cookies');
+    if(scan.notice&&!exist.includes('notice'))exist.push('notice');
+    if(scan.consent&&!exist.includes('consent'))exist.push('consent');
+    if(scan.optout&&!exist.includes('optout'))exist.push('optout');
+    // Auto-detect vendors from scan
+    if(scan._ga&&!vends.includes('analytics'))vends.push('analytics');
+    if(scan._pixel&&!vends.includes('pixel'))vends.push('pixel');
+    var hasSens=sens.length>0,hasSuper=sens.some(function(s){return SUPERSENS.includes(s)}),sensCount=sens.length;
+    var score=0,findings=[],needDPO=false,dW=[];
+
+    // === DPO (Section 17b1) ===
+    if(type==='public'){needDPO=true;dW.push('גוף ציבורי — ס׳ 17ב1(א)(1)')}
+    if(acts.includes('trade')){needDPO=true;dW.push('מסירת/סחר במידע — ס׳ 17ב1(א)(2)')}
+    if(acts.includes('monitor')||acts.includes('profile')){needDPO=true;dW.push('ניטור שוטף / פרופיילינג — ס׳ 17ב1(א)(3)')}
+    if(['health','finance'].includes(type)&&hasSens){needDPO=true;dW.push('עיבוד מידע רגיש כעיסוק מרכזי — ס׳ 17ב1(א)(4)')}
+    if(hasSens&&(scale==='large'||scale==='xlarge')&&!dW.some(function(r){return r.includes('(4)')})){needDPO=true;dW.push('מידע רגיש בהיקף ניכר — ס׳ 17ב1(א)(4)')}
+
+    // === SCORING ===
+    if(sensCount>0)score+=Math.min(sensCount*8,30);
+    if(hasSuper)score+=10;
+    if(scale==='large')score+=5;if(scale==='xlarge')score+=10;
+    if(acts.includes('abroad'))score+=8;if(acts.length>1)score+=6;
+    if(D.cc)score+=12;
+
+    // === FINDINGS ===
+    if(needDPO&&!exist.includes('dpo')){score+=15;findings.push({t:'c',ti:'חובת מינוי ממונה פרטיות (DPO) — לא מונה',d:'תיקון 13 מחייב. בתוקף מ-14.8.2025. אי-מינוי = הפרה עצמאית + עיצום כספי.',l:dW.join(' | ')})}
+    if(hasUrl&&!exist.includes('policy')){score+=14;findings.push({t:'c',ti:'אין מדיניות פרטיות באתר',d:'חובה לפרסם מדיניות נגישה: מידע נאסף, מטרות, משך שמירה, למי מועבר, זכויות המשתמש, דרכי יצירת קשר.',l:'תיקון 13 — פרק 7'})}
+    if(hasUrl&&!exist.includes('cookies')&&(vends.includes('analytics')||vends.includes('pixel')||vends.includes('outbrain'))){score+=10;findings.push({t:'c',ti:'אין באנר עוגיות',d:'עוגיות לא חיוניות (אנליטיקס, פרסום, Pixel) דורשות הסכמה מפורשת — כפתור אישור, דחייה, והגדרות לפי קטגוריות.',l:'תיקון 13 — פרק 8'})}
+    if(!exist.includes('notice')){var notW=hasSens?12:5;score+=notW;findings.push({t:hasSens?'c':'w',ti:'אין הודעת פרטיות בנקודות איסוף',d:'בכל טופס שאוסף מידע — מומלץ לציין: מטרה, למי יימסר, זכויות.',l:'סעיף 11 + תיקון 13 — פרק 9'})}
+    if(hasSens&&!exist.includes('consent')){score+=14;findings.push({t:'c',ti:'מידע רגיש ללא הסכמה מפורשת',d:'הסכמה חייבת להיות: פעילה (לא מסומנת מראש), מדעת (הסבר מה נאסף ולמה), ספציפית, וניתנת לביטול בכל עת.',l:'סעיף 2(ב) + תיקון 13 — פרק 6'})}
+    if(D.cc){score+=5;findings.push({t:'c',ti:'אחסון פרטי אשראי — סיכון גבוה',d:'אחסון פרטי כרטיס אצלך = חובת PCI DSS + הצפנה + בקרות גישה. מומלץ מאוד לעבור לסליקה חיצונית.',l:'תיקון 13 — מידע פיננסי כרגישות מיוחדת'})}
+    // נהלים פנימיים — משקל נמוך יותר, סוג warning לא critical
+    if(!exist.includes('security')){var secW=hasSens||scale!=='small'?8:3;score+=secW;findings.push({t:hasSens?'c':'w',ti:'אין נוהל אבטחת מידע כתוב',d:'נדרש נוהל כתוב, מסמך הגדרות מאגר, הרשאות גישה, גיבויים.',l:'תקנות אבטחת מידע, התשע"ז-2017'})}
+    if(vends.length&&!exist.includes('contracts')){score+=vends.length>2?8:4;findings.push({t:vends.length>2?'w':'w',ti:'אין הסכמי עיבוד עם ספקים חיצוניים',d:'ספקים שמקבלים מידע (ענן, אנליטיקס, דיוור) — חייבים הסכם עיבוד.',l:'תיקון 13 — פרק 10'})}
+    if(!exist.includes('delete')){score+=4;findings.push({t:'w',ti:'מומלץ להסדיר נוהל בקשות עיון/מחיקה',d:'לכל אדם הזכות לעיין, לתקן ולמחוק. 30 יום לטפל.',l:'סעיפים 13-14 + תיקון 13'})}
+    if(acts.includes('mkt')&&!exist.includes('optout')){score+=6;findings.push({t:'c',ti:'שיווק ישיר ללא מנגנון הסרה',d:'חובת הסכמה מפורשת + הסרה בכל הודעה.',l:'סעיף 30א לחוק התקשורת'})}
+    if(!exist.includes('docs')){score+=2;findings.push({t:'w',ti:'מומלץ לתעד פעילויות עיבוד',d:'תיעוד החלטות, הסכמות, אירועים — הגנה בביקורת.',l:'תיקון 13 — Accountability'})}
+    if(!exist.includes('training')&&(scale!=='small'||hasSens)){score+=2;findings.push({t:'w',ti:'מומלץ לבצע הדרכת עובדים',d:'עובדים עם גישה למידע — הדרכה תקופתית.',l:'תקנה 7'})}
+    if(acts.includes('abroad')){findings.push({t:'w',ti:'העברת מידע לחו"ל',d:'מותר רק למדינות עם הגנה מקבילה (white list) או באמצעות הסכם חוזי.',l:'תיקון 13'})}
+    if((scale==='xlarge'&&hasSens)||type==='public'||acts.includes('trade')){if(!exist.includes('registry'))findings.push({t:'w',ti:'ייתכן שנדרש רישום מאגר מידע',d:'מאגר ציבורי, מאגר למסירת מידע, או מידע רגיש על 100K+ — עלול לחייב רישום.',l:'תיקון 13 — פרק 18'})}
+
+    // OK
+    if(exist.includes('policy'))findings.push({t:'ok',ti:'מדיניות פרטיות קיימת',d:'ודא עדכון לתיקון 13.',l:'תיקון 13'});
+    if(exist.includes('cookies'))findings.push({t:'ok',ti:'באנר עוגיות קיים',d:'ודא: אישור + דחייה + הגדרות.',l:'תיקון 13'});
+    if(exist.includes('consent')&&hasSens)findings.push({t:'ok',ti:'הסכמה מפורשת קיימת',d:'ודא: מדעת, חופשית, ספציפית, ניתנת לביטול.',l:'סעיף 2(ב)'});
+    if(exist.includes('security'))findings.push({t:'ok',ti:'נוהל אבטחה קיים',d:'ודא התאמה לרמה (בסיסית/בינונית/גבוהה).',l:'תקנות אבטחת מידע'});
+    if(exist.includes('dpo'))findings.push({t:'ok',ti:'ממונה פרטיות מונה',d:'ודא: תושב ישראל, 40+ שעות הכשרה, ללא ניגוד עניינים.',l:'סעיף 17ב1'});
+    if(exist.includes('docs'))findings.push({t:'ok',ti:'תיעוד Accountability קיים',d:'המשך לתעד — זו ההגנה הטובה ביותר.',l:'תיקון 13'});
+
+    score=Math.min(score,100);
+
+    // === DETERMINE TIER ===
+    var tier='basic';
+    if(needDPO||hasSuper||(hasSens&&(scale==='large'||scale==='xlarge')))tier='full';
+    else if(vends.length>2||acts.includes('mkt')||sensCount>2||scale==='medium')tier='pro';
+
+    SHOW(score,findings,needDPO,dW,tier,url,type,scale,hasSens,sensCount,vends,acts);
+}
+
+function SHOW(score,findings,needDPO,dW,tier,url,type,scale,hasSens,sensCount,vends,acts){
+    for(var i=1;i<=4;i++)document.getElementById('q'+i).className='qc';
+    document.getElementById('res').className='rc a';
+    document.getElementById('qpf').style.width='100%';
+
+    var cls,label,sub,sc;
+    if(score<=18){cls='good';label='העסק שלך עומד בדרישות החוק';sub='יש כמה המלצות לשיפור — אבל אתה מוגן';sc='color:var(--grn)'}
+    else if(score<=45){cls='mid';label='נמצאו פערים שדורשים טיפול';sub='המצב ניתן לתיקון';sc='color:var(--amb)'}
+    else{cls='bad';label='העסק שלך עלול להיות חשוף';sub='מומלץ לטפל בהקדם';sc='color:var(--red)'}
+
+    document.getElementById('rT').className='rt '+cls;
+    var rs=document.getElementById('rS');rs.textContent=score+'/100';rs.style.cssText=sc;
+    document.getElementById('rL').textContent=label;
+    document.getElementById('rU').textContent=sub;
+
+    var dv=document.getElementById('dB');
+    if(needDPO){dv.className='db req';dv.innerHTML='<b>חובת מינוי ממונה פרטיות (DPO)</b><p>'+dW.join('<br>')+'</p>'}
+    else{dv.className='db none';dv.innerHTML='<b>לא נדרש מינוי ממונה</b><p>חלות החובות הכלליות של החוק.</p>'}
+
+    var crits=findings.filter(function(f){return f.t==='c'}),warns=findings.filter(function(f){return f.t==='w'}),oks=findings.filter(function(f){return f.t==='ok'});
+    var h='';
+    if(crits.length){h+='<div class="fg2"><div class="fg2t c">נדרש טיפול ('+crits.length+')</div>';crits.forEach(function(f){h+=FC(f)});h+='</div>'}
+    if(warns.length){h+='<div class="fg2"><div class="fg2t w">לתשומת לב ('+warns.length+')</div>';warns.forEach(function(f){h+=FC(f)});h+='</div>'}
+    if(oks.length){h+='<div class="fg2"><div class="fg2t ok">תקין ('+oks.length+')</div>';oks.forEach(function(f){h+=FC(f)});h+='</div>'}
+    document.getElementById('fnd').innerHTML=h;
+
+    // === PACKAGE ===
+    var pa=document.getElementById('pkgArea');
+    if(score<=18){pa.innerHTML='';return}
+
+    var pkg='';
+    if(tier==='basic'){
+        pkg='<div class="pkg basic"><h3>חבילה בסיסית</h3><p class="ps">מסמכים מותאמים לעסק שלך · ע"י עו"ד · תוך 24 שעות</p>'+
+        '<div class="pi"><div><span class="v">✓</span> מדיניות פרטיות מותאמת</div><div><span class="v">✓</span> באנר עוגיות (אישור/דחייה/הגדרות)</div><div><span class="v">✓</span> הודעת פרטיות לטפסים</div><div><span class="v">✓</span> טופס בקשת עיון/מחיקה</div><div><span class="v">✓</span> הנחיות הסכמה תקפה</div><div><span class="v">✓</span> צ\'קליסט ציות</div></div>';
+    } else if(tier==='pro'){
+        pkg='<div class="pkg pro"><h3>חבילה מורחבת</h3><p class="ps">כל הבסיסית + הסכמי עיבוד + נהלים · ע"י עו"ד</p>'+
+        '<div class="pi"><div><span class="v">✓</span> מדיניות פרטיות מותאמת</div><div><span class="v">✓</span> באנר עוגיות</div><div><span class="v">✓</span> הודעת פרטיות לטפסים</div><div><span class="v">✓</span> טופס בקשת עיון/מחיקה</div><div><span class="v">✓</span> הנחיות הסכמה תקפה</div><div><span class="v">✓</span> צ\'קליסט ציות</div><div><span class="v">✓</span> הסכמי עיבוד מידע עם ספקים</div><div><span class="v">✓</span> נוהל טיפול בבקשות מחיקה</div><div><span class="v">✓</span> הנחיות לדיוור חוקי</div></div>';
+    } else {
+        pkg='<div class="pkg full"><h3>ליווי מלא</h3><p class="ps">DPO חיצוני + מיפוי מאגרים + הדרכות + ליווי רגולטורי</p>'+
+        '<div class="pi"><div><span class="v">✓</span> כל מה שבחבילה המורחבת</div><div><span class="v">✓</span> מינוי DPO חיצוני</div><div><span class="v">✓</span> מיפוי וסיווג מאגרי מידע</div><div><span class="v">✓</span> סקר סיכונים ותוכנית ציות</div><div><span class="v">✓</span> הדרכת עובדים</div><div><span class="v">✓</span> ליווי מול רשות הפרטיות</div><div><span class="v">✓</span> דיווח תקופתי להנהלה</div><div><span class="v">✓</span> היערכות לאירועי אבטחה</div></div>';
+    }
+
+    pkg+='<input type="text" id="oN" placeholder="שם מלא"><input type="text" id="oP" placeholder="טלפון"><input type="text" id="oE" placeholder="אימייל">';
+    pkg+='<div style="text-align:right;margin:10px 0 6px">';
+    pkg+='<label style="display:flex;align-items:flex-start;gap:6px;font-size:.7em;color:rgba(255,255,255,.45);line-height:1.4;cursor:pointer;margin-bottom:6px"><input type="checkbox" id="ck1" required style="margin-top:2px;flex-shrink:0"><span>אני מאשר/ת כי הכלי מספק הערכה ראשונית בלבד שאינה מהווה ייעוץ משפטי. אני מסכים/ה ל<a href="#" onclick="event.stopPropagation();OM(\'terms\');return false" style="color:var(--gl)">תנאי השימוש</a> ול<a href="#" onclick="event.stopPropagation();OM(\'priv\');return false" style="color:var(--gl)">מדיניות הפרטיות</a>. *</span></label>';
+    pkg+='<label style="display:flex;align-items:flex-start;gap:6px;font-size:.65em;color:rgba(255,255,255,.3);line-height:1.4;cursor:pointer"><input type="checkbox" id="ck2" style="margin-top:2px;flex-shrink:0"><span>אני מסכים/ה לקבל עדכונים מקצועיים מהמשרד. (רשות)</span></label>';
+    pkg+='</div>';
+    pkg+='<a class="bbuy" id="buyB" href="#" target="_blank" onclick="BUY(event,\''+tier+'\')">שלחו פרטים</a>';
+    pkg+='<div class="alt">מעדיפים לשוחח? <a href="https://wa.me/972549260698" target="_blank">וואטסאפ</a> · <a href="tel:054-9260698">054-9260698</a></div>';
+    pkg+='<div class="g">עו"ד אלון אלישע · מסמכים מותאמים אישית · ללא התחייבות</div></div>';
+
+    pa.innerHTML=pkg;
+    window._R={score:score,crits:crits.length,warns:warns.length,needDPO:needDPO,dpoWhy:dW.join('; '),url:url,type:type,tier:tier,scale:scale};
+    document.querySelector('.ow').scrollTo({top:0,behavior:'smooth'});
+}
+
+function FC(f){return'<div class="fd '+f.t+'"><b>'+f.ti+'</b><p>'+f.d+'</p><div class="lw">'+f.l+'</div></div>'}
+
+function BUY(e,tier){
+    var n=document.getElementById('oN').value.trim(),p=document.getElementById('oP').value.trim(),em=document.getElementById('oE').value.trim();
+    if(!n){alert('נא להזין שם');e.preventDefault();return}
+    if(!p&&!em){alert('נא להזין טלפון או אימייל');e.preventDefault();return}
+    if(!document.getElementById('ck1').checked){alert('נא לאשר את תנאי השימוש ומדיניות הפרטיות');e.preventDefault();return}
+    var r=window._R||{};
+    var tl={basic:'בסיסית',pro:'מורחבת',full:'ליווי מלא'};
+    var m='*פנייה — ציות לתיקון 13*\n━━━━━━━━━━━━\n'+
+        'שם: '+n+'\nטלפון: '+(p||'—')+'\nאימייל: '+(em||'—')+'\n'+
+        'עסק: '+(BL[r.type]||'—')+'\n'+(r.url?'אתר: '+r.url+'\n':'')+
+        'היקף: '+(r.scale||'—')+'\n'+
+        '━━━━━━━━━━━━\n'+
+        '*תוצאות אבחון:*\n'+
+        'ציון: '+r.score+'/100\n'+
+        'ממצאים: '+r.crits+' נדרש טיפול, '+r.warns+' לתשומת לב\n'+
+        (r.needDPO?'חובת DPO: '+r.dpoWhy+'\n':'')+
+        '━━━━━━━━━━━━\n'+
+        '*חבילה מותאמת: '+tl[tier]+'*\n'+
+        'אשמח לקבל הצעה ופרטי תשלום.';
+    document.getElementById('buyB').href='https://wa.me/972549260698?text='+encodeURIComponent(m);
+
+    // Send lead to email via Formspree
+    fetch('https://formspree.io/f/mgopabze',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({
+            _subject:'ליד חדש — כלי הגנת פרטיות תיקון 13',
+            name:n,
+            phone:p,
+            email:em,
+            business:BL[r.type]||r.type||'',
+            website:r.url||'',
+            scale:r.scale||'',
+            score:r.score+'/100',
+            findings:r.crits+' קריטי, '+r.warns+' אזהרות',
+            dpo:r.needDPO?'חובה — '+r.dpoWhy:'לא נדרש',
+            tier:tl[tier],
+            source:'privacy-shield'
+        })
+    }).catch(function(){});
+}
+
+function RST(){for(var i=1;i<=4;i++)document.getElementById('q'+i).className='qc';document.getElementById('res').className='rc';document.querySelectorAll('.ci.on').forEach(function(e){e.classList.remove('on')});document.querySelectorAll('.tb').forEach(function(e){e.className='tb'});D={cc:null};GQ(1)}
+
+// A11y
+function AF(d){FS=Math.min(150,Math.max(80,FS+d));document.documentElement.style.fontSize=FS+'%'}
+function AR(){FS=100;document.documentElement.style.fontSize='100%';document.documentElement.classList.remove('a11y-contrast','a11y-links','a11y-gray')}
+
+// Cookies
+if(!localStorage.getItem('ck')){setTimeout(function(){document.getElementById('cb').style.display='block'},1500)}
+function SC(v){localStorage.setItem('ck',v);document.getElementById('cb').style.display='none'}
+
+// Modals
+var MD={
+priv:'<h2 style="font-size:1.2em;font-weight:700;color:var(--navy);margin-bottom:6px">מדיניות פרטיות</h2><p style="font-size:.72em;color:var(--mt);margin-bottom:16px">עודכן: מאי 2026</p><div style="font-size:.82em;color:var(--mt);line-height:1.7"><p style="margin-bottom:10px"><b style="color:var(--tx)">1. כללי</b><br>מדיניות זו מתארת כיצד משרד עו"ד אלון אלישע אוסף, משתמש ומגן על מידע אישי. פועל בהתאם לחוק הגנת הפרטיות התשמ"א-1981 ותיקון 13.</p><p style="margin-bottom:10px"><b style="color:var(--tx)">2. מידע שנאסף</b><br>תשובות לשאלון (סוג עסק, מידע, פעילויות). פרטי קשר (שם, טלפון, אימייל, אתר) — רק אם שלחת. מידע טכני (IP, דפדפן) — לאבטחה.</p><p style="margin-bottom:10px"><b style="color:var(--tx)">3. מטרות</b><br>הערכת ציות לתיקון 13. יצירת קשר לפי בקשה. שיפור הכלי.</p><p style="margin-bottom:10px"><b style="color:var(--tx)">4. צדדים שלישיים</b><br>לא נמכור מידע. שיתוף רק עם ספקי שירות (תחת סודיות) או בדרישה חוקית.</p><p style="margin-bottom:10px"><b style="color:var(--tx)">5. עוגיות</b><br>חיוניות + אנליטיות (רק לאחר הסכמה).</p><p style="margin-bottom:10px"><b style="color:var(--tx)">6. אבטחה</b><br>SSL + אמצעים סבירים.</p><p style="margin-bottom:10px"><b style="color:var(--tx)">7. שמירה</b><br>תשובות מעובדות בדפדפן ונמחקות בסגירה. פרטי קשר — לפי נוהלי המשרד.</p><p style="margin-bottom:10px"><b style="color:var(--tx)">8. זכויות</b><br>עיון, תיקון, מחיקה, התנגדות לדיוור: <a href="mailto:alonelisha3@gmail.com" style="color:var(--navy)">alonelisha3@gmail.com</a></p><p><b style="color:var(--tx)">9. שינויים</b><br>המשרד רשאי לעדכן. המשך שימוש = הסכמה.</p></div>',
+terms:'<h2 style="font-size:1.2em;font-weight:700;color:var(--navy);margin-bottom:6px">תנאי שימוש</h2><p style="font-size:.72em;color:var(--mt);margin-bottom:16px">עודכן: מאי 2026</p><div style="font-size:.82em;color:var(--mt);line-height:1.7"><p style="margin-bottom:10px"><b style="color:var(--tx)">1. כללי</b><br>השימוש מהווה הסכמה לתנאים אלה.</p><p style="margin-bottom:10px"><b style="color:var(--tx)">2. מהות</b><br>הערכה ראשונית של עמידה בתיקון 13. תוצאות כלליות ואוטומטיות.</p><p style="margin-bottom:10px"><b style="color:var(--tx)">3. אי-ייעוץ</b><br><b style="color:var(--tx)">אינו מהווה ייעוץ משפטי</b>, אינו יוצר יחסי עו"ד–לקוח.</p><p style="margin-bottom:10px"><b style="color:var(--tx)">4. הגבלת אחריות</b><br>המשרד אינו אחראי לנזק מהשימוש. אחריות למידע נכון — על המשתמש.</p><p style="margin-bottom:10px"><b style="color:var(--tx)">5. שיפוי</b><br>המשתמש מתחייב לשפות בגין תביעות הנובעות משימוש.</p><p style="margin-bottom:10px"><b style="color:var(--tx)">6. קניין רוחני</b><br>כל התכנים — קניין המשרד.</p><p style="margin-bottom:10px"><b style="color:var(--tx)">7. זמינות</b><br>ללא התחייבות לזמינות רציפה.</p><p style="margin-bottom:10px"><b style="color:var(--tx)">8. דין חל</b><br>דיני ישראל. סמכות: ת"א.</p><p><b style="color:var(--tx)">9. קשר</b><br><a href="tel:054-9260698" style="color:var(--navy)">054-9260698</a> · <a href="mailto:alonelisha3@gmail.com" style="color:var(--navy)">alonelisha3@gmail.com</a></p></div>',
+a11y:'<h2 style="font-size:1.2em;font-weight:700;color:var(--navy);margin-bottom:16px">הצהרת נגישות</h2><div style="font-size:.82em;color:var(--mt);line-height:1.7"><p style="margin-bottom:10px">משרד עו"ד אלון אלישע מחויב לנגישות בהתאם לחוק שוויון זכויות, התשנ"ח-1998.</p><p style="margin-bottom:10px"><b style="color:var(--tx)">פעולות:</b> קריאת מסך, מקלדת, ניגודיות, הגדלת טקסט, RTL מלא.</p><p><b style="color:var(--tx)">פניות:</b> <a href="mailto:alonelisha3@gmail.com" style="color:var(--navy)">alonelisha3@gmail.com</a> · <a href="tel:054-9260698" style="color:var(--navy)">054-9260698</a></p></div>'
+};
+function OM(id){document.getElementById('mc').innerHTML=MD[id]||'';document.getElementById('mo').style.display='block';document.body.style.overflow='hidden'}
+function CM(){document.getElementById('mo').style.display='none';if(!document.getElementById('qo').classList.contains('open'))document.body.style.overflow=''}
+</script>
+</body>
+</html>
