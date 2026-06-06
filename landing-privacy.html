@@ -493,14 +493,74 @@ function Q1NEXT(){
                 document.getElementById('q1btn').disabled=false;
                 if(scan&&scan.ok&&scan.scannable!==false){
                     window._scan=scan;
-                    prefillFromScan(scan);
-                    GQ(2);
+                    SCANRESULT(scan);
                 }else{GQ(2)}
             }
         });
     } else {
         GQ(2);
     }
+}
+
+// Scan succeeded — go straight to results
+function SCANRESULT(scan){
+    var type=document.getElementById('iType').value;
+    var scale=document.getElementById('iScale').value;
+    var url=document.getElementById('iUrl').value.trim();
+    var exist=[];
+    if(scan.policy)exist.push('policy');
+    if(scan.cookies)exist.push('cookies');
+    if(scan.notice)exist.push('notice');
+    if(scan.consent)exist.push('consent');
+    if(scan.optout)exist.push('optout');
+
+    var vends=scan._vendors||[];
+    var hasSens=false,sensCount=0,hasSuper=false;
+    // Detect sensitive from scan signals
+    if(scan._signals&&scan._signals.includes('payment')){hasSens=true;sensCount++}
+    // Detect from business type
+    if(type==='health'){hasSens=true;sensCount++;hasSuper=true}
+    if(type==='finance'){hasSens=true;sensCount+=2}
+
+    var score=0,findings=[],needDPO=false,dW=[];
+    var acts=[];
+    if(scan._monitoring)acts.push('monitor');
+    if(scan._profiling)acts.push('profile');
+
+    // DPO
+    if(type==='public'){needDPO=true;dW.push('גוף ציבורי — ס׳ 17ב1(א)(1)')}
+    if(acts.includes('monitor')||acts.includes('profile')){needDPO=true;dW.push('ניטור שוטף / פרופיילינג — ס׳ 17ב1(א)(3)')}
+    if(['health','finance'].includes(type)&&hasSens){needDPO=true;dW.push('עיבוד מידע רגיש כעיסוק מרכזי — ס׳ 17ב1(א)(4)')}
+    if(hasSens&&(scale==='large'||scale==='xlarge')){needDPO=true;dW.push('מידע רגיש בהיקף ניכר — ס׳ 17ב1(א)(4)')}
+
+    // Score
+    if(sensCount>0)score+=Math.min(sensCount*8,30);
+    if(hasSuper)score+=10;
+    if(scale==='large')score+=5;if(scale==='xlarge')score+=10;
+    if(acts.length>1)score+=6;
+
+    // Findings from scan
+    if(needDPO&&!exist.includes('dpo')){score+=15;findings.push({t:'c',ti:'ייתכן שנדרש מינוי ממונה פרטיות (DPO)',d:'לפי הנתונים, ייתכן שחלה חובת מינוי. מומלץ לבדוק עם עורך דין.',l:dW.join(' | ')})}
+    if(!exist.includes('policy')){score+=14;findings.push({t:'c',ti:'לא זוהתה מדיניות פרטיות באתר',d:'לא נמצא קישור למדיניות פרטיות. ייתכן שקיימת בדף נפרד — מומלץ לוודא.',l:'תיקון 13 — פרק 7'})}
+    if(!exist.includes('cookies')&&vends.length>0){score+=10;findings.push({t:'c',ti:'לא זוהה באנר עוגיות',d:'זוהו '+vends.length+' סקריפטים חיצוניים ('+vends.join(', ')+') — ייתכן שנדרשת הסכמה.',l:'תיקון 13 — פרק 8'})}
+    if(!exist.includes('notice')&&scan._signals&&scan._signals.includes('forms')){score+=5;findings.push({t:'w',ti:'לא זוהתה הודעת פרטיות בטפסים',d:'זוהו טפסים באתר ללא הודעת פרטיות נלווית.',l:'סעיף 11 + תיקון 13'})}
+    if(hasSens&&!exist.includes('consent')){score+=14;findings.push({t:'c',ti:'ייתכן שנדרשת הסכמה מפורשת למידע רגיש',d:'סוג העסק עשוי לדרוש הסכמה פעילה ומדעת.',l:'סעיף 2(ב) + תיקון 13'})}
+    if(!exist.includes('security')){score+=3;findings.push({t:'w',ti:'מומלץ לבדוק נוהל אבטחת מידע',d:'ייתכן שנדרש נוהל כתוב.',l:'תקנות אבטחת מידע'})}
+    if(vends.length>1&&!exist.includes('contracts')){score+=vends.length>3?10:6;findings.push({t:vends.length>2?'c':'w',ti:'זוהו '+vends.length+' ספקים חיצוניים',d:'ספקים שמקבלים מידע עשויים לדרוש הסכם עיבוד.',l:'תיקון 13 — פרק 10'})}
+
+    // OK findings
+    if(exist.includes('policy'))findings.push({t:'ok',ti:'זוהה קישור למדיניות פרטיות',d:'נמצא באתר. מומלץ לוודא שמעודכנת.',l:'תיקון 13'});
+    if(exist.includes('cookies'))findings.push({t:'ok',ti:'זוהה באנר עוגיות',d:'נמצא באתר.',l:'תיקון 13'});
+    if(exist.includes('notice'))findings.push({t:'ok',ti:'זוהתה הודעת פרטיות בטפסים',d:'',l:'סעיף 11'});
+    if(exist.includes('consent'))findings.push({t:'ok',ti:'זוהתה הסכמה מפורשת',d:'',l:'סעיף 2(ב)'});
+    if(scan._a11y)findings.push({t:'ok',ti:'זוהו אלמנטי נגישות',d:'',l:'חוק שוויון זכויות'});
+
+    score=Math.min(score,100);
+    var tier='basic';
+    if(needDPO||hasSuper||(hasSens&&(scale==='large'||scale==='xlarge')))tier='full';
+    else if(vends.length>2||sensCount>2||scale==='medium')tier='pro';
+
+    SHOW(score,findings,needDPO,dW,tier,url,type,scale,hasSens,sensCount,vends,acts);
 }
 
 // Pre-fill Q4 and Q3 from scan results — only what was FOUND with certainty
