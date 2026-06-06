@@ -378,17 +378,16 @@ function Q1NEXT(){
     if(url.length>=5){
         document.getElementById('q1btn').textContent='סורק...';
         document.getElementById('q1btn').disabled=true;
-        // Try scan with 4 second timeout
         var done=false;
         var timer=setTimeout(function(){
-            if(!done){done=true;document.getElementById('q1btn').textContent='המשך';document.getElementById('q1btn').disabled=false;QUICK({})}
-        },4000);
+            if(!done){done=true;document.getElementById('q1btn').textContent='המשך';document.getElementById('q1btn').disabled=false;GQ(2)}
+        },5000);
         SCAN(function(scan){
             if(!done){
                 done=true;clearTimeout(timer);
                 document.getElementById('q1btn').textContent='המשך';
                 document.getElementById('q1btn').disabled=false;
-                QUICK(scan);
+                if(scan&&scan.ok){QUICK(scan)}else{GQ(2)}
             }
         });
     } else {
