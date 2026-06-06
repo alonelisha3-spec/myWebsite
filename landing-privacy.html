@@ -354,19 +354,18 @@
         <div id="pkgArea"></div>
 
         <!-- DISCLAIMER -->
-        <div style="margin-top:18px;padding:16px;background:#f9f7f4;border:1px solid var(--bd);border-radius:10px">
-            <details>
-                <summary style="font-size:.78em;font-weight:600;color:var(--navy);cursor:pointer">⚖️ הבהרה משפטית חשובה — לחצו לקריאה</summary>
-                <div style="margin-top:10px;font-size:.72em;color:var(--mt);line-height:1.7">
+        <div style="margin-top:18px;padding:16px;background:#fff8ee;border:1.5px solid var(--gold);border-radius:10px">
+                <div style="font-size:.74em;font-weight:600;color:#4a3b1f;margin-bottom:8px">⚖️ הבהרה משפטית</div>
+                <div style="font-size:.72em;color:#5a4a2a;line-height:1.7">
                     <p style="margin-bottom:8px"><strong style="color:var(--tx)">הערכה כללית בלבד</strong> — הכלי מספק הערכה ראשונית וכללית בלבד של עמידה בתיקון 13 לחוק הגנת הפרטיות, התשמ"א-1981. התוצאות מבוססות על מידע חלקי שהוזן ו/או נסרק באופן אוטומטי, ואינן מהוות בדיקה מקיפה או מלאה של מכלול החובות החלות על הארגון.</p>
                     <p style="margin-bottom:8px"><strong style="color:var(--tx)">אינו מהווה ייעוץ משפטי</strong> — השימוש בכלי אינו מהווה ייעוץ משפטי, חוות דעת, או המלצה מקצועית מכל סוג שהוא. אין להסתמך על התוצאות כתחליף לייעוץ משפטי פרטני מעורך דין או מבעל מקצוע מתאים.</p>
                     <p style="margin-bottom:8px"><strong style="color:var(--tx)">אין יחסי עורך דין–לקוח</strong> — השימוש בכלי אינו יוצר יחסי עורך דין–לקוח בין המשתמש למשרד עו"ד אלון אלישע. יחסים כאלה נוצרים רק בהסכם ייצוג חתום ומפורש.</p>
                     <p style="margin-bottom:8px"><strong style="color:var(--tx)">התאמה מדויקת — רק מול בעל מקצוע</strong> — רק פנייה ישירה ושירות מול עורך דין או בעל מקצוע מתאים בתחום הגנת הפרטיות תיתן התאמה מדויקת, מלאה ותקפה לצרכי הארגון ולדרישות החוק.</p>
                     <p style="margin-bottom:8px"><strong style="color:var(--tx)">הגבלת אחריות מוחלטת</strong> — המשרד, עובדיו ונציגיו אינם אחראים, בשום מקרה ובשום נסיבות, לכל נזק ישיר, עקיף, תוצאתי, מיוחד, עונשי או אגבי, לרבות אובדן רווחים, פגיעה במוניטין, קנסות, עיצומים כספיים, או כל הפסד אחר, הנובע או הקשור לשימוש בכלי, להסתמכות על תוצאותיו, או לאי-שימוש בייעוץ משפטי פרטני.</p>
                     <p style="margin-bottom:8px"><strong style="color:var(--tx)">שיפוי</strong> — המשתמש מתחייב לשפות את המשרד, עובדיו ונציגיו בגין כל תביעה, דרישה, נזק, הפסד, הוצאה או חבות (לרבות שכר טרחת עורך דין) הנובעים מהשימוש בכלי או מהסתמכות על תוצאותיו.</p>
-                    <p><strong style="color:var(--tx)">הסכמה</strong> — עצם השימוש בכלי מהווה הסכמה מלאה ומפורשת לכל האמור לעיל, ל<a href="#" onclick="OM('terms');return false" style="color:var(--navy)">תנאי השימוש</a> ול<a href="#" onclick="OM('priv');return false" style="color:var(--navy)">מדיניות הפרטיות</a>.</p>
+                    <p style="margin-bottom:8px"><strong style="color:var(--tx)">המערכת עלולה לטעות</strong> — התוצאות מבוססות על סריקה אוטומטית ו/או תשובות המשתמש, ועלולות להיות לא מדויקות, חלקיות או שגויות. אין להסתמך עליהן כקביעה משפטית.</p>
+                    <p><strong style="color:var(--tx)">הסכמה</strong> — עצם השימוש בכלי מהווה הסכמה מלאה לכל האמור לעיל, ל<a href="#" onclick="OM('terms');return false" style="color:var(--navy)">תנאי השימוש</a> ול<a href="#" onclick="OM('priv');return false" style="color:var(--navy)">מדיניות הפרטיות</a>.</p>
                 </div>
-            </details>
         </div>
 
         <div class="qb" style="margin-top:14px"><button class="b bb" onclick="RST()" style="flex:1">בדיקה חדשה</button></div>
@@ -644,9 +643,9 @@ function SHOW(score,findings,needDPO,dW,tier,url,type,scale,hasSens,sensCount,ve
     document.getElementById('qpf').style.width='100%';
 
     var cls,label,sub,sc;
-    if(score<=18){cls='good';label='העסק שלך עומד בדרישות החוק';sub='יש כמה המלצות לשיפור — אבל אתה מוגן';sc='color:var(--grn)'}
-    else if(score<=45){cls='mid';label='נמצאו פערים שדורשים טיפול';sub='המצב ניתן לתיקון';sc='color:var(--amb)'}
-    else{cls='bad';label='העסק שלך עלול להיות חשוף';sub='מומלץ לטפל בהקדם';sc='color:var(--red)'}
+    if(score<=18){cls='good';label='לפי הנתונים שהוזנו — נראה שהעסק עומד בדרישות';sub='מומלץ לוודא מול בעל מקצוע';sc='color:var(--grn)'}
+    else if(score<=45){cls='mid';label='זוהו נושאים שמומלץ לבדוק';sub='ייתכן שנדרשות התאמות — מומלץ ייעוץ';sc='color:var(--amb)'}
+    else{cls='bad';label='זוהו נושאים שעשויים לדרוש טיפול';sub='מומלץ לפנות לבעל מקצוע בהקדם';sc='color:var(--red)'}
 
     document.getElementById('rT').className='rt '+cls;
     var rs=document.getElementById('rS');rs.textContent=score+'/100';rs.style.cssText=sc;
@@ -654,8 +653,8 @@ function SHOW(score,findings,needDPO,dW,tier,url,type,scale,hasSens,sensCount,ve
     document.getElementById('rU').textContent=sub;
 
     var dv=document.getElementById('dB');
-    if(needDPO){dv.className='db req';dv.innerHTML='<b>חובת מינוי ממונה פרטיות (DPO)</b><p>'+dW.join('<br>')+'</p>'}
-    else{dv.className='db none';dv.innerHTML='<b>לא נדרש מינוי ממונה</b><p>חלות החובות הכלליות של החוק.</p>'}
+    if(needDPO){dv.className='db req';dv.innerHTML='<b>ייתכן שנדרש מינוי ממונה פרטיות (DPO)</b><p>'+dW.join('<br>')+'<br><em style="font-size:.9em;opacity:.7">אינדיקציה ראשונית — מומלץ לוודא עם עורך דין.</em></p>'}
+    else{dv.className='db none';dv.innerHTML='<b>לפי הנתונים שהוזנו — ככל הנראה לא נדרש מינוי ממונה</b><p>חלות החובות הכלליות של החוק. מומלץ לוודא.</p>'}
 
     var crits=findings.filter(function(f){return f.t==='c'}),warns=findings.filter(function(f){return f.t==='w'}),oks=findings.filter(function(f){return f.t==='ok'});
     var h='';
