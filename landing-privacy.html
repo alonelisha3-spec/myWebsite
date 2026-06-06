@@ -114,7 +114,7 @@
         .fg input,.fg select{width:100%;padding:12px 16px;border:1px solid var(--bd);border-radius:10px;font-family:'Heebo';font-size:.89em;background:#fff;transition:border-color .25s ease}
         .fg input:focus,.fg select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(13,27,46,.08)}
         .ch{display:flex;flex-wrap:wrap;gap:8px}.ci{padding:9px 14px;border:1px solid var(--bd);border-radius:10px;background:#fff;cursor:pointer;font-size:.82em;font-weight:500;transition:all .25s ease;user-select:none;font-family:'Heebo',sans-serif}
-        .ci:hover{border-color:var(--gold);transform:translateY(-1px)}.ci.on{border-color:var(--navy);background:#eef2f8;font-weight:600;color:var(--navy)}
+        .ci{-webkit-tap-highlight-color:transparent;touch-action:manipulation}.ci:hover{border-color:var(--gold);transform:translateY(-1px)}.ci:active{transform:scale(.97)}.ci.on{border-color:var(--navy);background:#eef2f8;font-weight:600;color:var(--navy)}
         .ci .w{background:#fef2f2;color:var(--red);font-size:.68em;padding:1px 4px;border-radius:4px;font-weight:700;margin-left:2px}
         .tg{display:flex;gap:8px}.tb{flex:1;padding:13px;border:1px solid var(--bd);border-radius:10px;background:#fff;cursor:pointer;font-family:'Heebo';font-size:.88em;font-weight:600;text-align:center;transition:all .25s ease}
         .tb:hover{border-color:var(--gold)}
@@ -173,22 +173,28 @@
         @media(max-width:600px){
             .hero h1{font-size:1.5em}
             .hero{padding:48px 18px 40px}
-            .s{padding:44px 20px}
+            .s{padding:32px 16px}
+            .si{max-width:100%}
             .stp{flex-direction:column;gap:10px}
             .stp::before{display:none}
-            .stp .st{position:relative;margin-right:20px}
-            .stp .st:not(:last-child)::before{content:'';position:absolute;bottom:-10px;right:50%;width:0;height:10px;border-right:2px dashed var(--gold);opacity:.3}
             .wp{grid-template-columns:1fr}
             .wc{flex-direction:column;align-items:center;text-align:center;border-right:none;border-top:3px solid var(--gold)}
-            .qc{padding:24px 18px;border-radius:14px}
-            .rc{padding:24px 18px;border-radius:14px}
+            .qc{padding:20px 16px;border-radius:14px}
+            .rc{padding:20px 16px;border-radius:14px}
             .qb{flex-direction:column-reverse}
-            .b{width:100%;text-align:center}
+            .b{width:100%;text-align:center;padding:14px;font-size:.92em}
             .prob li{border-right:3px solid var(--red)}
-            .si2{padding:16px 14px}
-            .st{padding:18px 12px}
-            .ft{padding:28px 20px}
+            .si2{padding:14px 12px}
+            .st{padding:16px 10px}
+            .ft{padding:24px 16px}
             .disclaimer-bar{font-size:.65em;padding:8px 16px}
+            .ch{gap:6px}
+            .ci{padding:10px 12px;font-size:.82em;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+            .pkg{padding:20px 16px;border-radius:10px}
+            .pkg input{font-size:.9em;padding:14px}
+            .bbuy{padding:16px;font-size:.95em}
+            .ow{padding:12px 12px 30px}
+            .oc button{padding:10px 18px;font-size:.85em}
         }
     </style>
 </head>
@@ -370,22 +376,22 @@ function Q1NEXT(){
     if(!document.getElementById('iType').value){alert('נא לבחור סוג עסק');return}
     var url=document.getElementById('iUrl').value.trim();
     if(url.length>=5){
-        // Has URL — scan and skip to results
-        document.getElementById('q1btn').textContent='סורק את האתר...';
+        document.getElementById('q1btn').textContent='סורק...';
         document.getElementById('q1btn').disabled=true;
+        // Try scan with 4 second timeout
+        var done=false;
+        var timer=setTimeout(function(){
+            if(!done){done=true;document.getElementById('q1btn').textContent='המשך';document.getElementById('q1btn').disabled=false;QUICK({})}
+        },4000);
         SCAN(function(scan){
-            document.getElementById('q1btn').textContent='המשך';
-            document.getElementById('q1btn').disabled=false;
-            if(scan&&Object.keys(scan).length>0){
-                // Scan succeeded — go straight to results with smart defaults
+            if(!done){
+                done=true;clearTimeout(timer);
+                document.getElementById('q1btn').textContent='המשך';
+                document.getElementById('q1btn').disabled=false;
                 QUICK(scan);
-            } else {
-                // Scan failed — fallback to manual questions
-                GQ(2);
             }
         });
     } else {
-        // No URL — manual flow
         GQ(2);
     }
 }
@@ -485,18 +491,25 @@ function SCAN(cb){
     if(!url.startsWith('http'))url='https://'+url;
     var proxies=[
         'https://api.codetabs.com/v1/proxy?quest='+encodeURIComponent(url),
-        'https://api.allorigins.win/raw?url='+encodeURIComponent(url)
+        'https://api.allorigins.win/raw?url='+encodeURIComponent(url),
+        'https://corsproxy.io/?'+encodeURIComponent(url)
     ];
     var scanEl=document.getElementById('scanStatus');
     if(scanEl)scanEl.style.display='block';
-    function tryProxy(i){
-        if(i>=proxies.length){if(scanEl)scanEl.style.display='none';cb({});return}
-        fetch(proxies[i]).then(function(r){if(!r.ok)throw new Error('status '+r.status);return r.text()}).then(function(html){
-            if(html.length<200)throw new Error('too short');
-            parseScan(html,cb,scanEl);
-        }).catch(function(){tryProxy(i+1)});
-    }
-    tryProxy(0);
+    // Race all proxies — first success wins
+    var resolved=false;
+    proxies.forEach(function(p){
+        var ctrl=new AbortController();
+        setTimeout(function(){ctrl.abort()},3500);
+        fetch(p,{signal:ctrl.signal}).then(function(r){
+            if(!r.ok)throw new Error('bad');
+            return r.text();
+        }).then(function(html){
+            if(!resolved&&html.length>500){resolved=true;parseScan(html,cb,scanEl)}
+        }).catch(function(){});
+    });
+    // Fallback after all fail
+    setTimeout(function(){if(!resolved){resolved=true;if(scanEl)scanEl.style.display='none';cb({})}},3500);
 }
 function parseScan(html,cb,scanEl){
         var res={_vendors:[],_signals:[]};
@@ -655,14 +668,16 @@ function SHOW(score,findings,needDPO,dW,tier,url,type,scale,hasSens,sensCount,ve
         '<div class="pi"><div><span class="v">✓</span> כל מה שבחבילה המורחבת</div><div><span class="v">✓</span> מינוי DPO חיצוני</div><div><span class="v">✓</span> מיפוי וסיווג מאגרי מידע</div><div><span class="v">✓</span> סקר סיכונים ותוכנית ציות</div><div><span class="v">✓</span> הדרכת עובדים</div><div><span class="v">✓</span> ליווי מול רשות הפרטיות</div><div><span class="v">✓</span> דיווח תקופתי להנהלה</div><div><span class="v">✓</span> היערכות לאירועי אבטחה</div></div>';
     }
 
-    pkg+='<input type="text" id="oN" placeholder="שם מלא"><input type="text" id="oP" placeholder="טלפון"><input type="text" id="oE" placeholder="אימייל">';
-    pkg+='<div style="text-align:right;margin:10px 0 6px">';
-    pkg+='<label style="display:flex;align-items:flex-start;gap:6px;font-size:.7em;color:rgba(255,255,255,.45);line-height:1.4;cursor:pointer;margin-bottom:6px"><input type="checkbox" id="ck1" required style="margin-top:2px;flex-shrink:0"><span>אני מאשר/ת כי הכלי מספק הערכה ראשונית בלבד שאינה מהווה ייעוץ משפטי. אני מסכים/ה ל<a href="#" onclick="event.stopPropagation();OM(\'terms\');return false" style="color:var(--gl)">תנאי השימוש</a> ול<a href="#" onclick="event.stopPropagation();OM(\'priv\');return false" style="color:var(--gl)">מדיניות הפרטיות</a>. *</span></label>';
-    pkg+='<label style="display:flex;align-items:flex-start;gap:6px;font-size:.65em;color:rgba(255,255,255,.3);line-height:1.4;cursor:pointer"><input type="checkbox" id="ck2" style="margin-top:2px;flex-shrink:0"><span>אני מסכים/ה לקבל עדכונים מקצועיים מהמשרד. (רשות)</span></label>';
+    pkg+='<input type="text" id="oN" placeholder="שם מלא" style="width:100%;padding:12px 14px;border:1px solid rgba(200,169,110,.2);border-radius:8px;background:rgba(255,255,255,.04);color:#fff;font-family:Heebo;font-size:.86em;text-align:center;margin-bottom:8px;box-sizing:border-box">';
+    pkg+='<input type="text" id="oP" placeholder="טלפון" style="width:100%;padding:12px 14px;border:1px solid rgba(200,169,110,.2);border-radius:8px;background:rgba(255,255,255,.04);color:#fff;font-family:Heebo;font-size:.86em;text-align:center;margin-bottom:8px;box-sizing:border-box">';
+    pkg+='<input type="text" id="oE" placeholder="אימייל" style="width:100%;padding:12px 14px;border:1px solid rgba(200,169,110,.2);border-radius:8px;background:rgba(255,255,255,.04);color:#fff;font-family:Heebo;font-size:.86em;text-align:center;margin-bottom:8px;box-sizing:border-box">';
+    pkg+='<div style="text-align:right;margin:10px 0 6px;overflow:hidden;width:100%;box-sizing:border-box">';
+    pkg+='<label style="display:flex;align-items:flex-start;gap:8px;font-size:.72em;color:rgba(255,255,255,.5);line-height:1.5;cursor:pointer;margin-bottom:8px;width:100%;box-sizing:border-box;overflow-wrap:break-word;word-wrap:break-word"><input type="checkbox" id="ck1" required style="margin-top:3px;flex-shrink:0;min-width:18px;min-height:18px;width:18px;height:18px"><span style="flex:1;min-width:0">אני מאשר/ת כי הכלי מספק הערכה ראשונית בלבד. אני מסכים/ה ל<a href="#" onclick="event.stopPropagation();OM(\'terms\');return false" style="color:var(--gl)">תנאי השימוש</a> ול<a href="#" onclick="event.stopPropagation();OM(\'priv\');return false" style="color:var(--gl)">מדיניות הפרטיות</a>. *</span></label>';
+    pkg+='<label style="display:flex;align-items:flex-start;gap:8px;font-size:.68em;color:rgba(255,255,255,.35);line-height:1.5;cursor:pointer;width:100%;box-sizing:border-box"><input type="checkbox" id="ck2" style="margin-top:3px;flex-shrink:0;min-width:18px;min-height:18px;width:18px;height:18px"><span style="flex:1;min-width:0">אני מסכים/ה לקבל עדכונים מקצועיים. (רשות)</span></label>';
     pkg+='</div>';
-    pkg+='<a class="bbuy" id="buyB" href="#" target="_blank" onclick="BUY(event,\''+tier+'\')">שלחו פרטים</a>';
-    pkg+='<div class="alt">מעדיפים לשוחח? <a href="https://wa.me/972549260698" target="_blank">וואטסאפ</a> · <a href="tel:054-9260698">054-9260698</a></div>';
-    pkg+='<div class="g">עו"ד אלון אלישע · מסמכים מותאמים אישית · ללא התחייבות</div></div>';
+    pkg+='<a class="bbuy" id="buyB" href="#" target="_blank" onclick="BUY(event,\''+tier+'\')">שלחו פרטים — ₪149+מע״מ · מסמכים תוך 24 שעות</a>';
+    pkg+='<div class="alt" style="font-size:.74em;color:rgba(255,255,255,.4);margin-top:10px">מעדיפים לשוחח? <a href="https://wa.me/972549260698" target="_blank" style="color:var(--gl)">וואטסאפ</a> · <a href="tel:054-9260698" style="color:var(--gl)">054-9260698</a></div>';
+    pkg+='<div class="g" style="font-size:.68em;color:rgba(255,255,255,.25);margin-top:8px">עו"ד אלון אלישע · מסמכים מותאמים אישית</div></div>';
 
     pa.innerHTML=pkg;
     window._R={score:score,crits:crits.length,warns:warns.length,needDPO:needDPO,dpoWhy:dW.join('; '),url:url,type:type,tier:tier,scale:scale};
@@ -678,7 +693,7 @@ function BUY(e,tier){
     if(!document.getElementById('ck1').checked){alert('נא לאשר את תנאי השימוש ומדיניות הפרטיות');e.preventDefault();return}
     var r=window._R||{};
     var tl={basic:'בסיסית',pro:'מורחבת',full:'ליווי מלא'};
-    var m='*פנייה — ציות לתיקון 13*\n━━━━━━━━━━━━\n'+
+    var m='*הזמנת חבילת ציות — תיקון 13*\n━━━━━━━━━━━━\n'+
         'שם: '+n+'\nטלפון: '+(p||'—')+'\nאימייל: '+(em||'—')+'\n'+
         'עסק: '+(BL[r.type]||'—')+'\n'+(r.url?'אתר: '+r.url+'\n':'')+
         'היקף: '+(r.scale||'—')+'\n'+
@@ -688,8 +703,8 @@ function BUY(e,tier){
         'ממצאים: '+r.crits+' נדרש טיפול, '+r.warns+' לתשומת לב\n'+
         (r.needDPO?'חובת DPO: '+r.dpoWhy+'\n':'')+
         '━━━━━━━━━━━━\n'+
-        '*חבילה מותאמת: '+tl[tier]+'*\n'+
-        'אשמח לקבל הצעה ופרטי תשלום.';
+        '*חבילה: '+tl[tier]+' — ₪149+מע"מ*\n'+
+        'מעוניין/ת להתקדם. מסמכים תוך 24 שעות.';
     document.getElementById('buyB').href='https://wa.me/972549260698?text='+encodeURIComponent(m);
 
     // Send lead to email via Formspree
