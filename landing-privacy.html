@@ -652,32 +652,23 @@ function SHOW(score,findings,needDPO,dW,tier,url,type,scale,hasSens,sensCount,ve
     if(oks.length){h+='<div class="fg2"><div class="fg2t ok">תקין ('+oks.length+')</div>';oks.forEach(function(f){h+=FC(f)});h+='</div>'}
     document.getElementById('fnd').innerHTML=h;
 
-    // === PACKAGE ===
+    // === CTA — no price, just contact ===
     var pa=document.getElementById('pkgArea');
     if(score<=18){pa.innerHTML='';return}
 
-    var pkg='';
-    if(tier==='basic'){
-        pkg='<div class="pkg basic"><h3>חבילה בסיסית</h3><p class="ps">מסמכים מותאמים לעסק שלך · ע"י עו"ד · תוך 24 שעות</p>'+
-        '<div class="pi"><div><span class="v">✓</span> מדיניות פרטיות מותאמת</div><div><span class="v">✓</span> באנר עוגיות (אישור/דחייה/הגדרות)</div><div><span class="v">✓</span> הודעת פרטיות לטפסים</div><div><span class="v">✓</span> טופס בקשת עיון/מחיקה</div><div><span class="v">✓</span> הנחיות הסכמה תקפה</div><div><span class="v">✓</span> צ\'קליסט ציות</div></div>';
-    } else if(tier==='pro'){
-        pkg='<div class="pkg pro"><h3>חבילה מורחבת</h3><p class="ps">כל הבסיסית + הסכמי עיבוד + נהלים · ע"י עו"ד</p>'+
-        '<div class="pi"><div><span class="v">✓</span> מדיניות פרטיות מותאמת</div><div><span class="v">✓</span> באנר עוגיות</div><div><span class="v">✓</span> הודעת פרטיות לטפסים</div><div><span class="v">✓</span> טופס בקשת עיון/מחיקה</div><div><span class="v">✓</span> הנחיות הסכמה תקפה</div><div><span class="v">✓</span> צ\'קליסט ציות</div><div><span class="v">✓</span> הסכמי עיבוד מידע עם ספקים</div><div><span class="v">✓</span> נוהל טיפול בבקשות מחיקה</div><div><span class="v">✓</span> הנחיות לדיוור חוקי</div></div>';
-    } else {
-        pkg='<div class="pkg full"><h3>ליווי מלא</h3><p class="ps">DPO חיצוני + מיפוי מאגרים + הדרכות + ליווי רגולטורי</p>'+
-        '<div class="pi"><div><span class="v">✓</span> כל מה שבחבילה המורחבת</div><div><span class="v">✓</span> מינוי DPO חיצוני</div><div><span class="v">✓</span> מיפוי וסיווג מאגרי מידע</div><div><span class="v">✓</span> סקר סיכונים ותוכנית ציות</div><div><span class="v">✓</span> הדרכת עובדים</div><div><span class="v">✓</span> ליווי מול רשות הפרטיות</div><div><span class="v">✓</span> דיווח תקופתי להנהלה</div><div><span class="v">✓</span> היערכות לאירועי אבטחה</div></div>';
-    }
-
-    pkg+='<input type="text" id="oN" placeholder="שם מלא" style="width:100%;padding:12px 14px;border:1px solid rgba(200,169,110,.2);border-radius:8px;background:rgba(255,255,255,.04);color:#fff;font-family:Heebo;font-size:.86em;text-align:center;margin-bottom:8px;box-sizing:border-box">';
-    pkg+='<input type="text" id="oP" placeholder="טלפון" style="width:100%;padding:12px 14px;border:1px solid rgba(200,169,110,.2);border-radius:8px;background:rgba(255,255,255,.04);color:#fff;font-family:Heebo;font-size:.86em;text-align:center;margin-bottom:8px;box-sizing:border-box">';
-    pkg+='<input type="text" id="oE" placeholder="אימייל" style="width:100%;padding:12px 14px;border:1px solid rgba(200,169,110,.2);border-radius:8px;background:rgba(255,255,255,.04);color:#fff;font-family:Heebo;font-size:.86em;text-align:center;margin-bottom:8px;box-sizing:border-box">';
-    pkg+='<div style="text-align:right;margin:10px 0 6px;overflow:hidden;width:100%;box-sizing:border-box">';
-    pkg+='<label style="display:flex;align-items:flex-start;gap:10px;font-size:.82em;color:rgba(255,255,255,.55);line-height:1.6;cursor:pointer;margin-bottom:10px;width:100%;box-sizing:border-box;-webkit-tap-highlight-color:transparent"><input type="checkbox" id="ck1" required style="margin-top:4px;flex-shrink:0;min-width:22px;min-height:22px;width:22px;height:22px"><span style="flex:1;min-width:0">אני מאשר/ת כי הכלי מספק הערכה ראשונית בלבד. אני מסכים/ה ל<a href="#" onclick="event.stopPropagation();OM(\'terms\');return false" style="color:var(--gl)">תנאי השימוש</a> ול<a href="#" onclick="event.stopPropagation();OM(\'priv\');return false" style="color:var(--gl)">מדיניות הפרטיות</a>. *</span></label>';
-    pkg+='<label style="display:flex;align-items:flex-start;gap:10px;font-size:.78em;color:rgba(255,255,255,.4);line-height:1.5;cursor:pointer;width:100%;box-sizing:border-box;-webkit-tap-highlight-color:transparent"><input type="checkbox" id="ck2" style="margin-top:4px;flex-shrink:0;min-width:22px;min-height:22px;width:22px;height:22px"><span style="flex:1;min-width:0">אני מסכים/ה לקבל עדכונים מקצועיים. (רשות)</span></label>';
+    var pkg='<div class="pkg basic">';
+    pkg+='<h3>רוצה לסדר את זה?</h3>';
+    pkg+='<p class="ps">השאירו פרטים — אחזור אליכם עם פתרון מותאם</p>';
+    pkg+='<input type="text" id="oN" placeholder="שם מלא" style="width:100%;padding:14px;border:1px solid rgba(200,169,110,.2);border-radius:8px;background:rgba(255,255,255,.04);color:#fff;font-family:Heebo;font-size:.9em;text-align:center;margin-bottom:8px;box-sizing:border-box">';
+    pkg+='<input type="text" id="oP" placeholder="טלפון" style="width:100%;padding:14px;border:1px solid rgba(200,169,110,.2);border-radius:8px;background:rgba(255,255,255,.04);color:#fff;font-family:Heebo;font-size:.9em;text-align:center;margin-bottom:8px;box-sizing:border-box">';
+    pkg+='<input type="text" id="oE" placeholder="אימייל" style="width:100%;padding:14px;border:1px solid rgba(200,169,110,.2);border-radius:8px;background:rgba(255,255,255,.04);color:#fff;font-family:Heebo;font-size:.9em;text-align:center;margin-bottom:10px;box-sizing:border-box">';
+    pkg+='<div style="text-align:right;margin:6px 0 10px;width:100%;box-sizing:border-box">';
+    pkg+='<label style="display:flex;align-items:flex-start;gap:10px;font-size:.82em;color:rgba(255,255,255,.55);line-height:1.6;cursor:pointer;margin-bottom:8px;-webkit-tap-highlight-color:transparent"><input type="checkbox" id="ck1" required style="margin-top:4px;flex-shrink:0;min-width:22px;min-height:22px;width:22px;height:22px"><span style="flex:1;min-width:0">אני מאשר/ת כי הכלי מספק הערכה ראשונית בלבד. אני מסכים/ה ל<a href="#" onclick="event.stopPropagation();OM(\'terms\');return false" style="color:var(--gl)">תנאי השימוש</a> ול<a href="#" onclick="event.stopPropagation();OM(\'priv\');return false" style="color:var(--gl)">מדיניות הפרטיות</a>. *</span></label>';
+    pkg+='<label style="display:flex;align-items:flex-start;gap:10px;font-size:.78em;color:rgba(255,255,255,.4);line-height:1.5;cursor:pointer;-webkit-tap-highlight-color:transparent"><input type="checkbox" id="ck2" style="margin-top:4px;flex-shrink:0;min-width:22px;min-height:22px;width:22px;height:22px"><span style="flex:1;min-width:0">אני מסכים/ה לקבל עדכונים מקצועיים. (רשות)</span></label>';
     pkg+='</div>';
-    pkg+='<a class="bbuy" id="buyB" href="#" target="_blank" onclick="BUY(event,\''+tier+'\')">שלחו פרטים — ₪149+מע״מ · מסמכים תוך 24 שעות</a>';
-    pkg+='<div class="alt" style="font-size:.74em;color:rgba(255,255,255,.4);margin-top:10px">מעדיפים לשוחח? <a href="https://wa.me/972549260698" target="_blank" style="color:var(--gl)">וואטסאפ</a> · <a href="tel:054-9260698" style="color:var(--gl)">054-9260698</a></div>';
-    pkg+='<div class="g" style="font-size:.68em;color:rgba(255,255,255,.25);margin-top:8px">עו"ד אלון אלישע · מסמכים מותאמים אישית</div></div>';
+    pkg+='<a class="bbuy" id="buyB" href="#" target="_blank" onclick="BUY(event)" style="display:block;width:100%;padding:16px;background:var(--gold);color:var(--nd);border:none;border-radius:8px;font-family:Heebo;font-size:1em;font-weight:700;cursor:pointer;text-decoration:none;text-align:center">דברו עם עו"ד אלישע</a>';
+    pkg+='<div style="font-size:.72em;color:rgba(255,255,255,.3);margin-top:10px;text-align:center">ללא התחייבות · תשובה תוך 24 שעות</div>';
+    pkg+='</div>';
 
     pa.innerHTML=pkg;
     window._R={score:score,crits:crits.length,warns:warns.length,needDPO:needDPO,dpoWhy:dW.join('; '),url:url,type:type,tier:tier,scale:scale};
@@ -686,25 +677,23 @@ function SHOW(score,findings,needDPO,dW,tier,url,type,scale,hasSens,sensCount,ve
 
 function FC(f){return'<div class="fd '+f.t+'"><b>'+f.ti+'</b><p>'+f.d+'</p><div class="lw">'+f.l+'</div></div>'}
 
-function BUY(e,tier){
+function BUY(e){
     var n=document.getElementById('oN').value.trim(),p=document.getElementById('oP').value.trim(),em=document.getElementById('oE').value.trim();
     if(!n){alert('נא להזין שם');e.preventDefault();return}
     if(!p&&!em){alert('נא להזין טלפון או אימייל');e.preventDefault();return}
-    if(!document.getElementById('ck1').checked){alert('נא לאשר את תנאי השימוש ומדיניות הפרטיות');e.preventDefault();return}
+    if(!document.getElementById('ck1').checked){alert('נא לאשר את תנאי השימוש');e.preventDefault();return}
     var r=window._R||{};
-    var tl={basic:'בסיסית',pro:'מורחבת',full:'ליווי מלא'};
-    var m='*הזמנת חבילת ציות — תיקון 13*\n━━━━━━━━━━━━\n'+
-        'שם: '+n+'\nטלפון: '+(p||'—')+'\nאימייל: '+(em||'—')+'\n'+
-        'עסק: '+(BL[r.type]||'—')+'\n'+(r.url?'אתר: '+r.url+'\n':'')+
-        'היקף: '+(r.scale||'—')+'\n'+
-        '━━━━━━━━━━━━\n'+
-        '*תוצאות אבחון:*\n'+
-        'ציון: '+r.score+'/100\n'+
+    var m='שלום עו"ד אלישע,\n'+
+        'ביצעתי בדיקת ציות לתיקון 13 באתר שלכם.\n\n'+
+        'שם: '+n+'\n'+
+        'טלפון: '+(p||'—')+'\n'+
+        'אימייל: '+(em||'—')+'\n'+
+        (r.url?'אתר: '+r.url+'\n':'')+
+        'עסק: '+(BL[r.type]||'—')+'\n\n'+
+        'תוצאות: '+r.score+'/100\n'+
         'ממצאים: '+r.crits+' נדרש טיפול, '+r.warns+' לתשומת לב\n'+
-        (r.needDPO?'חובת DPO: '+r.dpoWhy+'\n':'')+
-        '━━━━━━━━━━━━\n'+
-        '*חבילה: '+tl[tier]+' — ₪149+מע"מ*\n'+
-        'מעוניין/ת להתקדם. מסמכים תוך 24 שעות.';
+        (r.needDPO?'חובת DPO: כן\n':'')+
+        '\nאשמח לשמוע איך אפשר להסדיר.';
     document.getElementById('buyB').href='https://wa.me/972549260698?text='+encodeURIComponent(m);
 
     // Send lead to email via Formspree
@@ -712,7 +701,7 @@ function BUY(e,tier){
         method:'POST',
         headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify({
-            _subject:'ליד חדש — כלי הגנת פרטיות תיקון 13',
+            _subject:'ליד חדש — בדיקת ציות תיקון 13',
             name:n,
             phone:p,
             email:em,
@@ -720,9 +709,9 @@ function BUY(e,tier){
             website:r.url||'',
             scale:r.scale||'',
             score:r.score+'/100',
-            findings:r.crits+' קריטי, '+r.warns+' אזהרות',
+            findings:r.crits+' נדרש טיפול, '+r.warns+' לתשומת לב',
             dpo:r.needDPO?'חובה — '+r.dpoWhy:'לא נדרש',
-            tier:tl[tier],
+            marketing:document.getElementById('ck2').checked?'הסכים לעדכונים':'לא',
             source:'privacy-shield'
         })
     }).catch(function(){});
