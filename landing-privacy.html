@@ -492,8 +492,8 @@ function SCAN(cb){
     var scanEl=document.getElementById('scanStatus');
     if(scanEl)scanEl.style.display='block';
 
-    // Use our own Netlify Function — no external proxies
-    fetch('/api/scan?url='+encodeURIComponent(url))
+    // Use our Vercel Function
+    fetch('https://privacy-scanner.vercel.app/api/scan?url='+encodeURIComponent(url))
     .then(function(r){return r.json()})
     .then(function(res){
         if(scanEl)scanEl.style.display='none';
