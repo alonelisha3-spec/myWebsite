@@ -491,8 +491,7 @@ function Q1NEXT(){
                 done=true;clearTimeout(timer);
                 document.getElementById('q1btn').textContent='המשך';
                 document.getElementById('q1btn').disabled=false;
-                if(scan&&scan.ok){
-                    // Store scan, pre-fill Q4 with what was found, then go to Q2
+                if(scan&&scan.ok&&scan.scannable!==false){
                     window._scan=scan;
                     prefillFromScan(scan);
                     GQ(2);
