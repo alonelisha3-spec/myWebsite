@@ -411,7 +411,7 @@
     <!-- Q4 -->
     <div class="qc" id="q4">
         <div class="qt">מה כבר מסודר?</div>
-        <div class="qs">סמנו מה שקיים. אם הזנתם כתובת אתר — הכלי יסרוק ויזהה אוטומטית.</div>
+        <div class="qs">סמנו מה שקיים ומעודכן. פריטים שהסורק זיהה כבר מסומנים — ניתן לשנות.</div>
         <div id="scanStatus" style="display:none;text-align:center;padding:10px;background:var(--bg);border-radius:8px;margin-bottom:12px;font-size:.82em;color:var(--navy)">סורק את האתר שלכם...</div>
         <div class="ch" id="gE">
             <div class="ci" onclick="T(this)" data-v="policy">מדיניות פרטיות באתר</div>
@@ -485,13 +485,18 @@ function Q1NEXT(){
         var done=false;
         var timer=setTimeout(function(){
             if(!done){done=true;document.getElementById('q1btn').textContent='המשך';document.getElementById('q1btn').disabled=false;GQ(2)}
-        },5000);
+        },6000);
         SCAN(function(scan){
             if(!done){
                 done=true;clearTimeout(timer);
                 document.getElementById('q1btn').textContent='המשך';
                 document.getElementById('q1btn').disabled=false;
-                if(scan&&scan.ok){QUICK(scan)}else{GQ(2)}
+                if(scan&&scan.ok){
+                    // Store scan, pre-fill Q4 with what was found, then go to Q2
+                    window._scan=scan;
+                    prefillFromScan(scan);
+                    GQ(2);
+                }else{GQ(2)}
             }
         });
     } else {
@@ -499,7 +504,25 @@ function Q1NEXT(){
     }
 }
 
-// Quick analysis based on scan + business type defaults
+// Pre-fill Q4 and Q3 from scan results — only what was FOUND with certainty
+function prefillFromScan(scan){
+    // Pre-select vendors detected by scanner in Q3
+    if(scan._ga){var el=document.querySelector('#gV .ci[data-v="analytics"]');if(el)el.classList.add('on')}
+    if(scan._pixel){var el=document.querySelector('#gV .ci[data-v="pixel"]');if(el)el.classList.add('on')}
+    if(scan._vendors){scan._vendors.forEach(function(v){
+        var el=document.querySelector('#gV .ci[data-v="'+v+'"]');
+        if(el)el.classList.add('on');
+    })}
+
+    // Pre-select what was FOUND in Q4 — only confirmed items
+    if(scan.policy){var el=document.querySelector('#gE .ci[data-v="policy"]');if(el)el.classList.add('on')}
+    if(scan.cookies){var el=document.querySelector('#gE .ci[data-v="cookies"]');if(el)el.classList.add('on')}
+    if(scan.notice){var el=document.querySelector('#gE .ci[data-v="notice"]');if(el)el.classList.add('on')}
+    if(scan.consent){var el=document.querySelector('#gE .ci[data-v="consent"]');if(el)el.classList.add('on')}
+    if(scan.optout){var el=document.querySelector('#gE .ci[data-v="optout"]');if(el)el.classList.add('on')}
+}
+
+// QUICK — no longer used, scan pre-fills and user goes through questionnaire
 function QUICK(scan){
     var type=document.getElementById('iType').value;
     var scale=document.getElementById('iScale').value;
