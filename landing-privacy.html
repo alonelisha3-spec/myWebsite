@@ -381,10 +381,11 @@
     <div class="qc a" id="q1">
         <div class="qt">ספרו לנו על העסק</div>
         <div class="qs">כתובת אתר + 2 שאלות — תוך דקה תקבלו אבחון מלא</div>
-        <div class="fg"><label>כתובת האתר שלכם</label><input type="url" id="iUrl" placeholder="https://example.co.il"></div>
+        <div class="fg"><label>כתובת האתר שלכם (אם יש)</label><input type="url" id="iUrl" placeholder="https://example.co.il"></div>
         <div class="fg"><label>סוג העסק</label><select id="iType"><option value="">בחרו...</option><option value="ecommerce">חנות אונליין</option><option value="services">שירותים מקצועיים</option><option value="health">בריאות / רפואה</option><option value="finance">פיננסים / ביטוח</option><option value="realestate">נדל״ן</option><option value="tech">טכנולוגיה / סטארטאפ</option><option value="retail">קמעונאות / מסעדנות</option><option value="education">חינוך / הדרכה</option><option value="public">גוף ציבורי / עמותה</option><option value="other">אחר</option></select></div>
         <div class="fg"><label>כמה אנשים יש לכם מידע עליהם?</label><select id="iScale"><option value="small">עד 1,000</option><option value="medium">1,000–10,000</option><option value="large">10,000–100,000</option><option value="xlarge">מעל 100,000</option></select></div>
         <div class="qb"><button class="b bn" id="q1btn" onclick="Q1NEXT()">המשך</button></div>
+        <div style="text-align:center;margin-top:8px"><a href="#" onclick="GQ(2);return false" style="font-size:.78em;color:var(--mt);text-decoration:underline">אין לי אתר — דלגו לשאלון</a></div>
     </div>
 
     <!-- Q2 -->
