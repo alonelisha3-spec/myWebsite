@@ -248,6 +248,27 @@
 
 <div class="s ccta"><div class="si" style="padding:8px 0"><h2>רוצים לדעת אם אתם מוגנים?</h2><div class="sub">ללא עלות — תוך דקה תדעו בדיוק מה המצב</div><button class="cbtn" onclick="OQ()">בדקו עכשיו</button><div class="cn">ללא עלות · ללא התחייבות · ללא שמירת מידע</div><div class="trust-badges">&#x2696;&#xFE0F; עורך דין מוסמך · &#x1F512; ללא שמירת מידע · &#x23F1;&#xFE0F; תוך דקה</div></div></div>
 
+<!-- RELATED CONTENT -->
+<div style="background:var(--off-white);padding:32px 24px;text-align:center">
+    <div style="max-width:580px;margin:0 auto">
+        <h2 style="font-size:1.1em;font-weight:700;color:var(--navy);margin-bottom:16px">תוכן נוסף שיעזור לכם</h2>
+        <div style="display:flex;flex-direction:column;gap:10px;text-align:right">
+            <a href="article-privacy-amendment13.html" style="display:block;padding:14px 18px;background:#fff;border-radius:10px;border-right:3px solid var(--gold);text-decoration:none;box-shadow:0 1px 4px rgba(0,0,0,.04)">
+                <div style="font-weight:700;color:var(--navy);font-size:.92em;margin-bottom:4px">תיקון 13 — המדריך המלא לבעלי עסקים</div>
+                <div style="font-size:.78em;color:var(--mt)">התאמה רגולטורית, חובת DPO, עיצומים כספיים — סעיף-סעיף</div>
+            </a>
+            <a href="article-tzavaah.html" style="display:block;padding:14px 18px;background:#fff;border-radius:10px;border-right:3px solid var(--gold);text-decoration:none;box-shadow:0 1px 4px rgba(0,0,0,.04)">
+                <div style="font-weight:700;color:var(--navy);font-size:.92em;margin-bottom:4px">כתיבת צוואה בישראל: המדריך המלא</div>
+                <div style="font-size:.78em;color:var(--mt)">סוגי צוואות, טעויות נפוצות, עלויות — לפני שמתחילים</div>
+            </a>
+            <a href="landing-yipui-koach.html" style="display:block;padding:14px 18px;background:#fff;border-radius:10px;border-right:3px solid var(--gold);text-decoration:none;box-shadow:0 1px 4px rgba(0,0,0,.04)">
+                <div style="font-weight:700;color:var(--navy);font-size:.92em;margin-bottom:4px">ייפוי כוח מתמשך</div>
+                <div style="font-size:.78em;color:var(--mt)">הגנה על הרצון שלכם — מסמכים משפטיים מותאמים</div>
+            </a>
+        </div>
+    </div>
+</div>
+
 <div class="ft">
     <div style="margin-bottom:6px"><span class="ft-brand">ELISHA-LAW</span></div>
     <div class="ft-name" style="margin-bottom:12px">אלון אלישע | משרד עורכי דין</div>
@@ -458,15 +479,15 @@ function QUICK(scan){
     if(d.acts.includes('abroad'))score+=8;if(d.acts.length>1)score+=6;
 
     // Findings
-    if(needDPO&&!exist.includes('dpo')){score+=15;findings.push({t:'c',ti:'חובת מינוי ממונה פרטיות (DPO) — לא מונה',d:'תיקון 13 מחייב. בתוקף מ-14.8.2025.',l:dW.join(' | ')})}
-    if(!exist.includes('policy')){score+=14;findings.push({t:'c',ti:'לא נמצאה מדיניות פרטיות באתר',d:'חובה לפרסם מדיניות נגישה: מידע, מטרות, שמירה, העברות, זכויות.',l:'תיקון 13 — פרק 7'})}
-    if(!exist.includes('cookies')&&d.vends.length>0){var vList=d.vends.filter(function(v){return v!=='accountant'}).join(', ');score+=10;findings.push({t:'c',ti:'לא נמצא באנר עוגיות',d:'נמצאו '+d.vends.length+' סקריפטים/ספקים חיצוניים ('+vList+') — נדרשת הסכמה מפורשת.',l:'תיקון 13 — פרק 8'})}
-    if(!exist.includes('notice')){var notW=hasSens?12:5;score+=notW;findings.push({t:hasSens?'c':'w',ti:'לא נמצאה הודעת פרטיות בטפסים',d:'בכל טופס שאוסף מידע — מומלץ לציין מטרה וזכויות.',l:'סעיף 11 + תיקון 13'})}
-    if(hasSens&&!exist.includes('consent')){score+=14;findings.push({t:'c',ti:'מידע רגיש ללא הסכמה מפורשת',d:'הסכמה פעילה, מדעת, ספציפית, ניתנת לביטול.',l:'סעיף 2(ב) + תיקון 13'})}
-    if(!exist.includes('security')){var secW=hasSens?8:3;score+=secW;findings.push({t:hasSens?'c':'w',ti:'נוהל אבטחת מידע',d:'מומלץ — נוהל כתוב, הרשאות, גיבויים.',l:'תקנות אבטחת מידע'})}
-    if(d.vends.length&&!exist.includes('contracts')){var cW=d.vends.length>3?10:d.vends.length>1?6:3;score+=cW;findings.push({t:d.vends.length>2?'c':'w',ti:'נמצאו '+d.vends.length+' ספקים חיצוניים ללא הסכמי עיבוד',d:'כל ספק שמקבל מידע חייב הסכם: סודיות, איסור שימוש חורג, מחיקה.',l:'תיקון 13 — פרק 10'})}
-    if(!exist.includes('delete')){score+=3;findings.push({t:'w',ti:'נוהל בקשות עיון/מחיקה',d:'30 יום לטפל בבקשה.',l:'סעיפים 13-14'})}
-    if(!exist.includes('docs')){score+=2;findings.push({t:'w',ti:'תיעוד פעילויות עיבוד',d:'תיעוד = הגנה בביקורת.',l:'תיקון 13'})}
+    if(needDPO&&!exist.includes('dpo')){score+=15;findings.push({t:'c',ti:'ייתכן שנדרש מינוי ממונה פרטיות (DPO)',d:'לפי תיקון 13, ייתכן שחלה חובת מינוי. מומלץ לבדוק עם עורך דין.',l:dW.join(' | ')})}
+    if(!exist.includes('policy')){score+=14;findings.push({t:'c',ti:'ייתכן שנדרשת מדיניות פרטיות באתר',d:'לפי תיקון 13, ייתכן שחלה חובה לפרסם מדיניות פרטיות נגישה. מומלץ לוודא עם בעל מקצוע.',l:'תיקון 13 — פרק 7'})}
+    if(!exist.includes('cookies')&&d.vends.length>0){score+=10;findings.push({t:'c',ti:'ייתכן שנדרש באנר עוגיות',d:'זוהו סקריפטים חיצוניים באתר. ייתכן שנדרשת הסכמה מפורשת מהמשתמשים.',l:'תיקון 13 — פרק 8'})}
+    if(!exist.includes('notice')){var notW=hasSens?12:5;score+=notW;findings.push({t:hasSens?'c':'w',ti:'מומלץ לבדוק הודעת פרטיות בנקודות איסוף',d:'ייתכן שנדרש ליידע בכל נקודה שבה נאסף מידע. מומלץ לבדוק.',l:'סעיף 11 + תיקון 13'})}
+    if(hasSens&&!exist.includes('consent')){score+=14;findings.push({t:'c',ti:'ייתכן שנדרשת הסכמה מפורשת למידע רגיש',d:'מידע רגיש עשוי לדרוש הסכמה פעילה, מדעת וספציפית. מומלץ לוודא.',l:'סעיף 2(ב) + תיקון 13'})}
+    if(!exist.includes('security')){var secW=hasSens?8:3;score+=secW;findings.push({t:hasSens?'c':'w',ti:'מומלץ לבדוק נוהל אבטחת מידע',d:'ייתכן שנדרש נוהל כתוב. רמת האבטחה תלויה בסוג המידע.',l:'תקנות אבטחת מידע'})}
+    if(d.vends.length&&!exist.includes('contracts')){var cW=d.vends.length>3?10:d.vends.length>1?6:3;score+=cW;findings.push({t:d.vends.length>2?'c':'w',ti:'ייתכן שנדרשים הסכמי עיבוד עם ספקים חיצוניים',d:'זוהו ספקים שעשויים לקבל מידע. מומלץ לבדוק אם נדרש הסכם עיבוד.',l:'תיקון 13 — פרק 10'})}
+    if(!exist.includes('delete')){score+=3;findings.push({t:'w',ti:'מומלץ לבדוק נוהל בקשות עיון/מחיקה',d:'ייתכן שנדרש נוהל לטיפול בבקשות. מומלץ לוודא.',l:'סעיפים 13-14'})}
+    if(!exist.includes('docs')){score+=2;findings.push({t:'w',ti:'מומלץ לתעד פעילויות עיבוד',d:'תיעוד עשוי לשמש הגנה בביקורת.',l:'תיקון 13'})}
 
     // OK
     if(exist.includes('policy'))findings.push({t:'ok',ti:'מדיניות פרטיות נמצאה באתר',d:'ודא עדכון לתיקון 13.',l:'תיקון 13'});
@@ -583,19 +604,18 @@ function _ANALYZE(scan){
     if(acts.includes('abroad'))score+=8;if(acts.length>1)score+=6;
     if(D.cc)score+=12;
 
-    // === FINDINGS ===
-    if(needDPO&&!exist.includes('dpo')){score+=15;findings.push({t:'c',ti:'חובת מינוי ממונה פרטיות (DPO) — לא מונה',d:'תיקון 13 מחייב. בתוקף מ-14.8.2025. אי-מינוי = הפרה עצמאית + עיצום כספי.',l:dW.join(' | ')})}
-    if(hasUrl&&!exist.includes('policy')){score+=14;findings.push({t:'c',ti:'אין מדיניות פרטיות באתר',d:'חובה לפרסם מדיניות נגישה: מידע נאסף, מטרות, משך שמירה, למי מועבר, זכויות המשתמש, דרכי יצירת קשר.',l:'תיקון 13 — פרק 7'})}
-    if(hasUrl&&!exist.includes('cookies')&&(vends.includes('analytics')||vends.includes('pixel')||vends.includes('outbrain'))){score+=10;findings.push({t:'c',ti:'אין באנר עוגיות',d:'עוגיות לא חיוניות (אנליטיקס, פרסום, Pixel) דורשות הסכמה מפורשת — כפתור אישור, דחייה, והגדרות לפי קטגוריות.',l:'תיקון 13 — פרק 8'})}
-    if(!exist.includes('notice')){var notW=hasSens?12:5;score+=notW;findings.push({t:hasSens?'c':'w',ti:'אין הודעת פרטיות בנקודות איסוף',d:'בכל טופס שאוסף מידע — מומלץ לציין: מטרה, למי יימסר, זכויות.',l:'סעיף 11 + תיקון 13 — פרק 9'})}
-    if(hasSens&&!exist.includes('consent')){score+=14;findings.push({t:'c',ti:'מידע רגיש ללא הסכמה מפורשת',d:'הסכמה חייבת להיות: פעילה (לא מסומנת מראש), מדעת (הסבר מה נאסף ולמה), ספציפית, וניתנת לביטול בכל עת.',l:'סעיף 2(ב) + תיקון 13 — פרק 6'})}
-    if(D.cc){score+=5;findings.push({t:'c',ti:'אחסון פרטי אשראי — סיכון גבוה',d:'אחסון פרטי כרטיס אצלך = חובת PCI DSS + הצפנה + בקרות גישה. מומלץ מאוד לעבור לסליקה חיצונית.',l:'תיקון 13 — מידע פיננסי כרגישות מיוחדת'})}
-    // נהלים פנימיים — משקל נמוך יותר, סוג warning לא critical
-    if(!exist.includes('security')){var secW=hasSens||scale!=='small'?8:3;score+=secW;findings.push({t:hasSens?'c':'w',ti:'אין נוהל אבטחת מידע כתוב',d:'נדרש נוהל כתוב, מסמך הגדרות מאגר, הרשאות גישה, גיבויים.',l:'תקנות אבטחת מידע, התשע"ז-2017'})}
-    if(vends.length&&!exist.includes('contracts')){score+=vends.length>2?8:4;findings.push({t:vends.length>2?'w':'w',ti:'אין הסכמי עיבוד עם ספקים חיצוניים',d:'ספקים שמקבלים מידע (ענן, אנליטיקס, דיוור) — חייבים הסכם עיבוד.',l:'תיקון 13 — פרק 10'})}
-    if(!exist.includes('delete')){score+=4;findings.push({t:'w',ti:'מומלץ להסדיר נוהל בקשות עיון/מחיקה',d:'לכל אדם הזכות לעיין, לתקן ולמחוק. 30 יום לטפל.',l:'סעיפים 13-14 + תיקון 13'})}
-    if(acts.includes('mkt')&&!exist.includes('optout')){score+=6;findings.push({t:'c',ti:'שיווק ישיר ללא מנגנון הסרה',d:'חובת הסכמה מפורשת + הסרה בכל הודעה.',l:'סעיף 30א לחוק התקשורת'})}
-    if(!exist.includes('docs')){score+=2;findings.push({t:'w',ti:'מומלץ לתעד פעילויות עיבוד',d:'תיעוד החלטות, הסכמות, אירועים — הגנה בביקורת.',l:'תיקון 13 — Accountability'})}
+    // === FINDINGS — ניסוח זהיר: "ייתכן/מומלץ", לא "חייב/חובה" ===
+    if(needDPO&&!exist.includes('dpo')){score+=15;findings.push({t:'c',ti:'ייתכן שנדרש מינוי ממונה פרטיות (DPO)',d:'לפי הנתונים שהוזנו, ייתכן שחלה חובת מינוי לפי תיקון 13. מומלץ לבדוק עם עורך דין.',l:dW.join(' | ')})}
+    if(hasUrl&&!exist.includes('policy')){score+=14;findings.push({t:'c',ti:'ייתכן שנדרשת מדיניות פרטיות באתר',d:'לפי תיקון 13, ייתכן שחלה חובה לפרסם מדיניות פרטיות. מומלץ לוודא.',l:'תיקון 13 — פרק 7'})}
+    if(hasUrl&&!exist.includes('cookies')&&(vends.includes('analytics')||vends.includes('pixel')||vends.includes('outbrain'))){score+=10;findings.push({t:'c',ti:'ייתכן שנדרש באנר עוגיות',d:'צוין שימוש בכלי ניתוח/פרסום. ייתכן שנדרשת הסכמה מפורשת.',l:'תיקון 13 — פרק 8'})}
+    if(!exist.includes('notice')){var notW=hasSens?12:5;score+=notW;findings.push({t:hasSens?'c':'w',ti:'מומלץ לבדוק הודעת פרטיות בנקודות איסוף',d:'ייתכן שנדרש ליידע בכל נקודה שבה נאסף מידע.',l:'סעיף 11 + תיקון 13'})}
+    if(hasSens&&!exist.includes('consent')){score+=14;findings.push({t:'c',ti:'ייתכן שנדרשת הסכמה מפורשת למידע רגיש',d:'צוין איסוף מידע רגיש. ייתכן שנדרשת הסכמה פעילה ומדעת.',l:'סעיף 2(ב) + תיקון 13'})}
+    if(D.cc){score+=5;findings.push({t:'c',ti:'אחסון פרטי אשראי — מומלץ לבדוק',d:'ייתכן שנדרשת עמידה בתקני PCI DSS. מומלץ לשקול סליקה חיצונית.',l:'תיקון 13'})}
+    if(!exist.includes('security')){var secW=hasSens||scale!=='small'?8:3;score+=secW;findings.push({t:hasSens?'c':'w',ti:'מומלץ לבדוק נוהל אבטחת מידע',d:'ייתכן שנדרש נוהל כתוב. רמת האבטחה תלויה בסוג המידע.',l:'תקנות אבטחת מידע'})}
+    if(vends.length&&!exist.includes('contracts')){score+=vends.length>2?8:4;findings.push({t:'w',ti:'ייתכן שנדרשים הסכמי עיבוד עם ספקים',d:'ספקים שמקבלים מידע עשויים לדרוש הסכם עיבוד. מומלץ לבדוק.',l:'תיקון 13 — פרק 10'})}
+    if(!exist.includes('delete')){score+=4;findings.push({t:'w',ti:'מומלץ לבדוק נוהל בקשות עיון/מחיקה',d:'ייתכן שנדרש נוהל. 30 יום לטפל בבקשה.',l:'סעיפים 13-14'})}
+    if(acts.includes('mkt')&&!exist.includes('optout')){score+=6;findings.push({t:'w',ti:'מומלץ לבדוק מנגנון הסרה מדיוור',d:'ייתכן שנדרשת הסכמה מפורשת + אפשרות הסרה.',l:'סעיף 30א לחוק התקשורת'})}
+    if(!exist.includes('docs')){score+=2;findings.push({t:'w',ti:'מומלץ לתעד פעילויות עיבוד',d:'תיעוד עשוי לשמש הגנה בביקורת.',l:'תיקון 13'})}
     if(!exist.includes('training')&&(scale!=='small'||hasSens)){score+=2;findings.push({t:'w',ti:'מומלץ לבצע הדרכת עובדים',d:'עובדים עם גישה למידע — הדרכה תקופתית.',l:'תקנה 7'})}
     if(acts.includes('abroad')){findings.push({t:'w',ti:'העברת מידע לחו"ל',d:'מותר רק למדינות עם הגנה מקבילה (white list) או באמצעות הסכם חוזי.',l:'תיקון 13'})}
     if((scale==='xlarge'&&hasSens)||type==='public'||acts.includes('trade')){if(!exist.includes('registry'))findings.push({t:'w',ti:'ייתכן שנדרש רישום מאגר מידע',d:'מאגר ציבורי, מאגר למסירת מידע, או מידע רגיש על 100K+ — עלול לחייב רישום.',l:'תיקון 13 — פרק 18'})}
