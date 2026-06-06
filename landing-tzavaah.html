@@ -122,7 +122,7 @@
         <strong>80% מהישראלים לא כתבו צוואה.</strong> הסיבה? זה נראה מסובך, יקר, ומפחיד.<br/>
         עכשיו אפשר להתחיל — בלי לצאת מהבית, בלי לשלם, ובלי להתחייב.
       </p>
-      <a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="cta-primary" style="font-size:1.15rem; padding:18px 44px;">
+      <a href="#will-tool" onclick="document.getElementById('will-tool').scrollIntoView({behavior:'smooth'});return false" class="cta-primary" style="font-size:1.15rem; padding:18px 44px;">
         התחל עכשיו — חינם ←
       </a>
     </div>
@@ -344,6 +344,13 @@
     <a href="tel:054-9260698" class="sticky-phone">📞 התקשרו</a>
     <a href="https://wa.me/972549260698" target="_blank" class="sticky-whatsapp">💬 וואטסאפ</a>
   </div>
+
+  <!-- WILL TOOL EMBEDDED -->
+  <section id="will-tool" style="background:var(--navy,#1a3a5c);padding:40px 0 0;text-align:center">
+    <h2 style="font-family:'Heebo',sans-serif;color:#c8a96e;font-size:1.5em;font-weight:700;margin-bottom:8px">צרו טיוטת צוואה — עכשיו</h2>
+    <p style="color:rgba(255,255,255,.5);font-size:.9em;margin-bottom:20px">ענו על השאלון וקבלו טיוטה תוך 2 דקות — ללא עלות, ללא התחייבות</p>
+    <iframe src="https://hebrew-will-guide.vercel.app/" style="width:100%;height:850px;border:none;border-radius:12px 12px 0 0;max-width:800px;margin:0 auto;display:block" title="כלי צוואה דיגיטלית" loading="lazy"></iframe>
+  </section>
 
   <script src="script.js"></script>
   <script src="conversion.js"></script>
