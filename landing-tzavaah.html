@@ -143,26 +143,74 @@ a{text-decoration:none;color:inherit}
 
 /* ===== STICKY MOBILE ===== */
 .sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:997;background:var(--navy);border-top:2px solid var(--gold);padding:10px 16px}
+.sticky.visible{display:block}
 .sticky .cta{display:block;width:100%;text-align:center;padding:14px;font-size:1rem;border-radius:8px}
 
 /* ===== MOBILE ===== */
-@media(max-width:768px){
-  .sec{padding:36px 20px}
-  .sticky{display:block}
-  .wa{bottom:76px}
-  .hero-in{flex-direction:column;gap:24px;padding:36px 20px 36px}
+@media(max-width:480px){
+  /* Header */
+  .hdr-in{height:50px;padding:0 16px}
+  .hdr-logo img{height:26px}
+  .hdr-logo span{font-size:.78rem;letter-spacing:1px}
+  .hdr-office{display:none}
+  .hdr-tel{font-size:.78rem;white-space:nowrap}
+
+  /* Sections */
+  .sec{padding:36px 16px}
+
+  /* Hero */
+  .hero-in{flex-direction:column;gap:16px;padding:28px 16px 28px}
+  .hero .eyebrow{font-size:1.2rem;margin-bottom:8px}
+  .hero h1{font-size:1.35rem;margin-bottom:12px}
+  .hero .sub{font-size:.95rem;line-height:1.7;margin-bottom:12px}
+  .hero .sub-1{margin-bottom:10px}
+  .hero .sub-2{margin-bottom:18px}
+  .hero .cta{width:100%;text-align:center;padding:16px;font-size:1.05rem}
+
+  /* Hero image */
   .hero-img{flex:none;width:100%}
-  .hero-img img{max-height:260px;width:100%;object-position:top}
-  .hero h1{font-size:1.5rem}
-  .hero .sub{font-size:1.06rem}
-  .benefit-card li,.card li,.fq-q,.fq-a p,.about-txt,.st p{font-size:.95rem}
+  .hero-img img{height:300px;width:100%;object-fit:cover;object-position:65% 20%;border-radius:12px}
+
+  /* Cards */
   .cards{grid-template-columns:1fr}
+  .benefit-card{padding:20px 16px}
+  .benefit-card li,.card li{padding-left:70px}
+
+  /* Steps */
   .steps-row{flex-direction:column;align-items:center;gap:6px}
   .st{max-width:100%;display:flex;align-items:center;gap:12px;text-align:right;padding:6px 0}
   .st-n{margin:0;min-width:38px;width:38px;height:38px;font-size:.95rem}
   .st:not(:last-child)::after{content:none}
+
+  /* About */
   .about-row{flex-direction:column;text-align:center}
-  .benefit-card{padding:24px 20px}
+
+  /* Font sizes */
+  .benefit-card li,.card li,.fq-q,.fq-a p,.about-txt,.st p{font-size:.95rem}
+
+  /* WhatsApp FAB */
+  .wa{width:54px;height:54px;bottom:90px;left:16px}
+
+  /* Sticky bar — hidden by default, shown via JS */
+  .sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:997;background:var(--navy);border-top:2px solid var(--gold);padding:8px 14px}
+  .sticky.visible{display:block}
+  .sticky .cta{display:block;width:100%;text-align:center;padding:13px;font-size:.95rem;border-radius:8px}
+}
+/* Tablet fallback */
+@media(min-width:481px) and (max-width:768px){
+  .hero-in{flex-direction:column;gap:24px;padding:36px 24px}
+  .hero-img{flex:none;width:100%}
+  .hero-img img{height:300px;width:100%;object-fit:cover;object-position:65% 20%;border-radius:14px}
+  .cards{grid-template-columns:1fr}
+  .steps-row{flex-direction:column;align-items:center;gap:6px}
+  .st{max-width:100%;display:flex;align-items:center;gap:12px;text-align:right;padding:6px 0}
+  .st-n{margin:0;min-width:38px;width:38px;height:38px}
+  .st:not(:last-child)::after{content:none}
+  .about-row{flex-direction:column;text-align:center}
+  .hdr-office{display:none}
+  .sticky{display:none}
+  .sticky.visible{display:block}
+  .wa{bottom:90px}
 }
   </style>
 </head>
@@ -186,9 +234,9 @@ a{text-decoration:none;color:inherit}
     <div class="hero-txt">
       <p class="eyebrow">צוואה בדיגיטל</p>
       <h1>עושים צוואה? אותו עורך דין. אותה צוואה. בלי הפרוצדורה.</h1>
-      <p class="sub"><strong class="gold-big">איך זה עובד?</strong> עונים על שאלון קצר וחכם, ותוך 3 דקות מקבלים טיוטת צוואה אמיתית ומלאה, מנוסחת ומוכנה להמשך, <strong class="gold-big">ללא עלות וללא התחייבות.</strong> ומשם: אני עו״ד אלון אלישע, ערכתי מאות צוואות. אני מאפיין איתך את הצוואה, בודק כל סעיף לפי חוק הירושה, ומלווה אותך עד ההגשה. האחריות עליי.</p>
+      <p class="sub sub-1"><strong class="gold-big">איך זה עובד?</strong> עונים על שאלון קצר וחכם, ותוך 3 דקות מקבלים טיוטת צוואה אמיתית ומלאה, <strong class="gold-big">ללא עלות וללא התחייבות.</strong></p>
+      <p class="sub sub-2">ומשם: אני עו״ד אלון אלישע, ערכתי מאות צוואות. אני מאפיין איתך את הצוואה, בודק כל סעיף לפי חוק הירושה, ומלווה אותך עד ההגשה. האחריות עליי.</p>
       <div class="cta-wrap"><a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="cta">בנה את הטיוטה שלך עכשיו</a></div>
-      <p class="trust">3 דקות · ללא עלות · ללא התחייבות</p>
     </div>
     <div class="hero-img">
       <img src="externalContent/alon-office2.png" alt="עו״ד אלון אלישע"/>
@@ -302,6 +350,18 @@ a{text-decoration:none;color:inherit}
 <!-- COOKIE -->
 <div id="ckB" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#fff;border-top:2px solid var(--gold);padding:10px 16px;box-shadow:0 -4px 12px rgba(0,0,0,.08)"><div style="max-width:500px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between"><p style="font-size:.78em;color:#555;flex:1;min-width:140px">אתר זה משתמש בעוגיות.</p><div style="display:flex;gap:6px"><button onclick="localStorage.setItem('ck','y');document.getElementById('ckB').style.display='none';loadGA()" style="padding:5px 14px;background:var(--navy);color:#fff;border:none;border-radius:5px;font-family:inherit;font-size:.78em;font-weight:600;cursor:pointer">אישור</button><button onclick="localStorage.setItem('ck','n');document.getElementById('ckB').style.display='none'" style="padding:5px 14px;background:#f2f0eb;color:#666;border:1px solid #ddd;border-radius:5px;font-family:inherit;font-size:.78em;cursor:pointer">דחייה</button></div></div></div>
 <script>if(!localStorage.getItem('ck'))setTimeout(function(){document.getElementById('ckB').style.display='block'},1500)</script>
+<script>
+// Show sticky bar only after hero CTA scrolls out of view
+(function(){
+  var hero=document.querySelector('.hero .cta-wrap');
+  var bar=document.querySelector('.sticky');
+  if(!hero||!bar||window.innerWidth>768)return;
+  var io=new IntersectionObserver(function(e){
+    bar.classList.toggle('visible',!e[0].isIntersecting);
+  },{threshold:0});
+  io.observe(hero);
+})();
+</script>
 <script src="conversion.js"></script>
 </body>
 </html>
