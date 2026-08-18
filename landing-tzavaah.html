@@ -81,6 +81,9 @@ a{text-decoration:none;color:inherit}
 .hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--white);line-height:1.35;margin-bottom:18px}
 .hero .sub .gold-big{color:var(--gold);font-size:1.4rem}
 .hero .sub{font-size:1.22rem;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:28px}
+/* Hero desktop/mobile toggle */
+.hero-mob{display:none}
+.hero-desk{display:block}
 .hero .cta-wrap{margin-bottom:16px}
 .hero .trust{font-size:.95rem;color:rgba(255,255,255,.4)}
 
@@ -162,9 +165,14 @@ a{text-decoration:none;color:inherit}
   .hero-in{flex-direction:column;gap:16px;padding:28px 16px 28px}
   .hero .eyebrow{font-size:1.2rem;margin-bottom:8px}
   .hero h1{font-size:1.35rem;margin-bottom:12px}
-  .hero .sub{font-size:.95rem;line-height:1.7;margin-bottom:12px}
-  .hero .sub-1{margin-bottom:10px}
-  .hero .sub-2{margin-bottom:18px}
+  .hero-desk{display:none}
+  .hero-mob{display:block}
+  .mob-intro{font-size:1rem;color:rgba(255,255,255,.8);margin-bottom:10px}
+  .mob-checks{list-style:none;margin-bottom:14px}
+  .mob-checks li{font-size:1rem;color:rgba(255,255,255,.85);padding:4px 0;padding-right:24px;position:relative;line-height:1.5;white-space:nowrap}
+  .mob-checks li::before{content:'\2713';position:absolute;right:0;color:var(--gold);font-weight:700}
+  .mob-checks .gold-line{color:var(--gold);font-weight:700}
+  .mob-follow{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:18px}
   .hero .cta{width:100%;text-align:center;padding:16px;font-size:1.05rem}
 
   /* Hero image */
@@ -234,8 +242,20 @@ a{text-decoration:none;color:inherit}
     <div class="hero-txt">
       <p class="eyebrow">צוואה בדיגיטל</p>
       <h1>עושים צוואה? אותו עורך דין. אותה צוואה. בלי הפרוצדורה.</h1>
-      <p class="sub sub-1"><strong class="gold-big">איך זה עובד?</strong> עונים על שאלון קצר וחכם, ותוך 3 דקות מקבלים טיוטת צוואה אמיתית ומלאה, <strong class="gold-big">ללא עלות וללא התחייבות.</strong></p>
-      <p class="sub sub-2">ומשם: אני עו״ד אלון אלישע, ערכתי מאות צוואות. אני מאפיין איתך את הצוואה, בודק כל סעיף לפי חוק הירושה, ומלווה אותך עד ההגשה. האחריות עליי.</p>
+      <!-- Desktop version -->
+      <div class="hero-desk">
+        <p class="sub"><strong class="gold-big">איך זה עובד?</strong> עונים על שאלון קצר וחכם, ותוך 3 דקות מקבלים טיוטת צוואה אמיתית ומלאה, <strong class="gold-big">ללא עלות וללא התחייבות.</strong> ומשם: אני עו״ד אלון אלישע, ערכתי מאות צוואות. אני מאפיין איתך את הצוואה, בודק כל סעיף לפי חוק הירושה, ומלווה אותך עד ההגשה. האחריות עליי.</p>
+      </div>
+      <!-- Mobile version -->
+      <div class="hero-mob">
+        <p class="mob-intro">עונים על שאלון קצר וחכם, ומקבלים:</p>
+        <ul class="mob-checks">
+          <li>טיוטת צוואה אמיתית ומלאה</li>
+          <li>תוך 3 דקות</li>
+          <li class="gold-line">ללא עלות וללא התחייבות</li>
+        </ul>
+        <p class="mob-follow">ומשם: אני עו״ד אלון אלישע, ערכתי מאות צוואות. אני מאפיין איתך את הצוואה, בודק כל סעיף לפי חוק הירושה, ומלווה אותך עד ההגשה. האחריות עליי.</p>
+      </div>
       <div class="cta-wrap"><a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="cta">בנה את הטיוטה שלך עכשיו</a></div>
     </div>
     <div class="hero-img">
