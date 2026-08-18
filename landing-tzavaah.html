@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ET42K00LTJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ET42K00LTJ');
+    function loadGA(){if(document.getElementById('_ga'))return;var s=document.createElement('script');s.id='_ga';s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ET42K00LTJ';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-ET42K00LTJ');}
+    if(localStorage.getItem('ck')==='y')loadGA();
   </script>
   <meta charset="UTF-8" />
   <meta name="google" content="notranslate" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>צוואה דיגיטלית בחינם | כלי AI ליצירת טיוטת צוואה | עו״ד אלון אלישע</title>
-  <meta name="description" content="לראשונה בישראל — צרו טיוטת צוואה בחינם תוך 3 דקות. עונים על שאלון, מקבלים טיוטה, עורך הדין משלים. ללא התחייבות, ללא תשלום."/>
-  <meta name="keywords" content="צוואה דיגיטלית, צוואה בחינם, כלי צוואה, AI צוואה, טיוטת צוואה, כתיבת צוואה, צוואה אונליין, עורך דין צוואות, אלון אלישע"/>
+  <title>צוואה דיגיטלית | כלי ליצירת טיוטת צוואה | עו״ד אלון אלישע</title>
+  <meta name="description" content="עריכת צוואה אונליין תוך 3 דקות — צוואה דיגיטלית עם ליווי עורך דין צוואות. טיוטה ביד בלי התחייבות, בדיקה משפטית, ליווי עד ההגשה."/>
+  <meta name="keywords" content="צוואה דיגיטלית, עריכת צוואה אונליין, עורך דין צוואות, טיוטת צוואה, חוק הירושה, אלון אלישע"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://elisha-law.com/landing-tzavaah.html"/>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="צוואה דיגיטלית בחינם — תוך 3 דקות"/>
-  <meta property="og:description" content="80% מהישראלים לא כתבו צוואה. עכשיו אפשר להתחיל בחינם — שאלון קצר, טיוטה מוכנה, עורך דין משלים."/>
+  <meta property="og:title" content="צוואה דיגיטלית — טיוטה תוך 3 דקות | עו״ד אלון אלישע"/>
+  <meta property="og:description" content="עושים צוואה? תוך 3 דקות יש לך טיוטה ביד — בלי התחייבות. עורך דין צוואות מלווה אותך עד ההגשה."/>
   <meta property="og:url" content="https://elisha-law.com/landing-tzavaah.html"/>
   <meta property="og:type" content="website"/>
   <meta property="og:locale" content="he_IL"/>
   <meta property="og:image" content="https://elisha-law.com/externalContent/DA-185.jpg"/>
 
-  <!-- Schema: Service + FAQPage + BreadcrumbList -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,48 +30,18 @@
       {
         "@type": "Service",
         "name": "צוואה דיגיטלית",
-        "description": "כלי חינמי ליצירת טיוטת צוואה בעברית תוך דקות. עונים על שאלון ומקבלים מסמך מסודר.",
-        "provider": {
-          "@type": "LegalService",
-          "name": "משרד עורכי דין אלון אלישע",
-          "url": "https://elisha-law.com"
-        },
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "ILS",
-          "description": "יצירת טיוטת צוואה בחינם"
-        },
+        "description": "עריכת צוואה אונליין עם ליווי עורך דין — טיוטה תוך 3 דקות, בדיקה משפטית מלאה וליווי עד ההגשה.",
+        "provider": { "@type": "LegalService", "name": "משרד עורכי דין אלון אלישע", "url": "https://elisha-law.com" },
         "areaServed": { "@type": "Country", "name": "ישראל" }
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "כמה עולה ליצור צוואה דיגיטלית?",
-            "acceptedAnswer": { "@type": "Answer", "text": "השימוש בכלי הדיגיטלי לחלוטין חינמי. אתם מקבלים טיוטת צוואה ללא כל תשלום. רק אם תרצו שעורך דין ישלים את המסמך משפטית — תשלמו על ההשלמה בלבד." }
-          },
-          {
-            "@type": "Question",
-            "name": "כמה זמן לוקח?",
-            "acceptedAnswer": { "@type": "Answer", "text": "כ-3 דקות. עונים על שאלון קצר ופשוט ומקבלים טיוטה מיידית." }
-          },
-          {
-            "@type": "Question",
-            "name": "האם הטיוטה הזו צוואה תקפה?",
-            "acceptedAnswer": { "@type": "Answer", "text": "הטיוטה היא מסמך עבודה ראשוני ואינה מהווה צוואה תקפה על פי דין. כדי שתהיה תקפה, יש לחתום עליה בנוכחות שני עדים (צוואה בעדים) או להפקידה אצל רשם הירושות (צוואה בפני רשות)." }
-          },
-          {
-            "@type": "Question",
-            "name": "מה קורה עם המידע שאני מזין?",
-            "acceptedAnswer": { "@type": "Answer", "text": "המידע משמש אך ורק ליצירת הטיוטה. אנחנו לא שומרים מידע אישי ולא מעבירים אותו לצדדים שלישיים." }
-          },
-          {
-            "@type": "Question",
-            "name": "למה צריך עורך דין אם יש כלי דיגיטלי?",
-            "acceptedAnswer": { "@type": "Answer", "text": "הכלי מייצר טיוטה ראשונית מצוינת, אבל צוואה היא מסמך משפטי רגיש. עורך דין מוודא שהמסמך תקף, מותאם לנסיבות הספציפיות שלכם, ומוגן מפני ערעורים." }
-          }
+          { "@type": "Question", "name": "הטיוטה שאני מקבל היא צוואה תקפה?", "acceptedAnswer": { "@type": "Answer", "text": "הטיוטה היא הבסיס — 80% מהעבודה. כדי שתהיה צוואה שעומדת בדרישות חוק הירושה צריך את ההשלמה, הבדיקה והחתימה הנכונה — וזה בדיוק מה שעושים יחד בשלב השני." } },
+          { "@type": "Question", "name": "זה תקין משפטית כמו צוואה שנערכת במשרד?", "acceptedAnswer": { "@type": "Answer", "text": "כן. אותו חוק ירושה, אותן דרישות חתימה, אותה בדיקה של עורך דין. ההבדל היחיד: בלי הפרוצדורה." } },
+          { "@type": "Question", "name": "כמה זמן לוקח?", "acceptedAnswer": { "@type": "Answer", "text": "הטיוטה — 3 דקות. התהליך המלא — בדרך כלל ימים בודדים, בקצב שלך." } },
+          { "@type": "Question", "name": "מה אם המצב שלי מורכב?", "acceptedAnswer": { "@type": "Answer", "text": "בשיחה נזהה את זה. אם צריך טיפול פרטני — אגיד לך ביושר מראש." } },
+          { "@type": "Question", "name": "מה קורה עם הפרטים שלי?", "acceptedAnswer": { "@type": "Answer", "text": "הפרטים נשמרים במערכת 7 ימים בלבד מטעמי אבטחת מידע, ולאחר מכן נמחקים לצמיתות." } }
         ]
       },
       {
@@ -89,270 +55,408 @@
   }
   </script>
 
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="shared.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2a3a;
+      --navy-deep: #0f1e2e;
+      --gold: #c9a84c;
+      --gold-light: #e0c070;
+      --gold-soft: #f5ecd7;
+      --cream: #faf8f4;
+      --warm: #f3efe8;
+      --sand: #e8e0d0;
+      --text: #2c2c2c;
+      --text-soft: #6b6560;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      direction: rtl;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ---- NAV ---- */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--white);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+    .nav-in {
+      max-width: 1000px; margin: 0 auto; padding: 0 1.5rem;
+      height: 56px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 700;
+      color: var(--navy); letter-spacing: 2px; text-transform: uppercase;
+    }
+    .nav-tel {
+      color: var(--gold); font-size: 0.85rem; font-weight: 600; direction: ltr;
+      background: var(--gold-soft); padding: 6px 14px; border-radius: 20px;
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      min-height: 100vh; min-height: 100svh;
+      background: linear-gradient(170deg, var(--cream) 0%, var(--warm) 50%, var(--gold-soft) 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 80px 1.5rem 50px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--white); border: 1px solid var(--sand);
+      padding: 6px 18px; border-radius: 20px;
+      font-size: 0.78rem; color: var(--text-soft); font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 700; color: var(--navy); line-height: 1.45;
+      max-width: 640px; margin-bottom: 1.2rem;
+    }
+
+    .hero .sub {
+      font-size: clamp(0.92rem, 2vw, 1.05rem);
+      color: var(--text-soft); line-height: 1.9; max-width: 520px; margin-bottom: 2.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--navy); color: var(--white);
+      padding: 16px 42px; font-size: 1.05rem; font-weight: 700;
+      font-family: 'Heebo', sans-serif; border-radius: 10px; border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(26,42,58,0.18);
+    }
+    .btn:hover { background: #243d52; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(26,42,58,0.22); }
+
+    .hero .trust {
+      margin-top: 1.5rem; font-size: 0.8rem; color: var(--text-soft); opacity: 0.7;
+    }
+    .hero .trust strong { color: var(--navy); }
+
+    /* ---- 80/20 STRIP ---- */
+    .strip {
+      background: var(--white); padding: 32px 1.5rem; text-align: center;
+      border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand);
+    }
+    .strip-in { max-width: 480px; margin: 0 auto; }
+    .strip h2 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 14px; }
+    .bar {
+      width: 100%; height: 42px; background: var(--warm); border-radius: 21px;
+      overflow: hidden; display: flex; border: 1px solid var(--sand);
+    }
+    .bar-80 {
+      width: 80%; background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; color: var(--navy); border-radius: 21px 0 0 21px;
+    }
+    .bar-20 {
+      width: 20%; background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700; color: var(--gold); border-radius: 0 21px 21px 0;
+    }
+
+    /* ---- COMPARE ---- */
+    .compare { padding: 50px 1.5rem; background: var(--cream); }
+    .compare-in {
+      max-width: 600px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .col { padding: 1.5rem; border-radius: 12px; }
+    .col.old { background: var(--white); border: 1px solid #e8d5d5; }
+    .col.new { background: var(--white); border: 1px solid #c5dcc5; }
+    .col h3 {
+      font-size: 0.9rem; font-weight: 700; text-align: center;
+      margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--sand);
+    }
+    .col.old h3 { color: #8a5a5a; }
+    .col.new h3 { color: #4a7a4a; }
+    .col ul { list-style: none; padding: 0; }
+    .col li {
+      font-size: 0.82rem; color: var(--text-soft); padding: 8px 0; padding-right: 1.5rem;
+      position: relative; line-height: 1.5; border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+    .col li:last-child { border-bottom: none; }
+    .col.old li::before { content: '\2715'; position: absolute; right: 0; color: #c07070; font-weight: 700; font-size: 0.75rem; }
+    .col.new li::before { content: '\2713'; position: absolute; right: 0; color: #5a9a5a; font-weight: 700; font-size: 0.75rem; }
+
+    /* ---- STEPS ---- */
+    .steps {
+      background: var(--navy-deep); padding: 50px 1.5rem; text-align: center;
+    }
+    .steps h2 { font-size: 1.25rem; font-weight: 700; color: var(--gold); margin-bottom: 2rem; }
+    .steps-row {
+      display: flex; justify-content: center; max-width: 750px; margin: 0 auto; flex-wrap: wrap; gap: 0;
+    }
+    .st {
+      flex: 1; min-width: 130px; max-width: 160px; text-align: center; padding: 0 0.6rem; position: relative;
+    }
+    .st-n {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--gold); color: var(--navy-deep);
+      font-size: 0.85rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.5rem;
+    }
+    .st p { font-size: 0.76rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+    .st:not(:last-child)::after {
+      content: '\2190'; position: absolute; left: -4px; top: 6px;
+      font-size: 1rem; color: var(--gold); opacity: 0.5;
+    }
+
+    /* ---- FAQ ---- */
+    .faq { padding: 50px 1.5rem; background: var(--white); }
+    .faq h2 { font-size: 1.2rem; font-weight: 700; color: var(--navy); text-align: center; margin-bottom: 1.5rem; }
+    .faq-list { max-width: 560px; margin: 0 auto; }
+    .fq { border-bottom: 1px solid var(--sand); }
+    .fq-q {
+      width: 100%; background: none; border: none; padding: 15px 0; cursor: pointer;
+      font-size: 0.88rem; font-weight: 600; font-family: 'Heebo', sans-serif; color: var(--navy);
+      display: flex; justify-content: space-between; align-items: center; text-align: right; direction: rtl; gap: 0.8rem;
+    }
+    .fq-q::after { content: '+'; font-size: 1.2rem; color: var(--gold); flex-shrink: 0; transition: transform 0.2s; }
+    .fq.open .fq-q::after { content: '\2212'; }
+    .fq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .fq.open .fq-a { max-height: 200px; }
+    .fq-a p { font-size: 0.82rem; color: var(--text-soft); line-height: 1.85; padding-bottom: 14px; }
+
+    /* ---- ABOUT ---- */
+    .about {
+      padding: 36px 1.5rem; background: var(--cream); text-align: center;
+      border-top: 1px solid var(--sand);
+    }
+    .about p { font-size: 0.83rem; color: var(--text-soft); max-width: 480px; margin: 0 auto; line-height: 1.75; }
+    .about strong { color: var(--navy); }
+
+    /* ---- TOOL EMBED ---- */
+    .tool-section {
+      background: var(--navy-deep); padding: 40px 0 0; text-align: center;
+    }
+    .tool-section h2 {
+      font-size: 1.3rem; font-weight: 700; color: var(--gold); margin-bottom: 6px;
+    }
+    .tool-section .tool-sub {
+      color: rgba(255,255,255,0.45); font-size: 0.85rem; margin-bottom: 20px;
+    }
+    .tool-section iframe {
+      width: 100%; max-width: 800px; height: 850px;
+      border: none; border-radius: 14px 14px 0 0;
+      margin: 0 auto; display: block;
+    }
+
+    /* ---- BOTTOM CTA ---- */
+    .bottom {
+      padding: 50px 1.5rem; text-align: center;
+      background: linear-gradient(170deg, var(--warm) 0%, var(--gold-soft) 100%);
+    }
+    .bottom p {
+      font-size: 0.88rem; color: var(--text-soft); margin-bottom: 1.2rem;
+    }
+    .bottom .links {
+      margin-top: 1.5rem; font-size: 0.8rem; color: var(--text-soft);
+    }
+    .bottom .links a { color: var(--navy); font-weight: 600; margin: 0 8px; }
+
+    /* ---- FOOTER ---- */
+    .foot {
+      background: var(--navy-deep); padding: 24px 1.5rem 18px; text-align: center;
+    }
+    .foot p { font-size: 0.72rem; color: rgba(255,255,255,0.35); line-height: 1.7; margin-bottom: 4px; }
+    .foot a { color: var(--gold); }
+
+    /* ---- FLOATING BUTTONS ---- */
+    .fabs {
+      position: fixed; bottom: 20px; left: 20px; z-index: 998;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .fab {
+      width: 52px; height: 52px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.2); transition: transform 0.2s;
+      color: #fff;
+    }
+    .fab:hover { transform: scale(1.08); }
+    .fab-wa { background: #25d366; }
+    .fab-tel { background: var(--navy); }
+
+    /* ---- STICKY MOBILE ---- */
+    .sticky {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 997;
+      background: var(--white); border-top: 1px solid var(--sand);
+      padding: 8px 1rem; gap: 8px; justify-content: center;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.06);
+    }
+    .sticky a {
+      flex: 1; text-align: center; padding: 11px; border-radius: 8px;
+      font-size: 0.85rem; font-weight: 600; font-family: 'Heebo', sans-serif;
+    }
+    .sticky .s-main { background: var(--navy); color: var(--white); }
+    .sticky .s-wa { background: #25d366; color: #fff; }
+
+    @media (max-width: 768px) {
+      .sticky { display: flex; }
+      .fabs { bottom: 72px; }
+      .compare-in { grid-template-columns: 1fr; }
+      .steps-row { flex-direction: column; align-items: center; gap: 0.3rem; }
+      .st { max-width: 100%; padding: 0.5rem 0; }
+      .st:not(:last-child)::after { content: none; }
+      .tool-section iframe { height: 650px; border-radius: 0; }
+      .hero { min-height: auto; padding: 80px 1.2rem 45px; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- MINIMAL NAV -->
-  <div class="nav-minimal">
-    <div class="nav-minimal-inner">
-      <a href="https://elisha-law.com/" class="logo-text">ELISHA-LAW</a>
-      <a href="tel:054-9260698" class="nav-phone">054-9260698</a>
-    </div>
-  </div>
+  <!-- NAV -->
+  <div class="nav"><div class="nav-in">
+    <a href="https://elisha-law.com/" class="logo">ELISHA LAW</a>
+    <a href="tel:054-9260698" class="nav-tel">054-9260698</a>
+  </div></div>
 
-  <!-- BREADCRUMBS -->
-  <div style="padding-top:64px;">
-    <div class="breadcrumbs">
-      <a href="https://elisha-law.com/">דף הבית</a>
-      <span>›</span>
-      צוואה דיגיטלית
-    </div>
-  </div>
-
-  <!-- ============================================ -->
-  <!-- HERO                                          -->
-  <!-- ============================================ -->
-  <section class="landing-hero">
-    <div class="landing-hero-inner">
-      <h1>צוואה דיגיטלית — בחינם, תוך דקות</h1>
-      <p class="hook">
-        <strong>80% מהישראלים לא כתבו צוואה.</strong> הסיבה? זה נראה מסובך, יקר, ומפחיד.<br/>
-        עכשיו אפשר להתחיל — בלי לצאת מהבית, בלי לשלם, ובלי להתחייב.
-      </p>
-      <a href="#will-tool" onclick="document.getElementById('will-tool').scrollIntoView({behavior:'smooth'});return false" class="cta-primary" style="font-size:1.15rem; padding:18px 44px;">
-        התחל עכשיו — חינם ←
-      </a>
-    </div>
+  <!-- ======== HERO ======== -->
+  <section class="hero">
+    <div class="hero-badge">עו״ד אלון אלישע &middot; מ.ר. 97788</div>
+    <h1>עושים צוואה?<br/>תוך 3 דקות יש לך טיוטה ביד.</h1>
+    <p class="sub">
+      שאלון קצר מוציא ממך את הכל. אני בודק, מדייק, ומלווה עד ההגשה.<br/>
+      בלי משרד, בלי נסיעות, בלי המתנות. האחריות עליי.
+    </p>
+    <a href="#tool" class="btn" onclick="document.getElementById('tool').scrollIntoView({behavior:'smooth'});return false;">בנה את הטיוטה שלך עכשיו</a>
+    <p class="trust"><strong>מאות צוואות</strong> &middot; ליווי מקצועי עד ההגשה</p>
   </section>
 
-  <!-- ============================================ -->
-  <!-- PAIN POINTS                                   -->
-  <!-- ============================================ -->
-  <section class="landing-section bg-off-white">
-    <div class="landing-container">
-      <h2 class="dark">למה אנשים דוחים את הצוואה?</h2>
-      <div class="pain-grid">
-        <div class="pain-card problem">
-          <div class="icon">😰</div>
-          <h3>"זה מסובך מדי"</h3>
-          <p>אנשים חושבים שצריך מומחה כדי אפילו להתחיל. בפועל — שאלון של 3 דקות מספיק כדי לייצר טיוטה ראשונה.</p>
-        </div>
-        <div class="pain-card problem">
-          <div class="icon">💸</div>
-          <h3>"זה יעלה הרבה"</h3>
-          <p>פגישה ראשונה אצל עורך דין עולה מאות שקלים. הכלי שלנו חינמי — ומשלמים רק אם רוצים השלמה מקצועית.</p>
-        </div>
-        <div class="pain-card problem">
-          <div class="icon">⏰</div>
-          <h3>"אעשה את זה מחר"</h3>
-          <p>"מחר" הופך לחודשים ושנים. בינתיים חוק הירושה — לא אתם — מחליט מה יקרה עם הנכסים שלכם.</p>
-        </div>
-      </div>
-
-      <div class="pain-grid" style="margin-top:0;">
-        <div class="pain-card solution" style="grid-column: 1 / -1; text-align:center;">
-          <div class="icon">💡</div>
-          <h3>הפתרון: צוואה דיגיטלית שמסירה את כל החסמים</h3>
-          <p>3 דקות. חינם. בעברית. בממשק פשוט. ובסוף — עורך דין אמיתי משלים את העבודה.</p>
-        </div>
-      </div>
+  <!-- ======== 80/20 ======== -->
+  <div class="strip"><div class="strip-in">
+    <h2>80% אתה לבד. 20% עושים יחד.</h2>
+    <div class="bar">
+      <div class="bar-80">אתה + הכלי, 3 דקות</div>
+      <div class="bar-20">אני + אתה</div>
     </div>
-  </section>
+  </div></div>
 
-  <!-- ============================================ -->
-  <!-- HOW IT WORKS                                  -->
-  <!-- ============================================ -->
-  <section class="landing-section bg-white">
-    <div class="landing-container">
-      <h2 class="dark">איך זה עובד?</h2>
-      <div class="step-flow">
-        <div class="step-item">
-          <div class="step-number">1</div>
-          <h3>עונים על שאלון</h3>
-          <p>שאלות פשוטות בעברית: על המשפחה, הנכסים והרצונות שלכם. לוקח כ-3 דקות.</p>
-        </div>
-        <div class="step-item">
-          <div class="step-number">2</div>
-          <h3>מקבלים טיוטת צוואה</h3>
-          <p>הכלי מייצר מסמך מסודר על בסיס התשובות — מיידית, בחינם, ללא רישום.</p>
-        </div>
-        <div class="step-item">
-          <div class="step-number">3</div>
-          <h3>עורך הדין משלים</h3>
-          <p>אני בודק, מתאים ומשלים את המסמך משפטית. אתם משלמים רק על ההשלמה — הדלתא.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- COMPARISON TABLE                              -->
-  <!-- ============================================ -->
-  <section class="landing-section bg-off-white">
-    <div class="landing-container">
-      <h2 class="dark">מסורתי לעומת דיגיטלי</h2>
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>הדרך המסורתית</th>
-            <th>צוואה דיגיטלית</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>עלות התחלתית</strong></td>
-            <td>500-1,500 ₪ פגישת ייעוץ</td>
-            <td><span class="check">חינם לחלוטין</span></td>
-          </tr>
-          <tr>
-            <td><strong>זמן עד טיוטה ראשונה</strong></td>
-            <td>שבוע-שבועיים</td>
-            <td><span class="check">3 דקות</span></td>
-          </tr>
-          <tr>
-            <td><strong>נגישות</strong></td>
-            <td>בשעות פעילות, בתיאום</td>
-            <td><span class="check">24/7, מכל מקום</span></td>
-          </tr>
-          <tr>
-            <td><strong>שקיפות</strong></td>
-            <td>לא יודעים מה יוצא עד שמשלמים</td>
-            <td><span class="check">רואים את הטיוטה לפני תשלום</span></td>
-          </tr>
-          <tr>
-            <td><strong>ליווי עורך דין</strong></td>
-            <td><span class="check">כן</span></td>
-            <td><span class="check">כן — בשלב ההשלמה</span></td>
-          </tr>
-          <tr>
-            <td><strong>התחייבות</strong></td>
-            <td>משלמים מרגע הפגישה</td>
-            <td><span class="check">אפס התחייבות</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- WHO NEEDS THIS                                -->
-  <!-- ============================================ -->
-  <section class="landing-section bg-white">
-    <div class="landing-container">
-      <h2 class="dark">למי הכלי הזה מתאים?</h2>
-      <ul class="checklist">
-        <li>הורים שרוצים להבטיח את עתיד הילדים</li>
-        <li>בעלי נכסים שרוצים לקבוע מי יקבל מה</li>
-        <li>זוגות בנישואים שניים — למנוע סכסוכים</li>
-        <li>עצמאים ובעלי עסקים עם שותפויות</li>
-        <li>כל מי שנמאס לו לדחות את זה ל"מחר"</li>
-        <li>ידועים בציבור שרוצים להגן על בן/בת הזוג</li>
+  <!-- ======== COMPARE ======== -->
+  <section class="compare"><div class="compare-in">
+    <div class="col old">
+      <h3>הדרך הרגילה</h3>
+      <ul>
+        <li>2-3 פגישות במשרד</li>
+        <li>ימי חופש מהעבודה</li>
+        <li>נסיעות וחניה</li>
+        <li>שבועות בין טיוטות</li>
       </ul>
     </div>
+    <div class="col new">
+      <h3>צוואה בדיגיטל</h3>
+      <ul>
+        <li>טיוטה ב-3 דקות מהבית</li>
+        <li>שיחה אחת מרחוק</li>
+        <li>בלי נסיעות, בלי המתנות</li>
+        <li>אותה אחריות משפטית</li>
+      </ul>
+    </div>
+  </div></section>
+
+  <!-- ======== STEPS ======== -->
+  <section class="steps">
+    <h2>איך זה עובד?</h2>
+    <div class="steps-row">
+      <div class="st"><div class="st-n">1</div><p>שאלון חכם — טיוטה ביד</p></div>
+      <div class="st"><div class="st-n">2</div><p>שיחה מרחוק — מדייקים יחד</p></div>
+      <div class="st"><div class="st-n">3</div><p>בדיקה לפי חוק הירושה</p></div>
+      <div class="st"><div class="st-n">4</div><p>חתימה בפני עדים / בכתב יד</p></div>
+      <div class="st"><div class="st-n">5</div><p>אישור סופי — מוכן, מוגש</p></div>
+    </div>
   </section>
 
-  <!-- ============================================ -->
-  <!-- PRIMARY CTA                                   -->
-  <!-- ============================================ -->
-  <div class="cta-block">
-    <h2>מוכנים להתחיל?</h2>
-    <a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="cta-primary" style="font-size:1.15rem; padding:18px 44px;">
-      התחל עכשיו — חינם ←
+  <!-- ======== TOOL EMBED ======== -->
+  <section id="tool" class="tool-section">
+    <h2>התחילו עכשיו</h2>
+    <p class="tool-sub">ענו על השאלון וקבלו טיוטה תוך דקות — בלי התחייבות</p>
+    <iframe src="https://hebrew-will-guide.vercel.app/" title="כלי צוואה דיגיטלית" loading="lazy"></iframe>
+  </section>
+
+  <!-- ======== FAQ ======== -->
+  <section class="faq">
+    <h2>שאלות נפוצות</h2>
+    <div class="faq-list">
+      <div class="fq">
+        <button class="fq-q" onclick="this.parentElement.classList.toggle('open')"><span>הטיוטה היא צוואה תקפה?</span></button>
+        <div class="fq-a"><p>הטיוטה היא 80% מהעבודה. כדי שתעמוד בדרישות חוק הירושה צריך השלמה, בדיקה וחתימה — וזה בדיוק מה שעושים יחד.</p></div>
+      </div>
+      <div class="fq">
+        <button class="fq-q" onclick="this.parentElement.classList.toggle('open')"><span>זה תקין משפטית כמו צוואה ממשרד?</span></button>
+        <div class="fq-a"><p>כן. אותו חוק, אותן דרישות, אותה בדיקה. בלי הפרוצדורה.</p></div>
+      </div>
+      <div class="fq">
+        <button class="fq-q" onclick="this.parentElement.classList.toggle('open')"><span>כמה זמן לוקח?</span></button>
+        <div class="fq-a"><p>הטיוטה — 3 דקות. התהליך המלא — ימים בודדים, בקצב שלך.</p></div>
+      </div>
+      <div class="fq">
+        <button class="fq-q" onclick="this.parentElement.classList.toggle('open')"><span>מצב מורכב (פרק ב', עסק, נכסים בחו"ל)?</span></button>
+        <div class="fq-a"><p>בשיחה נזהה את זה. אם צריך טיפול פרטני — אגיד לך ביושר מראש.</p></div>
+      </div>
+      <div class="fq">
+        <button class="fq-q" onclick="this.parentElement.classList.toggle('open')"><span>מה קורה עם הפרטים שלי?</span></button>
+        <div class="fq-a"><p>נשמרים 7 ימים בלבד ונמחקים לצמיתות.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ABOUT ======== -->
+  <div class="about">
+    <p><strong>עו״ד אלון אלישע, מ.ר. 97788</strong> — ערכתי מאות צוואות. בניתי את צוואה בדיגיטל כי ראיתי כמה אנשים דוחים את הצוואה בגלל הפרוצדורה — לא בגלל ההחלטות.</p>
+  </div>
+
+  <!-- ======== BOTTOM ======== -->
+  <section class="bottom">
+    <p>מעדיפים ליווי אישי מההתחלה?</p>
+    <a href="tel:054-9260698" class="btn">התקשרו עכשיו — 054-9260698</a>
+    <div class="links">
+      <a href="https://elisha-law.com/">לאתר הראשי</a>
+      <a href="article-tzavaah.html">מדריך צוואה</a>
+      <a href="article-tzavaah-digital.html">על הכלי</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <p>עו״ד אלון אלישע &middot; <a href="tel:054-9260698">054-9260698</a> &middot; <a href="mailto:alonelisha3@gmail.com">alonelisha3@gmail.com</a></p>
+    <p style="font-size:.63rem; max-width:500px; margin:6px auto 0;">הכלי מייצר טיוטה ראשונית בלבד ואינו מהווה ייעוץ משפטי. השימוש אינו יוצר יחסי עורך דין-לקוח. &copy; 2026</p>
+  </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <div class="fabs">
+    <a href="tel:054-9260698" class="fab fab-tel" aria-label="התקשר">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
     </a>
-    <p class="cta-secondary">מעדיפים לדבר? <a href="tel:054-9260698">054-9260698</a></p>
+    <a href="https://wa.me/972549260698" target="_blank" class="fab fab-wa" aria-label="וואטסאפ">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
   </div>
 
-  <!-- ============================================ -->
-  <!-- FAQ                                           -->
-  <!-- ============================================ -->
-  <section class="landing-section bg-off-white">
-    <div class="landing-container">
-      <h2 class="dark">שאלות נפוצות</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question">כמה עולה ליצור צוואה דיגיטלית?</button>
-          <div class="faq-answer">
-            <p>השימוש בכלי הדיגיטלי לחלוטין חינמי. אתם מקבלים טיוטת צוואה ללא כל תשלום. רק אם תרצו שעורך דין ישלים את המסמך משפטית — תשלמו על ההשלמה בלבד.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">כמה זמן לוקח?</button>
-          <div class="faq-answer">
-            <p>כ-3 דקות. עונים על שאלון קצר ופשוט ומקבלים טיוטה מיידית. השלמת המסמך על ידי עורך דין — תוך ימים ספורים.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">האם הטיוטה הזו צוואה תקפה?</button>
-          <div class="faq-answer">
-            <p>הטיוטה היא מסמך עבודה ראשוני. כדי שצוואה תהיה תקפה על פי דין, יש לחתום עליה בנוכחות שני עדים (צוואה בעדים) או להפקידה אצל רשם הירושות. עורך הדין מוודא שהמסמך עומד בכל הדרישות.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">מה קורה עם המידע שאני מזין?</button>
-          <div class="faq-answer">
-            <p>המידע משמש אך ורק ליצירת הטיוטה. אנחנו לא שומרים מידע אישי ולא מעבירים אותו לצדדים שלישיים.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">למה צריך עורך דין אם יש כלי דיגיטלי?</button>
-          <div class="faq-answer">
-            <p>הכלי מייצר טיוטה ראשונית מצוינת — אבל צוואה היא מסמך משפטי רגיש. עורך דין מוודא שהמסמך תקף, מותאם לנסיבות שלכם, ומוגן מפני ערעורים. השילוב של כלי דיגיטלי + עורך דין נותן לכם את שני העולמות.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- LEGAL DISCLAIMER                              -->
-  <!-- ============================================ -->
-  <section class="landing-section bg-white" style="padding: 40px 2rem;">
-    <div class="landing-container">
-      <div class="legal-disclaimer">
-        <strong>הבהרה משפטית:</strong> הכלי מייצר טיוטת מסמך ראשונית בלבד לצורכי עבודה מקדימה, ואינו מהווה ייעוץ משפטי.
-        השימוש בכלי אינו יוצר יחסי עורך דין–לקוח בין המשתמש למשרד עו"ד אלון אלישע.
-        הטיוטה מיועדת כבסיס ראשוני להשלמה מקצועית בלבד.
-        <strong>אין להסתמך על הטיוטה כמסמך משפטי תקף.</strong>
-        לייעוץ: <a href="tel:054-9260698" style="color:var(--navy); font-weight:700;">054-9260698</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- SECONDARY CTA                                 -->
-  <!-- ============================================ -->
-  <div class="cta-block" style="padding:50px 2rem;">
-    <p style="color:rgba(255,255,255,0.7); font-size:0.95rem; margin-bottom:1rem;">מעדיפים ליווי אישי מההתחלה?</p>
-    <a href="tel:054-9260698" class="cta-primary">התקשרו עכשיו — 054-9260698</a>
-    <p class="cta-secondary" style="margin-top:1.5rem;">
-      <a href="https://elisha-law.com/">← חזרה לאתר הראשי</a>
-      &nbsp;|&nbsp;
-      <a href="article-tzavaah.html">מדריך מלא לכתיבת צוואה</a>
-      &nbsp;|&nbsp;
-      <a href="article-tzavaah-digital.html">על הכלי הדיגיטלי</a>
-      &nbsp;|&nbsp;
-      <a href="article-privacy-amendment13.html">הגנת פרטיות לעסקים</a>
-    </p>
+  <!-- STICKY MOBILE -->
+  <div class="sticky">
+    <a href="#tool" class="s-main" onclick="document.getElementById('tool').scrollIntoView({behavior:'smooth'});return false;">בנה טיוטה עכשיו</a>
+    <a href="https://wa.me/972549260698" target="_blank" class="s-wa">וואטסאפ</a>
   </div>
 
-  <!-- STICKY MOBILE CTA -->
-  <div class="sticky-cta-mobile">
-    <a href="tel:054-9260698" class="sticky-phone">📞 התקשרו</a>
-    <a href="https://wa.me/972549260698" target="_blank" class="sticky-whatsapp">💬 וואטסאפ</a>
-  </div>
+  <!-- COOKIE -->
+  <div id="ckB" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#fff;border-top:1px solid var(--sand);padding:12px 16px;box-shadow:0 -4px 16px rgba(0,0,0,.06)"><div style="max-width:600px;margin:0 auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between"><p style="font-size:.75em;color:#6b6560;flex:1;min-width:180px">אתר זה משתמש בעוגיות.</p><div style="display:flex;gap:6px"><button onclick="localStorage.setItem('ck','y');document.getElementById('ckB').style.display='none';loadGA()" style="padding:6px 16px;background:var(--navy);color:#fff;border:none;border-radius:6px;font-family:inherit;font-size:.78em;font-weight:600;cursor:pointer">אישור</button><button onclick="localStorage.setItem('ck','n');document.getElementById('ckB').style.display='none'" style="padding:6px 16px;background:var(--warm);color:#666;border:1px solid var(--sand);border-radius:6px;font-family:inherit;font-size:.78em;cursor:pointer">דחייה</button></div></div></div>
+  <script>if(!localStorage.getItem('ck'))setTimeout(function(){document.getElementById('ckB').style.display='block'},1500)</script>
 
-  <!-- WILL TOOL EMBEDDED -->
-  <section id="will-tool" style="background:var(--navy,#1a3a5c);padding:40px 0 0;text-align:center">
-    <h2 style="font-family:'Heebo',sans-serif;color:#c8a96e;font-size:1.5em;font-weight:700;margin-bottom:8px">צרו טיוטת צוואה — עכשיו</h2>
-    <p style="color:rgba(255,255,255,.5);font-size:.9em;margin-bottom:20px">ענו על השאלון וקבלו טיוטה תוך 2 דקות — ללא עלות, ללא התחייבות</p>
-    <iframe src="https://hebrew-will-guide.vercel.app/" style="width:100%;height:850px;border:none;border-radius:12px 12px 0 0;max-width:800px;margin:0 auto;display:block" title="כלי צוואה דיגיטלית" loading="lazy"></iframe>
-  </section>
-
-  <script src="script.js"></script>
   <script src="conversion.js"></script>
 </body>
 </html>
