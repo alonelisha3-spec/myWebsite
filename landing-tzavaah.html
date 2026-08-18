@@ -11,16 +11,28 @@
   <meta name="google" content="notranslate"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>צוואה דיגיטלית | עריכת צוואה אונליין | עורך דין צוואות — עו״ד אלון אלישע</title>
-  <meta name="description" content="עריכת צוואה אונליין תוך 3 דקות — צוואה דיגיטלית עם ליווי עורך דין צוואות. טיוטה ביד ללא עלות וללא התחייבות, בדיקה משפטית, ליווי עד ההגשה."/>
+  <meta name="description" content="עריכת צוואה אונליין תוך 3 דקות. צוואה דיגיטלית עם ליווי עורך דין צוואות. טיוטה ביד ללא עלות וללא התחייבות, בדיקה משפטית, ליווי עד ההגשה."/>
   <meta name="keywords" content="צוואה דיגיטלית, עריכת צוואה אונליין, עורך דין צוואות, טיוטת צוואה, חוק הירושה, אלון אלישע"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://elisha-law.com/landing-tzavaah.html"/>
-  <meta property="og:title" content="צוואה דיגיטלית — טיוטה תוך 3 דקות | עו״ד אלון אלישע"/>
-  <meta property="og:description" content="עושים צוואה? תוך 3 דקות יש לך טיוטה ביד. עורך דין צוואות מלווה אותך עד ההגשה."/>
+  <meta property="og:title" content="צוואה דיגיטלית. טיוטה תוך 3 דקות | עו״ד אלון אלישע"/>
+  <meta property="og:description" content="עושים צוואה? תוך 3 דקות יש לך טיוטה ביד ללא עלות וללא התחייבות. עורך דין צוואות מלווה אותך עד ההגשה."/>
   <meta property="og:url" content="https://elisha-law.com/landing-tzavaah.html"/>
   <meta property="og:type" content="website"/>
   <meta property="og:locale" content="he_IL"/>
   <meta property="og:image" content="https://elisha-law.com/externalContent/DA-185.jpg"/>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Service","name":"צוואה דיגיטלית","description":"עריכת צוואה אונליין עם ליווי עורך דין. טיוטה תוך 3 דקות, בדיקה משפטית וליווי עד ההגשה.","provider":{"@type":"LegalService","name":"משרד עורכי דין אלון אלישע","url":"https://elisha-law.com"},"areaServed":{"@type":"Country","name":"ישראל"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"הטיוטה היא צוואה תקפה?","acceptedAnswer":{"@type":"Answer","text":"הטיוטה היא הבסיס. כדי שתעמוד בדרישות חוק הירושה צריך השלמה, בדיקה וחתימה נכונה, וזה מה שעושים יחד."}},
+      {"@type":"Question","name":"זה תקין משפטית כמו צוואה ממשרד?","acceptedAnswer":{"@type":"Answer","text":"כן. אותו חוק, אותן דרישות, אותה בדיקה של עורך דין. בלי הפרוצדורה."}},
+      {"@type":"Question","name":"כמה זמן לוקח?","acceptedAnswer":{"@type":"Answer","text":"הטיוטה, 3 דקות. התהליך המלא, ימים בודדים, בקצב שלך."}},
+      {"@type":"Question","name":"מצב מורכב?","acceptedAnswer":{"@type":"Answer","text":"בשיחה נזהה את זה. אם צריך טיפול פרטני, אגיד לך ביושר מראש."}},
+      {"@type":"Question","name":"מה קורה עם הפרטים שלי?","acceptedAnswer":{"@type":"Answer","text":"מגיעים אליי ונשמרים עד 7 ימים בלבד, ואז נמחקים."}}
+    ]}
+  ]}
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -29,139 +41,257 @@
   --navy2:#152236;
   --gold:#c9a84c;
   --gold-light:#e0c070;
-  --white:#ffffff;
+  --white:#fff;
   --off-white:#f2f0eb;
   --gray:#555;
 }
-html,body{height:100%;overflow:hidden}
-body{font-family:'Heebo',sans-serif;color:var(--navy);background:var(--navy);direction:rtl;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+body{font-family:'Heebo',sans-serif;color:var(--navy);background:var(--white);direction:rtl;font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 
-/* ===== LAYOUT ===== */
-.page{display:flex;height:100vh;height:100dvh}
-
-/* --- RIGHT COLUMN (text) --- */
-.col-txt{
-  flex:0 0 60%;display:flex;flex-direction:column;justify-content:center;
-  padding:40px 48px 24px;position:relative;
-}
-
-/* Logo */
-.logo{display:flex;align-items:center;gap:10px;margin-bottom:28px}
-.logo img{height:34px;width:auto}
-.logo span{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;color:var(--gold);letter-spacing:2px;text-transform:uppercase}
-
-/* Title */
-.title{font-size:clamp(1.6rem,3.2vw,2.6rem);font-weight:700;color:var(--white);line-height:1.4;margin-bottom:16px}
-
-/* Subtitle */
-.sub{font-size:clamp(.88rem,1.4vw,1rem);color:rgba(255,255,255,.65);line-height:1.85;margin-bottom:24px}
-
-/* Checks */
-.checks{list-style:none;margin-bottom:28px;display:grid;grid-template-columns:1fr 1fr;gap:6px 20px}
-.checks li{font-size:.92rem;color:rgba(255,255,255,.8);padding-right:24px;position:relative;line-height:1.6}
-.checks li::before{content:'\2713';position:absolute;right:0;color:var(--gold);font-weight:700}
-
-/* CTA */
-.cta{display:inline-block;background:var(--gold);color:var(--navy);padding:18px 48px;font-size:1.15rem;font-weight:700;font-family:'Heebo',sans-serif;border-radius:8px;border:none;cursor:pointer;transition:background .2s,transform .15s;letter-spacing:.5px}
+/* ===== SHARED ===== */
+.sec{padding:60px 24px}
+.sec-in{max-width:900px;margin:0 auto}
+.sec h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;text-align:center;margin-bottom:16px;line-height:1.35}
+.sec-note{font-size:1rem;color:var(--gray);text-align:center;line-height:1.85;max-width:680px;margin:0 auto 32px}
+.bg-w{background:var(--white)}
+.bg-o{background:var(--off-white)}
+.bg-n{background:var(--navy)}
+.cta{display:inline-block;background:var(--gold);color:var(--navy);padding:18px 44px;font-size:1.15rem;font-weight:700;font-family:'Heebo',sans-serif;border-radius:8px;border:none;cursor:pointer;transition:background .2s,transform .15s;letter-spacing:.5px}
 .cta:hover{background:var(--gold-light);transform:translateY(-2px);color:var(--navy)}
+.cta-center{text-align:center;margin-top:32px}
 
-/* Trust line */
-.trust{margin-top:16px;font-size:.82rem;color:rgba(255,255,255,.4)}
-.trust a{color:var(--gold)}
+/* ===== HEADER ===== */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy);box-shadow:0 2px 0 0 var(--gold)}
+.hdr-in{max-width:1100px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.hdr-logo{display:flex;align-items:center;gap:10px}
+.hdr-logo img{height:34px;width:auto}
+.hdr-logo span{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;color:var(--gold);letter-spacing:2px;text-transform:uppercase}
+.hdr-tel{color:var(--gold);font-size:.88rem;font-weight:600;direction:ltr}
 
-/* Footer line */
-.foot{position:absolute;bottom:12px;left:48px;right:48px;font-size:14px;color:rgba(255,255,255,.25);line-height:1.6}
-.foot a{color:var(--gold);opacity:.6}
-.foot a:hover{opacity:1}
+/* ===== (1) HERO ===== */
+.hero{background:var(--navy);padding-top:60px}
+.hero-in{max-width:1100px;margin:0 auto;padding:50px 24px 50px;display:flex;align-items:center;gap:40px}
+.hero-txt{flex:1}
+.hero-img{flex:0 0 38%}
+.hero-img img{width:100%;border-radius:16px;display:block;object-fit:cover;max-height:480px}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--white);line-height:1.35;margin-bottom:18px}
+.hero .sub{font-size:1rem;color:rgba(255,255,255,.65);line-height:1.85;margin-bottom:28px}
+.hero .cta-wrap{margin-bottom:16px}
+.hero .trust{font-size:.88rem;color:rgba(255,255,255,.4)}
 
-/* --- LEFT COLUMN (image) --- */
-.col-img{
-  flex:0 0 40%;position:relative;overflow:hidden;
-  padding:24px 24px 24px 0;
-}
-.col-img img{
-  width:100%;height:100%;object-fit:cover;object-position:top center;
-  border-radius:20px;display:block;
-}
+/* ===== (2) WHAT YOU GET ===== */
+.benefit-card{max-width:640px;margin:0 auto;background:var(--off-white);border:1px solid #e0dbd3;border-radius:14px;padding:32px 28px}
+.benefit-card ul{list-style:none;margin-bottom:0}
+.benefit-card li{font-size:1rem;color:var(--navy);padding:8px 0;padding-right:28px;position:relative;line-height:1.7;border-bottom:1px solid rgba(0,0,0,.05)}
+.benefit-card li:last-child{border-bottom:none}
+.benefit-card li::before{content:'\2713';position:absolute;right:0;color:var(--gold);font-weight:700;font-size:1rem}
+
+/* ===== (3) COMPARE ===== */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:0}
+.card{padding:28px 22px;border-radius:12px;background:var(--white)}
+.card.old{border:1px solid #ddd}
+.card.new{border:2px solid var(--gold)}
+.card h3{font-size:1.05rem;font-weight:700;text-align:center;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--off-white)}
+.card.old h3{color:var(--gray)}
+.card.new h3{color:var(--gold)}
+.card ul{list-style:none}
+.card li{font-size:.92rem;color:var(--gray);padding:8px 0;padding-right:26px;position:relative;line-height:1.6;border-bottom:1px solid rgba(0,0,0,.04)}
+.card li:last-child{border-bottom:none}
+.card.old li::before{content:'\2715';position:absolute;right:0;color:#c07070;font-weight:700;font-size:.82rem}
+.card.new li::before{content:'\2713';position:absolute;right:0;color:#4a9a4a;font-weight:700;font-size:.82rem}
+
+/* ===== (4) STEPS ===== */
+.steps-row{display:flex;justify-content:center;gap:0;max-width:820px;margin:0 auto;flex-wrap:wrap}
+.st{flex:1;min-width:120px;max-width:170px;text-align:center;padding:0 8px;position:relative}
+.st-n{width:46px;height:46px;border-radius:50%;background:var(--gold);color:var(--navy);font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
+.st p{font-size:.86rem;color:var(--gray);line-height:1.5}
+.st:not(:last-child)::after{content:'\2190';position:absolute;left:-4px;top:12px;font-size:1.1rem;color:var(--gold);opacity:.4}
+
+/* ===== (5) ABOUT ===== */
+.about-row{display:flex;align-items:center;gap:20px;max-width:640px;margin:0 auto}
+.about-row img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);flex-shrink:0}
+.about-txt{font-size:.95rem;color:var(--gray);line-height:1.8}
+.about-txt strong{color:var(--navy)}
+
+/* ===== (6) FAQ ===== */
+.fq{border-bottom:1px solid var(--off-white)}
+.fq-q{width:100%;background:none;border:none;padding:18px 0;cursor:pointer;font-size:1rem;font-weight:600;font-family:'Heebo',sans-serif;color:var(--navy);display:flex;justify-content:space-between;align-items:center;text-align:right;direction:rtl;gap:12px}
+.fq-q::after{content:'+';font-size:1.3rem;color:var(--gold);flex-shrink:0}
+.fq.open .fq-q::after{content:'\2212'}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.fq.open .fq-a{max-height:250px}
+.fq-a p{font-size:.92rem;color:var(--gray);line-height:1.85;padding-bottom:14px}
+
+/* ===== (7) BOTTOM ===== */
+.bottom-call{font-size:1rem;color:var(--gray);margin-top:20px}
+.bottom-call a{color:var(--navy);font-weight:700}
+
+/* ===== FOOTER ===== */
+.foot{background:var(--navy);padding:28px 24px 22px;text-align:center;border-top:2px solid var(--gold)}
+.foot p{font-size:14px;color:rgba(255,255,255,.4);line-height:1.8;margin-bottom:4px}
+.foot a{color:var(--gold)}
+.foot .disc{font-size:14px;color:rgba(255,255,255,.25);max-width:540px;margin:10px auto 0}
 
 /* ===== WHATSAPP ===== */
-.wa{position:fixed;bottom:24px;left:24px;z-index:998;width:54px;height:54px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.25);transition:transform .2s}
+.wa{position:fixed;bottom:24px;left:24px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.22);transition:transform .2s}
 .wa:hover{transform:scale(1.08)}
+
+/* ===== STICKY MOBILE ===== */
+.sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:997;background:var(--navy);border-top:2px solid var(--gold);padding:10px 16px}
+.sticky .cta{display:block;width:100%;text-align:center;padding:14px;font-size:1rem;border-radius:8px}
 
 /* ===== MOBILE ===== */
 @media(max-width:768px){
-  html,body{overflow-y:auto;overflow-x:hidden}
-  .page{flex-direction:column;height:auto;min-height:100vh;min-height:100dvh}
-  .col-txt{flex:none;padding:24px 20px 20px;justify-content:flex-start}
-  .logo{margin-bottom:16px}
-  .logo img{height:28px}
-  .title{font-size:1.45rem;margin-bottom:12px}
-  .sub{font-size:.88rem;margin-bottom:16px;line-height:1.75}
-  .checks{grid-template-columns:1fr;gap:4px;margin-bottom:20px}
-  .checks li{font-size:.85rem}
-  .cta{width:100%;text-align:center;padding:16px;font-size:1.05rem}
-  .trust{margin-top:12px;font-size:.78rem;text-align:center}
-  .col-img{flex:none;padding:0 20px 16px;height:200px}
-  .col-img img{border-radius:14px;height:200px}
-  .foot{position:static;padding:12px 20px;font-size:13px;text-align:center}
-  .wa{bottom:16px;left:16px;width:48px;height:48px}
-}
-
-/* Very small phones — hide image to fit in one screen */
-@media(max-height:700px) and (max-width:768px){
-  .col-img{display:none}
+  .sec{padding:36px 20px}
+  .sticky{display:block}
+  .wa{bottom:76px}
+  .hero-in{flex-direction:column;gap:24px;padding:36px 20px 36px}
+  .hero-img{flex:none;width:100%}
+  .hero-img img{max-height:260px;width:100%;object-position:top}
+  .hero h1{font-size:1.5rem}
+  .cards{grid-template-columns:1fr}
+  .steps-row{flex-direction:column;align-items:center;gap:6px}
+  .st{max-width:100%;display:flex;align-items:center;gap:12px;text-align:right;padding:6px 0}
+  .st-n{margin:0;min-width:38px;width:38px;height:38px;font-size:.95rem}
+  .st:not(:last-child)::after{content:none}
+  .about-row{flex-direction:column;text-align:center}
+  .benefit-card{padding:24px 20px}
 }
   </style>
 </head>
 <body>
 
-<div class="page">
-
-  <!-- ===== RIGHT: TEXT ===== -->
-  <div class="col-txt">
-
-    <div class="logo">
-      <img src="externalContent/ALON ELISHA (1).png" alt="לוגו"/>
-      <span>ELISHA LAW</span>
-    </div>
-
-    <h1 class="title">עושים צוואה? תוך 3 דקות יש לך טיוטה ביד — בלי התחייבות.</h1>
-
-    <p class="sub">אצל עורך דין רגיל משלמים גם על הפרוצדורה. כאן אתה מקבל את מה שחשוב: עורך דין שערך מאות צוואות, שמאפיין איתך, בודק לפי חוק הירושה ומלווה עד ההגשה. האחריות עליי.</p>
-
-    <ul class="checks">
-      <li>טיוטה מלאה תוך 3 דקות</li>
-      <li>אפיון אישי עם עורך דין</li>
-      <li>בדיקה לפי חוק הירושה</li>
-      <li>ליווי עד ההגשה</li>
-    </ul>
-
-    <div>
-      <a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="cta">בנה את הטיוטה שלך עכשיו</a>
-    </div>
-
-    <p class="trust">עו״ד אלון אלישע · ליווי אישי עד ההגשה · <a href="tel:054-9260698">054-9260698</a></p>
-
-    <div class="foot">הכלי מייצר טיוטה ראשונית בלבד ואינו מהווה ייעוץ משפטי · <a href="https://elisha-law.com/">אתר ראשי</a> · <a href="https://elisha-law.com/#privModal">מדיניות פרטיות</a></div>
+<!-- HEADER -->
+<header class="hdr"><div class="hdr-in">
+  <div class="hdr-logo">
+    <img src="externalContent/ALON ELISHA (1).png" alt="לוגו"/>
+    <span>ELISHA LAW</span>
   </div>
+  <a href="tel:054-9260698" class="hdr-tel">054-9260698</a>
+</div></header>
 
-  <!-- ===== LEFT: IMAGE ===== -->
-  <div class="col-img">
-    <img src="externalContent/DA-185.jpg" alt="עו״ד אלון אלישע"/>
+<!-- (1) HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <div class="hero-txt">
+      <h1>עושים צוואה? אותו עורך דין. אותה צוואה. בלי הפרוצדורה.</h1>
+      <p class="sub">תוך 3 דקות יש לך טיוטת צוואה מלאה ביד, ללא עלות וללא התחייבות. ומשם: אני, עו״ד שערך מאות צוואות, מאפיין איתך, בודק כל סעיף לפי חוק הירושה, ומלווה אותך עד ההגשה. האחריות עליי.</p>
+      <div class="cta-wrap"><a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="cta">בנה את הטיוטה שלך עכשיו</a></div>
+      <p class="trust">3 דקות · ללא עלות · ללא התחייבות</p>
+    </div>
+    <div class="hero-img">
+      <img src="externalContent/alon-office2.png" alt="עו״ד אלון אלישע"/>
+    </div>
   </div>
+</section>
 
-</div>
+<!-- (2) WHAT YOU GET -->
+<section class="sec bg-w">
+  <div class="sec-in">
+    <h2>מה אתה מקבל בצוואה בדיגיטל</h2>
+    <div class="benefit-card">
+      <ul>
+        <li>טיוטת צוואה מלאה תוך 3 דקות, מהבית</li>
+        <li>אפיון אישי: שיחה עם עורך דין שמדייק את הצוואה למצב שלך</li>
+        <li>בדיקה משפטית של כל סעיף לפי חוק הירושה</li>
+        <li>ליווי עד הסוף: הדרכה לחתימה נכונה, בדיקה אחרונה ואישור</li>
+      </ul>
+    </div>
+    <div class="cta-center"><a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="cta">בנה את הטיוטה שלך עכשיו</a></div>
+  </div>
+</section>
 
-<!-- WHATSAPP FAB -->
+<!-- (3) COMPARE -->
+<section class="sec bg-o">
+  <div class="sec-in">
+    <h2>אותה צוואה. בלי לבזבז זמן וכסף על הדרך.</h2>
+    <div class="cards">
+      <div class="card old">
+        <h3>הדרך הרגילה</h3>
+        <ul>
+          <li>2-3 פגישות במשרד</li>
+          <li>ימי חופש ונסיעות</li>
+          <li>שבועות בין טיוטות</li>
+        </ul>
+      </div>
+      <div class="card new">
+        <h3>צוואה בדיגיטל</h3>
+        <ul>
+          <li>טיוטה ב-3 דקות מהבית</li>
+          <li>שיחה אחת מרחוק</li>
+          <li>אותה בדיקה משפטית ואותה אחריות של עורך דין</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- (4) STEPS -->
+<section class="sec bg-w">
+  <div class="sec-in">
+    <h2>איך זה עובד?</h2>
+    <div class="steps-row">
+      <div class="st"><div class="st-n">1</div><p>שאלון חכם, טיוטה ביד</p></div>
+      <div class="st"><div class="st-n">2</div><p>שיחה מרחוק</p></div>
+      <div class="st"><div class="st-n">3</div><p>בדיקה לפי חוק הירושה</p></div>
+      <div class="st"><div class="st-n">4</div><p>חתימה בפני עדים</p></div>
+      <div class="st"><div class="st-n">5</div><p>אישור סופי, מוגש</p></div>
+    </div>
+    <div class="cta-center"><a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="cta">בנה את הטיוטה שלך עכשיו</a></div>
+  </div>
+</section>
+
+<!-- (5) ABOUT -->
+<section class="sec bg-o">
+  <div class="sec-in">
+    <div class="about-row">
+      <img src="externalContent/alon-office2.png" alt="עו״ד אלון אלישע"/>
+      <div class="about-txt">
+        <strong>עו״ד אלון אלישע</strong> · ערכתי מאות צוואות · צוואות, ירושות וחוזים<br/>
+        בניתי את צוואה בדיגיטל כי ראיתי כמה אנשים דוחים את הצוואה בגלל הפרוצדורה, לא בגלל ההחלטות.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- (6) FAQ -->
+<section class="sec bg-w">
+  <div class="sec-in">
+    <h2>שאלות נפוצות</h2>
+    <div class="fq"><button class="fq-q" onclick="this.parentElement.classList.toggle('open')"><span>הטיוטה היא צוואה תקפה?</span></button><div class="fq-a"><p>הטיוטה היא הבסיס. כדי שתעמוד בדרישות חוק הירושה צריך השלמה, בדיקה וחתימה נכונה, וזה מה שעושים יחד.</p></div></div>
+    <div class="fq"><button class="fq-q" onclick="this.parentElement.classList.toggle('open')"><span>זה תקין משפטית כמו צוואה ממשרד?</span></button><div class="fq-a"><p>כן. אותו חוק, אותן דרישות, אותה בדיקה של עורך דין. בלי הפרוצדורה.</p></div></div>
+    <div class="fq"><button class="fq-q" onclick="this.parentElement.classList.toggle('open')"><span>כמה זמן לוקח?</span></button><div class="fq-a"><p>הטיוטה, 3 דקות. התהליך המלא, ימים בודדים, בקצב שלך.</p></div></div>
+    <div class="fq"><button class="fq-q" onclick="this.parentElement.classList.toggle('open')"><span>מצב מורכב (פרק ב', עסק, נכסים בחו"ל)?</span></button><div class="fq-a"><p>בשיחה נזהה את זה. אם צריך טיפול פרטני, אגיד לך ביושר מראש.</p></div></div>
+    <div class="fq"><button class="fq-q" onclick="this.parentElement.classList.toggle('open')"><span>מה קורה עם הפרטים שלי?</span></button><div class="fq-a"><p>מגיעים אליי ונשמרים עד 7 ימים בלבד, ואז נמחקים.</p></div></div>
+  </div>
+</section>
+
+<!-- (7) BOTTOM -->
+<section class="sec bg-o" style="text-align:center">
+  <div class="sec-in">
+    <a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="cta" style="font-size:1.2rem;padding:20px 50px">בנה את הטיוטה שלך עכשיו</a>
+    <p class="bottom-call" style="margin-top:20px">מעדיפים ליווי אישי מההתחלה? <a href="tel:054-9260698">התקשרו: 054-9260698</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <p>עו״ד אלון אלישע · <a href="tel:054-9260698">054-9260698</a> · <a href="https://elisha-law.com/">אתר ראשי</a> · <a href="https://elisha-law.com/#privModal">מדיניות פרטיות</a></p>
+  <p class="disc">הכלי מייצר טיוטה ראשונית בלבד ואינו מהווה ייעוץ משפטי. השימוש אינו יוצר יחסי עורך דין-לקוח.</p>
+</footer>
+
+<!-- WHATSAPP -->
 <a href="https://wa.me/972549260698" target="_blank" class="wa" aria-label="וואטסאפ">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<!-- STICKY MOBILE -->
+<div class="sticky"><a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="cta">בנה את הטיוטה שלך עכשיו</a></div>
+
 <!-- COOKIE -->
 <div id="ckB" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#fff;border-top:2px solid var(--gold);padding:10px 16px;box-shadow:0 -4px 12px rgba(0,0,0,.08)"><div style="max-width:500px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between"><p style="font-size:.78em;color:#555;flex:1;min-width:140px">אתר זה משתמש בעוגיות.</p><div style="display:flex;gap:6px"><button onclick="localStorage.setItem('ck','y');document.getElementById('ckB').style.display='none';loadGA()" style="padding:5px 14px;background:var(--navy);color:#fff;border:none;border-radius:5px;font-family:inherit;font-size:.78em;font-weight:600;cursor:pointer">אישור</button><button onclick="localStorage.setItem('ck','n');document.getElementById('ckB').style.display='none'" style="padding:5px 14px;background:#f2f0eb;color:#666;border:1px solid #ddd;border-radius:5px;font-family:inherit;font-size:.78em;cursor:pointer">דחייה</button></div></div></div>
 <script>if(!localStorage.getItem('ck'))setTimeout(function(){document.getElementById('ckB').style.display='block'},1500)</script>
-
 <script src="conversion.js"></script>
 </body>
 </html>
