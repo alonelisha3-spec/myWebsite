@@ -64,9 +64,11 @@ a{text-decoration:none;color:inherit}
 /* ===== HEADER ===== */
 .hdr{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy);box-shadow:0 2px 0 0 var(--gold)}
 .hdr-in{max-width:1100px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
-.hdr-logo{display:flex;align-items:center;gap:10px}
+.hdr-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .hdr-logo img{height:34px;width:auto}
 .hdr-logo span{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;color:var(--gold);letter-spacing:2px;text-transform:uppercase}
+.hdr-right{display:flex;align-items:center;gap:16px}
+.hdr-office{color:rgba(255,255,255,.6);font-size:.82rem;font-weight:400}
 .hdr-tel{color:var(--gold);font-size:.88rem;font-weight:600;direction:ltr}
 
 /* ===== (1) HERO ===== */
@@ -75,7 +77,7 @@ a{text-decoration:none;color:inherit}
 .hero-txt{flex:1}
 .hero-img{flex:0 0 38%}
 .hero-img img{width:100%;border-radius:16px;display:block;object-fit:cover;max-height:480px}
-.hero .eyebrow{font-size:.95rem;color:var(--gold);letter-spacing:3px;font-weight:600;margin-bottom:10px}
+.hero .eyebrow{font-size:1.6rem;color:var(--gold);letter-spacing:3px;font-weight:700;margin-bottom:14px}
 .hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--white);line-height:1.35;margin-bottom:18px}
 .hero .sub{font-size:1.22rem;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:28px}
 .hero .cta-wrap{margin-bottom:16px}
@@ -167,11 +169,14 @@ a{text-decoration:none;color:inherit}
 
 <!-- HEADER -->
 <header class="hdr"><div class="hdr-in">
-  <div class="hdr-logo">
+  <a href="https://elisha-law.com/" class="hdr-logo">
     <img src="externalContent/ALON ELISHA (1).png" alt="לוגו"/>
     <span>ELISHA LAW</span>
+  </a>
+  <div class="hdr-right">
+    <span class="hdr-office">משרד עורכי דין אלון אלישע</span>
+    <a href="tel:054-9260698" class="hdr-tel">054-9260698</a>
   </div>
-  <a href="tel:054-9260698" class="hdr-tel">054-9260698</a>
 </div></header>
 
 <!-- (1) HERO -->
