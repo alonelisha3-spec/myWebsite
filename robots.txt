@@ -1,6 +1,11 @@
 User-agent: *
 Allow: /
 
+Disallow: /dashboard.html
+Disallow: /externalContent/
+Disallow: /campaign/
+Disallow: /node_modules/
+
 # AI crawlers — explicitly allowed to index and cite this site
 User-agent: GPTBot
 Allow: /

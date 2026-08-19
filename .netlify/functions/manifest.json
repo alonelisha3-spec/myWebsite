@@ -1,0 +1,1 @@
+{"functions":[{"bundler":"zisi","buildData":{"runtimeAPIVersion":1},"mainFile":"C:\\projects\\myWebsite\\netlify\\functions\\scan.js","name":"scan","priority":10,"runtimeVersion":"nodejs24.x","path":"C:\\projects\\myWebsite\\.netlify\\functions\\scan.zip","runtime":"js"}],"system":{"arch":"x64","platform":"win32"},"timestamp":1784800054065,"version":1}
