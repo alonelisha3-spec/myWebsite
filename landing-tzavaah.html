@@ -141,7 +141,8 @@ a{text-decoration:none;color:inherit}
 .foot .disc{font-size:14px;color:rgba(255,255,255,.25);max-width:540px;margin:10px auto 0}
 
 /* ===== WHATSAPP ===== */
-.wa{position:fixed;bottom:24px;left:24px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.22);transition:transform .2s}
+.wa{position:fixed;bottom:24px;left:24px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.22);transition:transform .2s,opacity .3s;opacity:0;pointer-events:none}
+.wa.visible{opacity:1;pointer-events:auto}
 .wa:hover{transform:scale(1.08)}
 
 /* ===== STICKY MOBILE ===== */
@@ -197,7 +198,7 @@ a{text-decoration:none;color:inherit}
   .benefit-card li,.card li,.fq-q,.fq-a p,.about-txt,.st p{font-size:.95rem}
 
   /* WhatsApp FAB */
-  .wa{width:54px;height:54px;bottom:95px;left:16px;z-index:999}
+  .wa{width:54px;height:54px;bottom:80px;left:16px;z-index:999}
 
   /* Sticky bar — hidden by default, shown via JS */
   .sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:997;background:var(--navy);border-top:2px solid var(--gold);padding:8px 14px}
@@ -269,22 +270,22 @@ a{text-decoration:none;color:inherit}
       <h1>עושים צוואה? אותו עורך דין. אותה צוואה. בלי הפרוצדורה.</h1>
       <!-- Desktop version -->
       <div class="hero-desk">
-        <p class="sub"><strong class="gold-big">איך זה עובד?</strong> עונים על שאלון קצר וחכם, ותוך 3 דקות מקבלים טיוטת צוואה אמיתית ומלאה, <strong class="gold-big">ללא עלות וללא התחייבות.</strong> ומשם: אני עו״ד אלון אלישע, ערכתי מאות צוואות. אני מאפיין איתך את הצוואה, בודק כל סעיף לפי חוק הירושה, ומלווה אותך עד ההגשה. האחריות עליי.</p>
+        <p class="sub"><strong class="gold-big">איך זה עובד?</strong> עונים על שאלון קצר וחכם, ותוך 3 דקות מקבלים טיוטת צוואה אמיתית ומלאה, <strong class="gold-big">ללא עלות וללא התחייבות.</strong> ומשם: אני עו״ד אלון אלישע, ערכתי מאות צוואות. אני מאפיין איתך את הצוואה, בודק כל סעיף לפי חוק הירושה, ומלווה אותך עד ההגשה.</p>
       </div>
       <!-- Mobile version -->
       <div class="hero-mob">
-        <p class="mob-intro">עונים על שאלון קצר וחכם, ומקבלים:</p>
-        <ul class="mob-checks">
-          <li>טיוטת צוואה אמיתית ומלאה</li>
-          <li>תוך 3 דקות</li>
-          <li class="gold-line">ללא עלות וללא התחייבות</li>
-        </ul>
-        <p class="mob-follow">ומשם: אני עו״ד אלון אלישע, ערכתי מאות צוואות. אני מאפיין איתך את הצוואה, בודק כל סעיף לפי חוק הירושה, ומלווה אותך עד ההגשה. האחריות עליי.</p>
+        <p class="mob-intro">טיוטת צוואה מלאה תוך 3 דקות · <strong style="color:var(--gold)">ללא עלות וללא התחייבות</strong></p>
       </div>
-      <div class="cta-wrap"><a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="cta" onclick="fbq('track','Lead')">בנה את הטיוטה שלך עכשיו</a></div>
+      <div class="cta-wrap"><a href="https://hebrew-will-guide.vercel.app/" class="cta" onclick="fbq('track','Lead')">בנה את הטיוטה שלך עכשיו</a></div>
+      <div class="hero-mob">
+        <p class="mob-follow">עו״ד אלון אלישע · מאות צוואות · בדיקה לפי חוק הירושה · ליווי עד ההגשה</p>
+      </div>
     </div>
     <div class="hero-img">
-      <img src="externalContent/alon-office2.png" alt="עו״ד אלון אלישע"/>
+      <picture>
+        <source srcset="externalContent/alon-office2.webp" type="image/webp"/>
+        <img src="externalContent/alon-office2.png" alt="עו״ד אלון אלישע" width="600" height="480"/>
+      </picture>
     </div>
   </div>
 </section>
@@ -301,7 +302,7 @@ a{text-decoration:none;color:inherit}
         <li>ליווי עד הסוף: הדרכה לחתימה נכונה, בדיקה אחרונה ואישור</li>
       </ul>
     </div>
-    <div class="cta-center"><a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="cta" onclick="fbq('track','Lead')">בנה את הטיוטה שלך עכשיו</a></div>
+    <div class="cta-center"><a href="https://hebrew-will-guide.vercel.app/" class="cta" onclick="fbq('track','Lead')">בנה את הטיוטה שלך עכשיו</a></div>
   </div>
 </section>
 
@@ -341,7 +342,7 @@ a{text-decoration:none;color:inherit}
       <div class="st"><div class="st-n">4</div><p>חתימה בפני עדים</p></div>
       <div class="st"><div class="st-n">5</div><p>אישור סופי, מוגש</p></div>
     </div>
-    <div class="cta-center"><a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="cta" onclick="fbq('track','Lead')">בנה את הטיוטה שלך עכשיו</a></div>
+    <div class="cta-center"><a href="https://hebrew-will-guide.vercel.app/" class="cta" onclick="fbq('track','Lead')">בנה את הטיוטה שלך עכשיו</a></div>
   </div>
 </section>
 
@@ -349,7 +350,10 @@ a{text-decoration:none;color:inherit}
 <section class="sec bg-o">
   <div class="sec-in">
     <div class="about-row">
-      <img src="externalContent/alon-office2.png" alt="עו״ד אלון אלישע"/>
+      <picture>
+        <source srcset="externalContent/alon-office2.webp" type="image/webp"/>
+        <img src="externalContent/alon-office2.png" alt="עו״ד אלון אלישע" loading="lazy" width="72" height="72"/>
+      </picture>
       <div class="about-txt">
         <strong>עו״ד אלון אלישע</strong> · ערכתי מאות צוואות · צוואות, ירושות וחוזים<br/>
         בניתי את צוואה בדיגיטל כי ראיתי כמה אנשים דוחים את הצוואה בגלל הפרוצדורה, לא בגלל ההחלטות.
@@ -373,7 +377,7 @@ a{text-decoration:none;color:inherit}
 <!-- (7) BOTTOM -->
 <section class="sec bg-o" style="text-align:center">
   <div class="sec-in">
-    <a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="cta" style="font-size:1.2rem;padding:20px 50px" onclick="fbq('track','Lead')">בנה את הטיוטה שלך עכשיו</a>
+    <a href="https://hebrew-will-guide.vercel.app/" class="cta" style="font-size:1.2rem;padding:20px 50px" onclick="fbq('track','Lead')">בנה את הטיוטה שלך עכשיו</a>
     <p class="bottom-call" style="margin-top:20px">מעדיפים ליווי אישי מההתחלה? <a href="tel:054-9260698">התקשרו: 054-9260698</a></p>
   </div>
 </section>
@@ -390,21 +394,30 @@ a{text-decoration:none;color:inherit}
 </a>
 
 <!-- STICKY MOBILE -->
-<div class="sticky"><a href="https://hebrew-will-guide.vercel.app/" target="_blank" class="cta" onclick="fbq('track','Lead')">בנה את הטיוטה שלך עכשיו</a></div>
+<div class="sticky"><a href="https://hebrew-will-guide.vercel.app/" class="cta" onclick="fbq('track','Lead')">בנה את הטיוטה שלך עכשיו</a></div>
 
 <!-- COOKIE -->
-<div id="ckB" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#fff;border-top:2px solid var(--gold);padding:10px 16px;box-shadow:0 -4px 12px rgba(0,0,0,.08)"><div style="max-width:500px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between"><p style="font-size:.78em;color:#555;flex:1;min-width:140px">אתר זה משתמש בעוגיות.</p><div style="display:flex;gap:6px"><button onclick="localStorage.setItem('ck','y');document.getElementById('ckB').style.display='none';loadGA()" style="padding:5px 14px;background:var(--navy);color:#fff;border:none;border-radius:5px;font-family:inherit;font-size:.78em;font-weight:600;cursor:pointer">אישור</button><button onclick="localStorage.setItem('ck','n');document.getElementById('ckB').style.display='none'" style="padding:5px 14px;background:#f2f0eb;color:#666;border:1px solid #ddd;border-radius:5px;font-family:inherit;font-size:.78em;cursor:pointer">דחייה</button></div></div></div>
+<div id="ckB" style="display:none;position:fixed;top:60px;left:0;right:0;z-index:99;background:#fff;border-bottom:1px solid var(--gold);padding:6px 16px;box-shadow:0 2px 8px rgba(0,0,0,.06)"><div style="max-width:500px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between"><p style="font-size:.78em;color:#555;flex:1;min-width:140px">אתר זה משתמש בעוגיות.</p><div style="display:flex;gap:6px"><button onclick="localStorage.setItem('ck','y');document.getElementById('ckB').style.display='none';loadGA()" style="padding:4px 12px;background:var(--navy);color:#fff;border:none;border-radius:5px;font-family:inherit;font-size:.78em;font-weight:600;cursor:pointer">אישור</button><button onclick="localStorage.setItem('ck','n');document.getElementById('ckB').style.display='none'" style="padding:4px 12px;background:#f2f0eb;color:#666;border:1px solid #ddd;border-radius:5px;font-family:inherit;font-size:.78em;cursor:pointer">דחייה</button></div></div></div>
 <script>if(!localStorage.getItem('ck'))setTimeout(function(){document.getElementById('ckB').style.display='block'},1500)</script>
 <script>
-// Show sticky bar only after hero CTA scrolls out of view
 (function(){
+  // Sticky bar: show after hero CTA scrolls out of view
   var hero=document.querySelector('.hero .cta-wrap');
   var bar=document.querySelector('.sticky');
-  if(!hero||!bar||window.innerWidth>768)return;
-  var io=new IntersectionObserver(function(e){
-    bar.classList.toggle('visible',!e[0].isIntersecting);
-  },{threshold:0});
-  io.observe(hero);
+  if(hero&&bar&&window.innerWidth<=768){
+    var io=new IntersectionObserver(function(e){
+      bar.classList.toggle('visible',!e[0].isIntersecting);
+    },{threshold:0});
+    io.observe(hero);
+  }
+  // WhatsApp FAB: show only after 60% scroll
+  var wa=document.querySelector('.wa');
+  if(wa){
+    window.addEventListener('scroll',function(){
+      var scrolled=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight);
+      wa.classList.toggle('visible',scrolled>=0.6);
+    },{passive:true});
+  }
 })();
 </script>
 <script src="conversion.js"></script>
