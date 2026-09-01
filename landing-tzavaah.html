@@ -276,7 +276,7 @@ a{text-decoration:none;color:inherit}
       <div class="hero-mob">
         <p class="mob-intro">טיוטת צוואה מלאה תוך 3 דקות · <strong style="color:var(--gold)">ללא עלות וללא התחייבות</strong></p>
       </div>
-      <div class="cta-wrap"><a href="https://hebrew-will-guide.vercel.app/" class="cta" onclick="fbq('track','Lead')">בנה את הטיוטה שלך עכשיו</a></div>
+      <div class="cta-wrap"><a href="https://hebrew-will-guide.vercel.app/" class="cta" onclick="fbq('trackCustom','CTAClick')">בנה את הטיוטה שלך עכשיו</a></div>
       <div class="hero-mob">
         <p class="mob-follow">עו״ד אלון אלישע · מאות צוואות · בדיקה לפי חוק הירושה · ליווי עד ההגשה</p>
       </div>
@@ -302,7 +302,7 @@ a{text-decoration:none;color:inherit}
         <li>ליווי עד הסוף: הדרכה לחתימה נכונה, בדיקה אחרונה ואישור</li>
       </ul>
     </div>
-    <div class="cta-center"><a href="https://hebrew-will-guide.vercel.app/" class="cta" onclick="fbq('track','Lead')">בנה את הטיוטה שלך עכשיו</a></div>
+    <div class="cta-center"><a href="https://hebrew-will-guide.vercel.app/" class="cta" onclick="fbq('trackCustom','CTAClick')">בנה את הטיוטה שלך עכשיו</a></div>
   </div>
 </section>
 
@@ -342,7 +342,7 @@ a{text-decoration:none;color:inherit}
       <div class="st"><div class="st-n">4</div><p>חתימה בפני עדים</p></div>
       <div class="st"><div class="st-n">5</div><p>אישור סופי, מוגש</p></div>
     </div>
-    <div class="cta-center"><a href="https://hebrew-will-guide.vercel.app/" class="cta" onclick="fbq('track','Lead')">בנה את הטיוטה שלך עכשיו</a></div>
+    <div class="cta-center"><a href="https://hebrew-will-guide.vercel.app/" class="cta" onclick="fbq('trackCustom','CTAClick')">בנה את הטיוטה שלך עכשיו</a></div>
   </div>
 </section>
 
@@ -377,7 +377,7 @@ a{text-decoration:none;color:inherit}
 <!-- (7) BOTTOM -->
 <section class="sec bg-o" style="text-align:center">
   <div class="sec-in">
-    <a href="https://hebrew-will-guide.vercel.app/" class="cta" style="font-size:1.2rem;padding:20px 50px" onclick="fbq('track','Lead')">בנה את הטיוטה שלך עכשיו</a>
+    <a href="https://hebrew-will-guide.vercel.app/" class="cta" style="font-size:1.2rem;padding:20px 50px" onclick="fbq('trackCustom','CTAClick')">בנה את הטיוטה שלך עכשיו</a>
     <p class="bottom-call" style="margin-top:20px">מעדיפים ליווי אישי מההתחלה? <a href="tel:054-9260698">התקשרו: 054-9260698</a></p>
   </div>
 </section>
@@ -394,7 +394,7 @@ a{text-decoration:none;color:inherit}
 </a>
 
 <!-- STICKY MOBILE -->
-<div class="sticky"><a href="https://hebrew-will-guide.vercel.app/" class="cta" onclick="fbq('track','Lead')">בנה את הטיוטה שלך עכשיו</a></div>
+<div class="sticky"><a href="https://hebrew-will-guide.vercel.app/" class="cta" onclick="fbq('trackCustom','CTAClick')">בנה את הטיוטה שלך עכשיו</a></div>
 
 <!-- COOKIE -->
 <div id="ckB" style="display:none;position:fixed;top:60px;left:0;right:0;z-index:99;background:#fff;border-bottom:1px solid var(--gold);padding:6px 16px;box-shadow:0 2px 8px rgba(0,0,0,.06)"><div style="max-width:500px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between"><p style="font-size:.78em;color:#555;flex:1;min-width:140px">אתר זה משתמש בעוגיות.</p><div style="display:flex;gap:6px"><button onclick="localStorage.setItem('ck','y');document.getElementById('ckB').style.display='none';loadGA()" style="padding:4px 12px;background:var(--navy);color:#fff;border:none;border-radius:5px;font-family:inherit;font-size:.78em;font-weight:600;cursor:pointer">אישור</button><button onclick="localStorage.setItem('ck','n');document.getElementById('ckB').style.display='none'" style="padding:4px 12px;background:#f2f0eb;color:#666;border:1px solid #ddd;border-radius:5px;font-family:inherit;font-size:.78em;cursor:pointer">דחייה</button></div></div></div>
@@ -410,14 +410,34 @@ a{text-decoration:none;color:inherit}
     },{threshold:0});
     io.observe(hero);
   }
-  // WhatsApp FAB: show only after 60% scroll
+  // WhatsApp FAB: visible from the start
   var wa=document.querySelector('.wa');
-  if(wa){
-    window.addEventListener('scroll',function(){
-      var scrolled=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight);
-      wa.classList.toggle('visible',scrolled>=0.6);
-    },{passive:true});
-  }
+  if(wa){wa.classList.add('visible');}
+})();
+</script>
+<script>
+/* Forward ad click ids + utm to the quiz tool so attribution survives the hop. */
+(function(){
+  var KEEP=['gclid','fbclid','wbraid','gbraid','msclkid',
+            'utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+  try{
+    var cur=new URLSearchParams(window.location.search), keep=new URLSearchParams();
+    KEEP.forEach(function(k){
+      var v=cur.get(k);
+      if(v){ try{sessionStorage.setItem('lp_'+k,v);}catch(e){} }
+      else { try{v=sessionStorage.getItem('lp_'+k);}catch(e){} }
+      if(v) keep.set(k,v);
+    });
+    if(!keep.get('utm_source')) keep.set('utm_source', keep.get('gclid')?'google':(keep.get('fbclid')?'meta':'direct'));
+    keep.set('lp','landing-tzavaah');
+    var qs=keep.toString();
+    if(!qs) return;
+    document.querySelectorAll('a[href*="hebrew-will-guide"]').forEach(function(a){
+      var h=a.getAttribute('href');
+      if(!h||h.indexOf('#')===0) return;
+      a.setAttribute('href', h + (h.indexOf('?')>-1?'&':'?') + qs);
+    });
+  }catch(e){}
 })();
 </script>
 <script src="conversion.js"></script>
