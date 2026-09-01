@@ -2,10 +2,35 @@
 <html lang="he" dir="rtl">
 <head>
   <script>
+    /* Consent Mode v2.
+       analytics_storage starts DENIED: GA4 measures every visitor with cookieless
+       pings - no cookie, no identifier, nothing stored on the device.
+       Clicking "אישור" upgrades to granted. Ad tags keep their previous behaviour. */
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    function loadGA(){if(document.getElementById('_ga'))return;var s=document.createElement('script');s.id='_ga';s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ET42K00LTJ';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-ET42K00LTJ');}
-    if(localStorage.getItem('ck')==='y')loadGA();
+
+    gtag('consent','default',{
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+
+    if(localStorage.getItem('ck')==='y'){
+      gtag('consent','update',{ analytics_storage:'granted' });
+    }
+
+    /* GA4 now loads for everyone, consented or not. */
+    (function(){
+      if(document.getElementById('_ga'))return;
+      var s=document.createElement('script');
+      s.id='_ga'; s.async=true;
+      s.src='https://www.googletagmanager.com/gtag/js?id=G-ET42K00LTJ';
+      document.head.appendChild(s);
+    })();
+    gtag('js', new Date());
+    gtag('config','G-ET42K00LTJ');
+
+    /* Called by the consent banner's "אישור" button. */
+    function loadGA(){ gtag('consent','update',{ analytics_storage:'granted' }); }
   </script>
   <meta charset="UTF-8"/>
   <meta name="google" content="notranslate"/>
@@ -397,7 +422,7 @@ a{text-decoration:none;color:inherit}
 <div class="sticky"><a href="https://hebrew-will-guide.vercel.app/" class="cta" onclick="fbq('trackCustom','CTAClick')">בנה את הטיוטה שלך עכשיו</a></div>
 
 <!-- COOKIE -->
-<div id="ckB" style="display:none;position:fixed;top:60px;left:0;right:0;z-index:99;background:#fff;border-bottom:1px solid var(--gold);padding:6px 16px;box-shadow:0 2px 8px rgba(0,0,0,.06)"><div style="max-width:500px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between"><p style="font-size:.78em;color:#555;flex:1;min-width:140px">אתר זה משתמש בעוגיות.</p><div style="display:flex;gap:6px"><button onclick="localStorage.setItem('ck','y');document.getElementById('ckB').style.display='none';loadGA()" style="padding:4px 12px;background:var(--navy);color:#fff;border:none;border-radius:5px;font-family:inherit;font-size:.78em;font-weight:600;cursor:pointer">אישור</button><button onclick="localStorage.setItem('ck','n');document.getElementById('ckB').style.display='none'" style="padding:4px 12px;background:#f2f0eb;color:#666;border:1px solid #ddd;border-radius:5px;font-family:inherit;font-size:.78em;cursor:pointer">דחייה</button></div></div></div>
+<div id="ckB" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;background:#fff;border-top:1px solid var(--gold);padding:6px 16px;box-shadow:0 -2px 8px rgba(0,0,0,.06);transition:bottom .25s ease"><div style="max-width:500px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between"><p style="font-size:.78em;color:#555;flex:1;min-width:140px">אתר זה משתמש בעוגיות.</p><div style="display:flex;gap:6px"><button onclick="localStorage.setItem('ck','y');document.getElementById('ckB').style.display='none';loadGA()" style="padding:4px 12px;background:var(--navy);color:#fff;border:none;border-radius:5px;font-family:inherit;font-size:.78em;font-weight:600;cursor:pointer">אישור</button><button onclick="localStorage.setItem('ck','n');document.getElementById('ckB').style.display='none'" style="padding:4px 12px;background:#f2f0eb;color:#666;border:1px solid #ddd;border-radius:5px;font-family:inherit;font-size:.78em;cursor:pointer">דחייה</button></div></div></div>
 <script>if(!localStorage.getItem('ck'))setTimeout(function(){document.getElementById('ckB').style.display='block'},1500)</script>
 <script>
 (function(){
@@ -406,7 +431,10 @@ a{text-decoration:none;color:inherit}
   var bar=document.querySelector('.sticky');
   if(hero&&bar&&window.innerWidth<=768){
     var io=new IntersectionObserver(function(e){
-      bar.classList.toggle('visible',!e[0].isIntersecting);
+      var show=!e[0].isIntersecting;
+      bar.classList.toggle('visible',show);
+      var ck=document.getElementById('ckB');
+      if(ck) ck.style.bottom = show ? (bar.offsetHeight+'px') : '0px';
     },{threshold:0});
     io.observe(hero);
   }
